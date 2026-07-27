@@ -2,7 +2,6 @@
 interface SkillCategory {
     emoji: string;
     categoryKey: string;
-    descriptionKey: string;
     skills: string[];
 }
 
@@ -10,19 +9,16 @@ const skillCategories: SkillCategory[] = [
     {
         emoji: "⚡",
         categoryKey: "skills.categories.core",
-        descriptionKey: "The foundation of every project",
         skills: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"],
     },
     {
         emoji: "🚀",
         categoryKey: "skills.categories.frameworks",
-        descriptionKey: "Building modern, scalable UIs",
         skills: ["React.js", "Next.js", "React Native"],
     },
     {
         emoji: "🎨",
         categoryKey: "skills.categories.styling",
-        descriptionKey: "Crafting beautiful, responsive layouts",
         skills: [
             "Tailwind CSS",
             "CSS Modules",
@@ -33,19 +29,16 @@ const skillCategories: SkillCategory[] = [
     {
         emoji: "🔄",
         categoryKey: "skills.categories.state",
-        descriptionKey: "Efficient data flow and management",
         skills: ["RTK Query", "Redux Toolkit", "REST APIs", "Async/Await"],
     },
     {
         emoji: "🛠️",
         categoryKey: "skills.categories.tools",
-        descriptionKey: "Professional development practices",
         skills: ["Git", "GitHub", "VS Code", "Figma", "npm / yarn"],
     },
     {
         emoji: "💡",
         categoryKey: "skills.categories.soft",
-        descriptionKey: "What makes a great teammate",
         skills: [
             "Problem Solving",
             "Team Collaboration",
@@ -117,12 +110,12 @@ const skillCategories: SkillCategory[] = [
                             <h3
                                 class="text-sm font-semibold leading-tight text-slate-200"
                             >
-                                {{ $t(cat.categoryKey) }}
+                                {{ $t(`${cat.categoryKey}.title`) }}
                             </h3>
                             <p
                                 class="text-xs mt-0.5 text-slate-400/40"
                             >
-                                {{ cat.descriptionKey }}
+                                {{ $t(`${cat.categoryKey}.description`) }}
                             </p>
                         </div>
                     </div>
@@ -137,7 +130,7 @@ const skillCategories: SkillCategory[] = [
                     <div
                         class="flex flex-wrap gap-2"
                         role="list"
-                        :aria-label="`${$t(cat.categoryKey)} skills`"
+                        :aria-label="`${$t(`${cat.categoryKey}.title`)} skills`"
                     >
                         <span
                             v-for="skill in cat.skills"
@@ -152,18 +145,7 @@ const skillCategories: SkillCategory[] = [
             </div>
 
             <!-- ── Bottom note ── -->
-            <p
-                class="text-center mt-10 text-xs scroll-animate text-slate-400/30 tracking-tight"
-            >
-                {{ $t('skills.bottom_note') }}
-                <strong class="text-sky-600 font-semibold">
-                    {{ $t('skills.advanced_next') }}
-                </strong>
-                &amp;
-                <strong class="text-sky-600 font-semibold">
-                    {{ $t('skills.performance') }}
-                </strong>
-            </p>
+
         </div>
     </section>
 </template>

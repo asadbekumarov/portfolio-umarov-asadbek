@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface ContactCard {
-    icon: "email" | "phone" | "linkedin" | "globe";
+    icon: "email" | "phone" | "linkedin" | "telegram";
     labelKey: string;
     value: string;
     href: string;
@@ -10,41 +10,33 @@ interface ContactCard {
 const contacts: ContactCard[] = [
     {
         icon: "email",
-        labelKey: "about.info.location", // label mismatch fix: should be label of the card
+        labelKey: "contact.cards.email",
         value: "asadbekumarov922@gmail.com",
-        href: "mailto:asadbekumarov922@gmail.com",
-        external: false,
+        href: "asadbekumarov922@gmail.com",
+        external: true,
     },
     {
         icon: "phone",
-        labelKey: "nav.contact", 
+        labelKey: "contact.cards.phone",
         value: "+998 77 268 7865",
         href: "tel:+998772687865",
         external: false,
     },
     {
         icon: "linkedin",
-        labelKey: "about.ctas.linkedin",
+        labelKey: "contact.cards.linkedin",
         value: "asadbek-umarov-ab9385376",
         href: "https://www.linkedin.com/in/asadbek-umarov-ab9385376",
         external: true,
     },
     {
-        icon: "globe",
-        labelKey: "about.ctas.portfolio",
-        value: "portfolio-umarov-asadbek.vercel.app",
-        href: "https://portfolio-umarov-asadbek.vercel.app/",
+        icon: "telegram",
+        labelKey: "contact.cards.telegram",
+        value: "@Asad_umarov",
+        href: "https://t.me/Asad_umarov",
         external: true,
-    },
+    }
 ];
-
-// Mapping correctly for labels
-const contactLabels: Record<string, string> = {
-    email: "Email",
-    phone: "Phone",
-    linkedin: "LinkedIn",
-    globe: "Portfolio"
-};
 </script>
 
 <template>
@@ -94,7 +86,7 @@ const contactLabels: Record<string, string> = {
                         :rel="card.external ? 'noopener noreferrer' : undefined"
                         class="glass-card flex items-center gap-4 p-5 group scroll-animate"
                         :style="`transition-delay: ${0.1 + index * 0.08}s;`"
-                        :aria-label="`${contactLabels[card.icon]}: ${card.value}`"
+                        :aria-label="`${$t(card.labelKey)}: ${card.value}`"
                     >
                         <!-- Icon box — blue accent -->
                         <div
@@ -137,7 +129,7 @@ const contactLabels: Record<string, string> = {
 
                             <!-- LinkedIn -->
                             <svg
-                                v-if="card.icon === 'linkedin'"
+                                v-else-if="card.icon === 'linkedin'"
                                 width="20"
                                 height="20"
                                 viewBox="0 0 24 24"
@@ -153,9 +145,9 @@ const contactLabels: Record<string, string> = {
                                 <circle cx="4" cy="4" r="2" />
                             </svg>
 
-                            <!-- Globe -->
+                            <!-- Telegram -->
                             <svg
-                                v-if="card.icon === 'globe'"
+                                v-else-if="card.icon === 'telegram'"
                                 width="20"
                                 height="20"
                                 viewBox="0 0 24 24"
@@ -165,11 +157,7 @@ const contactLabels: Record<string, string> = {
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                             >
-                                <circle cx="12" cy="12" r="10" />
-                                <line x1="2" y1="12" x2="22" y2="12" />
-                                <path
-                                    d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
-                                />
+                                <path d="M21.5 2L2 9.5l7.5 3L18 6l-6 8.5L17.5 22z" />
                             </svg>
                         </div>
 
@@ -178,7 +166,7 @@ const contactLabels: Record<string, string> = {
                             <p
                                 class="text-xs font-semibold mb-0.5 text-slate-400/40"
                             >
-                                {{ contactLabels[card.icon] }}
+                                {{ $t(card.labelKey) }}
                             </p>
                             <p
                                 class="text-sm font-semibold truncate transition-colors duration-200 text-slate-200 group-hover:text-sky-500"
@@ -219,7 +207,7 @@ const contactLabels: Record<string, string> = {
                         <span
                             class="text-xs font-semibold tracking-widest uppercase text-slate-400/20"
                         >
-                            {{ $t('contact.or_reach_out') }}
+                            {{ $t('contact.divider_text') }}
                         </span>
                         <div
                             class="flex-1 h-px bg-slate-200/5"
@@ -228,7 +216,7 @@ const contactLabels: Record<string, string> = {
                     </div>
 
                     <a
-                        href="mailto:asadbekumarov922@gmail.com"
+                        href="asadbekumarov922@gmail.com"
                         class="btn-primary py-3.5 px-10 text-base"
                     >
                         <svg
@@ -248,12 +236,6 @@ const contactLabels: Record<string, string> = {
                         </svg>
                         {{ $t('contact.cta_email') }}
                     </a>
-
-                    <p
-                        class="mt-4 text-xs text-slate-400/25"
-                    >
-                        {{ $t('contact.response_time') }}
-                    </p>
                 </div>
             </div>
         </div>

@@ -1,76 +1,37 @@
 <script setup lang="ts">
 interface Project {
+    key: string;
     title: string;
-    subtitleKey: string;
-    category: string;
+    categoryKey: string;
+    icon: string;
     statusKey: string;
-    descriptionKey: string;
-    highlights: string[];
+    link?: string;
+    highlightCount: number;
     technologies: string[];
 }
 
-// Note: For a real production app, project descriptions should also be in i18n files.
-// For now, we use keys and map them.
 const projects: Project[] = [
     {
-        title: "Mann Home",
-        subtitleKey: "projects.items.mann_home.subtitle",
-        category: "Web App",
-        statusKey: "projects.status.development",
-        descriptionKey: "projects.items.mann_home.description",
-        highlights: [
-            "RTK Query integration",
-            "Responsive UI",
-            "Modular architecture",
-        ],
-        technologies: ["React.js", "TypeScript", "RTK Query", "Tailwind CSS"],
-    },
-    {
-        title: "PUBG Tournament",
-        subtitleKey: "projects.items.pubg.subtitle",
-        category: "Web App",
+        key: "smart_life",
+        title: "Smart Life",
+        categoryKey: "E-commerce",
+        icon: "📱",
+        link: "https://www.smartlife.uz/uz",
         statusKey: "projects.status.completed",
-        descriptionKey: "projects.items.pubg.description",
-        highlights: [
-            "Dynamic brackets",
-            "Next.js SSR/SSG",
-            "Real-time updates",
-        ],
-        technologies: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
+        highlightCount: 3,
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "RTK Query"],
     },
     {
+        key: "darrow",
         title: "Darrow",
-        subtitleKey: "projects.items.darrow.subtitle",
-        category: "Telegram Mini App",
-        statusKey: "projects.status.development",
-        descriptionKey: "projects.items.darrow.description",
-        highlights: [
-            "Telegram API",
-            "Taxi & Food flows",
-            "Mobile-first",
-        ],
+        categoryKey: "telegram_app",
+        icon: "✈️",
+        link: "https://t.me/darrov_bot", // Darrow uchun demo link
+        statusKey: "projects.status.completed",
+        highlightCount: 3,
         technologies: ["React.js", "TypeScript", "Tailwind CSS", "Telegram API"],
     },
-    {
-        title: "VocabApp",
-        subtitleKey: "projects.items.vocab.subtitle",
-        category: "Mobile App",
-        statusKey: "projects.status.completed",
-        descriptionKey: "projects.items.vocab.description",
-        highlights: [
-            "Batch word entry",
-            "Spaced repetition",
-            "Smart quizzes",
-        ],
-        technologies: ["React Native", "TypeScript", "Mobile"],
-    },
 ];
-
-const categoryIcon: Record<string, string> = {
-    "Web App": "🌐",
-    "Telegram Mini App": "✈️",
-    "Mobile App": "📱",
-};
 </script>
 
 <template>
@@ -111,7 +72,7 @@ const categoryIcon: Record<string, string> = {
             <div class="grid sm:grid-cols-2 gap-6">
                 <article
                     v-for="(project, index) in projects"
-                    :key="project.title"
+                    :key="project.key"
                     class="glass-card flex flex-col scroll-animate group"
                     :style="`transition-delay: ${index * 0.1}s;`"
                     :aria-label="`Project: ${project.title}`"
@@ -127,12 +88,12 @@ const categoryIcon: Record<string, string> = {
                                 <!-- Category badge -->
                                 <div class="flex items-center gap-1.5 mb-2">
                                     <span class="text-sm" aria-hidden="true">
-                                        {{ categoryIcon[project.category] ?? "📁" }}
+                                        {{ project.icon }}
                                     </span>
                                     <span
                                         class="text-xs font-semibold tracking-wider uppercase text-slate-400/35"
                                     >
-                                        {{ project.category }}
+                                        {{ $t(`projects.categories.${project.categoryKey}`) }}
                                     </span>
                                 </div>
 
@@ -147,25 +108,54 @@ const categoryIcon: Record<string, string> = {
                                 <p
                                     class="text-sm font-medium text-slate-400/45"
                                 >
-                                    {{ project.subtitleKey.includes('.') ? $t(project.subtitleKey) : project.subtitleKey }}
+                                    {{ $t(`projects.items.${project.key}.subtitle`) }}
                                 </p>
                             </div>
 
-                            <!-- Status chip -->
-                            <span
-                                class="text-xs font-semibold px-2.5 py-1 rounded-full border flex-shrink-0 whitespace-nowrap"
-                                :class="project.statusKey.includes('development') ? 'status-dev' : 'status-completed'"
-                                :aria-label="`Status: ${$t(project.statusKey)}`"
-                            >
-                                {{ project.statusKey.includes('.') ? $t(project.statusKey) : project.statusKey }}
-                            </span>
+                            <!-- Status chip & External Link -->
+                            <div class="flex items-center gap-2">
+                                <!-- Status badge -->
+                                <span
+                                    class="text-xs font-semibold px-2.5 py-1 rounded-full border flex-shrink-0 whitespace-nowrap"
+                                    :class="project.statusKey.includes('development') ? 'status-dev' : 'status-completed'"
+                                    :aria-label="`Status: ${$t(project.statusKey)}`"
+                                >
+                                    {{ $t(project.statusKey) }}
+                                </span>
+
+                                <!-- Demo Link Button -->
+                                <a
+                                    v-if="project.link"
+                                    :href="project.link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="p-1.5 rounded-lg border border-sky-500/20 bg-sky-500/10 text-sky-400 hover:bg-sky-500/20 hover:border-sky-500/40 transition-colors flex items-center justify-center flex-shrink-0"
+                                    :title="`Open ${project.title}`"
+                                    :aria-label="`Visit ${project.title} website`"
+                                >
+                                    <svg
+                                        width="15"
+                                        height="15"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                        <polyline points="15 3 21 3 21 9" />
+                                        <line x1="10" y1="14" x2="21" y2="3" />
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
 
                         <!-- ── Description ── -->
                         <p
                             class="text-sm leading-relaxed mb-5 text-slate-400/55"
                         >
-                            {{ project.descriptionKey.includes('.') ? $t(project.descriptionKey) : project.descriptionKey }}
+                            {{ $t(`projects.items.${project.key}.description`) }}
                         </p>
 
                         <!-- ── Highlights ── -->
@@ -174,8 +164,8 @@ const categoryIcon: Record<string, string> = {
                             aria-label="Key highlights"
                         >
                             <li
-                                v-for="highlight in project.highlights"
-                                :key="highlight"
+                                v-for="i in project.highlightCount"
+                                :key="i"
                                 class="flex items-start gap-2.5 text-xs leading-relaxed text-slate-200/70"
                             >
                                 <!-- Bullet dot — blue accent -->
@@ -183,7 +173,7 @@ const categoryIcon: Record<string, string> = {
                                     class="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-600/70"
                                     aria-hidden="true"
                                 />
-                                {{ highlight }}
+                                {{ $t(`projects.items.${project.key}.highlights.${i - 1}`) }}
                             </li>
                         </ul>
 
@@ -208,52 +198,6 @@ const categoryIcon: Record<string, string> = {
                         </div>
                     </div>
                 </article>
-            </div>
-
-            <!-- ── View Full Portfolio CTA ── -->
-            <div class="text-center mt-12 scroll-animate">
-                <a
-                    href="https://portfolio-umarov-asadbek.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-secondary"
-                >
-                    <!-- Globe icon -->
-                    <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                    >
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="2" y1="12" x2="22" y2="12" />
-                        <path
-                            d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
-                        />
-                    </svg>
-                    {{ $t('projects.cta_full') }}
-                    <!-- External link icon -->
-                    <svg
-                        width="13"
-                        height="13"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                    >
-                        <path
-                            d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
-                        />
-                    </svg>
-                </a>
             </div>
         </div>
     </section>

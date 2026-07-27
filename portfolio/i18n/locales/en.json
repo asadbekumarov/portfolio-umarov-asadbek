@@ -1,4 +1,6 @@
 {
+  "welcome": "Welcome!",
+  "description": "This is my Nuxt 3 portfolio project.",
   "nav": {
     "about": "About",
     "skills": "Skills",
@@ -10,102 +12,205 @@
     "navigation": "Navigation",
     "connect": "Connect"
   },
-  "hero": {
-    "name": "Asadbek",
-    "surname": "Umarov",
-    "tagline": "Junior Frontend & Mobile Developer with 1 year of experience building modern web and mobile applications using React, Next.js, and React Native. Focused on clean UI, responsive design, and performance optimization across real-world projects including e-commerce, dashboards, and blogs. Based in",
-    "location": "Tashkent, Uzbekistan",
-    "open_to_work": "open to full-time, internship, and junior opportunities.",
-    "cta_view": "View My Projects",
-    "cta_contact": "Get in Touch"
-  },
   "about": {
     "label": "About Me",
     "title": "Passionate about building",
-    "title_accent": "great experiences",
-    "description_1": "I am {name}, a {role} with one year of experience. I build cross-platform applications using {tech}.",
-    "description_2": "I have developed {projects} using {tools}. I focus on delivering {focus}.",
-    "description_3": "I am currently seeking {roles} roles to join a professional engineering team. I am available for {availability} opportunities worldwide.",
+    "title_accent": "impactful products",
+    "description_1": "My name is {name}, a {role}. I build web and cross-platform mobile applications using {tech}.",
+    "description_2": "I have built {projects} using {tools}, always focusing on {focus}.",
+    "description_3": "Currently looking for {roles} roles to join a professional engineering team. Open to {availability} opportunities worldwide.",
     "stats": {
-      "projects": "Projects Shipped",
+      "projects": "Completed Projects",
       "experience": "Year of Experience",
       "remote": "Remote Ready"
     },
     "info": {
       "location": "Location",
       "status": "Status",
-      "availability": "Availability",
+      "availability": "Work Preference",
       "focus": "Focus",
+      "focus_value": "Frontend & Mobile",
       "open_to_work": "Open to Work",
       "remote_onsite": "Remote & On-site"
     },
     "ctas": {
-      "email": "Email Me",
+      "email": "Send an Email",
       "linkedin": "LinkedIn Profile",
       "portfolio": "Portfolio Website"
     },
     "identity": {
-      "role": "Junior Frontend Developer",
-      "available": "Available for Work"
+      "role": "Junior Frontend & Mobile Developer",
+      "available": "Open to Work"
     }
+  },
+  "hero": {
+    "name": "Asadbek",
+    "surname": "Umarov",
+    "role": "Junior Frontend & Mobile Developer",
+    "tagline": "Building modern, responsive web and mobile applications with React, Next.js, and React Native. Focused on clean UI, performance optimization, and scalable solutions across real-world projects like e-commerce, dashboards, and blogs.",
+    "location": "Tashkent, Uzbekistan",
+    "open_to_work": "Open to full-time, junior, and internship roles",
+    "cta_view": "View My Projects",
+    "cta_contact": "Get in Touch"
   },
   "skills": {
     "label": "Technical Expertise",
     "title": "Skills &",
     "title_accent": "Technologies",
     "description": "A focused toolkit forged through real-world projects and continuous self-driven learning.",
-    "bottom_note": "Always learning · Currently exploring",
-    "advanced_next": "advanced Next.js patterns",
-    "performance": "performance optimization",
     "categories": {
-      "core": "Core Languages",
-      "frameworks": "Frameworks & Libraries",
-      "styling": "Styling",
-      "state": "State & Data",
-      "tools": "Tools & Workflow",
-      "soft": "Soft Skills"
+      "core": {
+        "title": "Core Languages",
+        "description": "The foundation of every project"
+      },
+      "frameworks": {
+        "title": "Frameworks",
+        "description": "Building modern, scalable UIs"
+      },
+      "styling": {
+        "title": "Styling",
+        "description": "Crafting beautiful, responsive layouts"
+      },
+      "state": {
+        "title": "State Management",
+        "description": "Efficient data flow and management"
+      },
+      "tools": {
+        "title": "Tools",
+        "description": "Professional development practices"
+      },
+      "soft": {
+        "title": "Soft Skills",
+        "description": "What makes a great teammate"
+      }
     }
   },
   "experience": {
-    "label": "Work History",
+    "label": "Experience",
     "title": "Professional",
-    "title_accent": "Experience",
-    "description": "Real-world production experience building user-facing applications that serve actual end-users.",
-    "current": "Current",
-    "open_to_work": "Open to New Opportunities",
-    "seeking": "Actively seeking junior frontend developer roles & internships worldwide.",
-    "cta_talk": "Let's Talk"
-  },
-  "projects": {
-    "label": "Portfolio",
-    "title": "Featured",
-    "title_accent": "Projects",
-    "description": "Real-world applications built across diverse domains — from e-commerce to e-sports, service platforms, and mobile education.",
-    "cta_full": "View Full Portfolio"
+    "title_accent": "Journey",
+    "description": "My professional path and the projects I've worked on.",
+    "current": "Present",
+    "open_to_work": "Open to Work",
+    "seeking": "Seeking",
+    "cta_talk": "Let's Talk",
+    "items": {
+      "soft_turtkul": {
+        "role": "Freelance",
+        "company": "SoftTurtkul — \"Darrov\" WebApp",
+        "location": "Remote",
+        "type": "Freelance",
+        "description": "Co-developed Darrov, a multi-service Telegram Web App (similar in concept to Yandex Go), as part of a 3-person remote team (1 backend, 2 frontend).",
+        "achievements": [
+          "Built booking and ordering flows across multiple service categories: taxi, food delivery, handyman services (electricians, plumbers, technicians) and product orders from shops.",
+          "Built a responsive UI with React.js, TypeScript and Tailwind CSS, optimized for Telegram's constrained in-app browser.",
+          "Integrated REST APIs to handle real-time orders and service requests; the platform processed 5000+ orders in total, tracked via the admin panel."
+        ]
+      }
+    }
+  },  "projects": {
+    "label": "Projects",
+    "title": "Selected",
+    "title_accent": "Works",
+    "description": "Some of the projects I've developed and participated in.",
+    "status": {
+      "development": "In Development",
+      "completed": "Completed"
+    },
+    "categories": {
+      "web_app": "Web App",
+      "telegram_app": "Telegram Mini App",
+      "mobile_app": "Mobile App"
+    },
+    "items": {
+      "darrow": {
+        "subtitle": "Multi-service Platform",
+        "description": "A platform combining taxi and food delivery services.",
+        "highlights": [
+          "Telegram API",
+          "Taxi & Food flows",
+          "Mobile-first"
+        ]
+      }
+    },
+    "smart_life": {
+      "subtitle": "Electronics & Mobile Store Platform",
+      "description": "Modern e-commerce platform for Smart Life, an online store specializing in smartphones, gadgets, and consumer electronics.",
+      "highlights": [
+        "Interactive smartphone and gadget catalog with filtering",
+        "Seamless cart and online order management with RTK Query",
+        "Optimized mobile-first e-commerce interface"
+      ]
+    }
   },
   "education": {
-    "label": "Background",
-    "title": "Education &",
-    "title_accent": "Training",
-    "description": "A solid academic foundation built through intensive, hands-on training at a recognized tech education institution.",
-    "curriculum": "Curriculum Highlights",
-    "technologies": "Technologies Studied",
-    "continuous_learning": "Continuous Self-Learning",
-    "learning_note": "Beyond formal training — actively deepening expertise in {tech} through building real projects every day."
+    "label": "Education",
+    "title": "Academic",
+    "title_accent": "Knowledge",
+    "description": "My education and learning process.",
+    "curriculum": "Curriculum",
+    "technologies": "Technologies",
+    "continuous_learning": "Continuous Learning",
+    "status": {
+      "completed": "Completed"
+    },
+    "learning_note": "I am always ready to learn new technologies. Currently deepening my skills in {item1}, {item2}, and {item3}.",
+    "exploring": {
+      "item1": "advanced React patterns",
+      "item2": "Next.js App Router",
+      "item3": "web performance optimization"
+    },
+    "items": {
+      "najot_talim": {
+        "program": "Frontend Development",
+        "credential": "Web Development Certificate",
+        "description": "Completed an intensive, project-driven frontend development program at one of Uzbekistan's leading tech education centers. The curriculum combined modern JavaScript fundamentals with hands-on React ecosystem training and real-world UI development practice.",
+        "highlights": [
+          "Modern JavaScript (ES6+) — closures, async/await, modules, and beyond",
+          "TypeScript fundamentals — strict typing, interfaces, and generics",
+          "React.js ecosystem — components, hooks, context, and state management",
+          "Responsive design with Tailwind CSS and CSS best practices",
+          "Git version control and professional collaborative development workflows",
+          "Project-based learning with real deliverables and code reviews"
+        ]
+      }
+    }
   },
-  "contact": {
+  "footer": {
+      "tagline": "Junior Frontend Developer crafting modern, responsive web experiences with React, TypeScript & Next.js.",
+      "all_rights_reserved": "All rights reserved.",
+      "back_to_top": "Back to top",
+      "download_cv": "Download CV",
+      "social": {
+        "linkedin": "My LinkedIn profile",
+        "github": "My GitHub profile",
+        "telegram": "My Telegram profile",
+        "portfolio": "My portfolio website",
+        "email": "Send me an email",
+        "phone": "Call me"
+      }
+    },  "contact": {
     "label": "Get In Touch",
     "title": "Let's Work",
     "title_accent": "Together",
     "description": "I'm actively seeking junior frontend developer roles and internships. Whether you have a project in mind or simply want to connect — my inbox is always open.",
-    "or_reach_out": "or reach out directly",
-    "cta_email": "Send Me an Email",
-    "response_time": "Typically respond within 24 hours · Located in UTC+5"
+    "cards": {
+      "email": "Email",
+      "phone": "Telefon",
+      "linkedin": "LinkedIn",
+          "telegram": "Telegram"
+    },
+    "divider_text": "or reach out directly",
+    "cta_email": "Send Me an Email"
   },
-  "footer": {
-    "tagline": "Junior Frontend Developer crafting modern, responsive web experiences with React, TypeScript & Next.js.",
-    "rights": "All rights reserved.",
-    "built_with": "Built with",
-    "deployed_on": "Deployed on"
+  "seo": {
+    "title": "Asadbek Umarov — Frontend Developer",
+    "description": "Junior Frontend Developer specializing in React, TypeScript & Next.js. Building fast, modern, and user-friendly web applications. Based in Tashkent, Uzbekistan — open to remote opportunities worldwide.",
+    "author": "Asadbek Umarov",
+    "keywords": "frontend developer, react, typescript, next.js, nuxt, vue, web developer, tashkent, uzbekistan",
+    "og_title": "Asadbek Umarov — Frontend Developer",
+    "og_description": "Junior Frontend Developer specializing in React, TypeScript & Next.js. Based in Tashkent, Uzbekistan.",
+    "twitter_title": "Asadbek Umarov — Frontend Developer",
+    "twitter_description": "Junior Frontend Developer specializing in React, TypeScript & Next.js."
   }
 }
