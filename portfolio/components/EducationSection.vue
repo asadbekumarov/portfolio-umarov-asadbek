@@ -1,32 +1,20 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 interface EducationItem {
+    key: string;
     institution: string;
-    program: string;
-    credential: string;
-    period: string;
-    location: string;
-    description: string;
-    highlights: string[];
+    periodDate: string;
+    highlightCount: number;
     tags: string[];
 }
 
 const education: EducationItem[] = [
     {
+        key: "najot_talim",
         institution: "Najot Ta'lim",
-        program: "Frontend Development",
-        credential: "Web Development Certificate",
-        period: "Completed Mar 2024",
-        location: "Tashkent, Uzbekistan",
-        description:
-            "Completed an intensive, project-driven frontend development program at one of Uzbekistan's leading tech education centers. The curriculum combined modern JavaScript fundamentals with hands-on React ecosystem training and real-world UI development practice.",
-        highlights: [
-            "Modern JavaScript (ES6+) — closures, async/await, modules, and beyond",
-            "TypeScript fundamentals — strict typing, interfaces, and generics",
-            "React.js ecosystem — components, hooks, context, and state management",
-            "Responsive design with Tailwind CSS and CSS best practices",
-            "Git version control and professional collaborative development workflows",
-            "Project-based learning with real deliverables and code reviews",
-        ],
+        periodDate: "Mar 2024",
+        highlightCount: 6,
         tags: [
             "JavaScript",
             "TypeScript",
@@ -38,6 +26,12 @@ const education: EducationItem[] = [
         ],
     },
 ];
+
+const learningNote = computed(() => t('education.learning_note', {
+    item1: `<strong class="text-sky-600 font-medium">${t('education.exploring.item1')}</strong>`,
+    item2: `<strong class="text-sky-600 font-medium">${t('education.exploring.item2')}</strong>`,
+    item3: `<strong class="text-sky-600 font-medium">${t('education.exploring.item3')}</strong>`,
+}));
 </script>
 
 <template>
@@ -76,7 +70,7 @@ const education: EducationItem[] = [
             <div class="max-w-3xl mx-auto">
                 <div
                     v-for="edu in education"
-                    :key="edu.institution"
+                    :key="edu.key"
                     class="glass-card p-7 sm:p-10 scroll-animate delay-200 border-sky-500/20"
                 >
                     <!-- ── Card Header ── -->
@@ -111,12 +105,12 @@ const education: EducationItem[] = [
                             <p
                                 class="text-base font-semibold mt-0.5 text-sky-600"
                             >
-                                {{ edu.program }}
+                                {{ $t(`education.items.${edu.key}.program`) }}
                             </p>
                             <p
                                 class="text-sm mt-0.5 text-slate-400/45"
                             >
-                                {{ edu.credential }}
+                                {{ $t(`education.items.${edu.key}.credential`) }}
                             </p>
 
                             <!-- Meta badges: period + location -->
@@ -148,7 +142,7 @@ const education: EducationItem[] = [
                                         <line x1="8" y1="2" x2="8" y2="6" />
                                         <line x1="3" y1="10" x2="21" y2="10" />
                                     </svg>
-                                    {{ edu.period }}
+                                    {{ $t('education.status.completed') }} {{ edu.periodDate }}
                                 </span>
 
                                 <!-- Location -->
@@ -169,7 +163,7 @@ const education: EducationItem[] = [
                                         />
                                         <circle cx="12" cy="10" r="3" />
                                     </svg>
-                                    {{ edu.location }}
+                                    {{ $t('hero.location') }}
                                 </span>
                             </div>
                         </div>
@@ -185,7 +179,7 @@ const education: EducationItem[] = [
                     <p
                         class="text-sm leading-relaxed mb-7 text-slate-400/60"
                     >
-                        {{ edu.description }}
+                        {{ $t(`education.items.${edu.key}.description`) }}
                     </p>
 
                     <!-- Curriculum Highlights -->
@@ -201,8 +195,8 @@ const education: EducationItem[] = [
                             aria-label="Topics covered"
                         >
                             <li
-                                v-for="highlight in edu.highlights"
-                                :key="highlight"
+                                v-for="i in edu.highlightCount"
+                                :key="i"
                                 class="flex items-start gap-3 text-sm text-slate-200/80"
                             >
                                 <!-- Blue check icon -->
@@ -223,7 +217,7 @@ const education: EducationItem[] = [
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
                                 </span>
-                                {{ highlight }}
+                                {{ $t(`education.items.${edu.key}.highlights.${i - 1}`) }}
                             </li>
                         </ul>
                     </div>
@@ -272,9 +266,7 @@ const education: EducationItem[] = [
                         </p>
                         <p
                             class="text-xs mt-0.5 text-slate-400/45"
-                            v-html="$t('education.learning_note', {
-                                tech: `<strong class='text-sky-600 font-medium'>advanced React patterns</strong>, <strong class='text-sky-600 font-medium'>Next.js App Router</strong>, and <strong class='text-sky-600 font-medium'>web performance optimization</strong>`
-                            })"
+                            v-html="learningNote"
                         ></p>
                     </div>
                 </div>

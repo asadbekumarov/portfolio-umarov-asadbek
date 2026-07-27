@@ -8,83 +8,40 @@ export default defineNuxtConfig({
     preset: "vercel",
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/i18n",
+    "nuxt-schema-org" // Modul shu yerga qo'shildi
+  ],
 
   i18n: {
     locales: [
-      { code: "en", name: "English", iso: "en-US", file: "en.json" },
       { code: "uz", name: "O'zbek", iso: "uz-UZ", file: "uz.json" },
+      { code: "en", name: "English", iso: "en-US", file: "en.json" },
     ],
-    defaultLocale: "en",
+    defaultLocale: "uz",
     strategy: "prefix_except_default",
-    lazy: true,
     langDir: "locales",
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: "i18n_redirected",
       alwaysRedirect: true,
-      fallbackLocale: "en",
+      fallbackLocale: "uz",
     },
   },
 
   css: ["~/assets/css/main.css"],
 
-  app: {
-    head: {
-      title: "Asadbek Umarov — Frontend Developer",
-      htmlAttrs: {
-        lang: "en",
-      },
-      meta: [
-        { charset: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        {
-          name: "description",
-          content:
-            "Junior Frontend Developer specializing in React, TypeScript & Next.js. Building fast, modern, and user-friendly web applications. Based in Tashkent, Uzbekistan — open to remote opportunities worldwide.",
-        },
-        { name: "author", content: "Asadbek Umarov" },
-        { name: "robots", content: "index, follow" },
-        { name: "theme-color", content: "#0284c7" },
+  vite: {
+    build: {
+      rollupOptions: {
+        external: []
+      }
+    }
+  },
 
-        // Open Graph
-        { property: "og:type", content: "website" },
-        {
-          property: "og:title",
-          content: "Asadbek Umarov — Frontend Developer",
-        },
-        {
-          property: "og:description",
-          content:
-            "Junior Frontend Developer specializing in React, TypeScript & Next.js. Based in Tashkent, Uzbekistan.",
-        },
-        { property: "og:locale", content: "en_US" },
-
-        // Twitter / X
-        { name: "twitter:card", content: "summary_large_image" },
-        {
-          name: "twitter:title",
-          content: "Asadbek Umarov — Frontend Developer",
-        },
-        {
-          name: "twitter:description",
-          content:
-            "Junior Frontend Developer specializing in React, TypeScript & Next.js.",
-        },
-      ],
-      link: [
-        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossorigin: "",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-        },
-      ],
-    },
+  experimental: {
+    payloadExtraction: false,
+    appManifest: false
   },
 });

@@ -1,4 +1,6 @@
 {
+  "welcome": "Xush kelibsiz!",
+  "description": "Bu mening Nuxt 3 portfolio loyiham.",
   "nav": {
     "about": "Haqida",
     "skills": "Ko'nikmalar",
@@ -10,102 +12,204 @@
     "navigation": "Navigatsiya",
     "connect": "Bog'lanish"
   },
-  "hero": {
-    "name": "Asadbek",
-    "surname": "Umarov",
-    "tagline": "React, Next.js va React Native yordamida zamonaviy veb va mobil ilovalar yaratishda 1 yillik tajribaga ega bo'lgan Junior Frontend va Mobile dasturchisi. E-tijorat, dashboardlar va bloglar kabi real loyihalarda toza UI, responsiv dizayn va unumdorlikni optimallashtirishga e'tibor qaratadi.",
-    "location": "Toshkent, O'zbekiston",
-    "open_to_work": "to'liq vaqtli ish, stajirovka va junior lavozimlari uchun ochiq.",
-    "cta_view": "Loyihalarimni ko'rish",
-    "cta_contact": "Bog'lanish"
-  },
   "about": {
     "label": "Men haqimda",
-    "title": "Yaratishga bo'lgan",
+    "title": "Dasturlash va yaratishga bo'lgan",
     "title_accent": "ishtiyoq",
-    "description_1": "Men {name}, 1 yillik tajribaga ega {role}man. Men {tech} yordamida kross-platforma ilovalarini yarataman.",
-    "description_2": "Men {tools} yordamida {projects} ishlab chiqqanman. Men {focus}ga e'tibor qarataman.",
-    "description_3": "Hozirda professional muhandislik jamoasiga qo'shilish uchun {roles} lavozimlarini qidiryapman. Men butun dunyo bo'ylab {availability} imkoniyatlari uchun tayyorman.",
+    "description_1": "Mening ismim {name}, men {role}man. {tech} texnologiyalari yordamida zamonaviy veb va kross-platforma mobil ilovalari yarataman.",
+    "description_2": "{tools} yordamida {projects} kabi real loyihalarni ishlab chiqqanman. Asosiy e'tiborimni {focus}ga qarataman.",
+    "description_3": "Hozirda tajribali jamoaga qo'shilish uchun {roles} lavozimlarini ko'rib chiqyapman. {availability} formatidagi takliflar uchun ochiqman.",
     "stats": {
       "projects": "Tugallangan loyihalar",
       "experience": "Yillik tajriba",
-      "remote": "Masofaviy ishlashga tayyor"
+      "remote": "Masofaviy (Remote) ishlash"
     },
     "info": {
-      "location": "Manzil",
+      "location": "Joylashuv",
       "status": "Holat",
-      "availability": "Ish tartibi",
+      "availability": "Ish grafigi",
       "focus": "Yo'nalish",
+      "focus_value": "Frontend & Mobile",
       "open_to_work": "Ishga tayyor",
       "remote_onsite": "Masofaviy va Ofis"
     },
     "ctas": {
-      "email": "Menga yozing",
+      "email": "Email orqali bog'lanish",
       "linkedin": "LinkedIn profili",
-      "portfolio": "Portfolio veb-sayti"
+      "portfolio": "GitHub"
     },
     "identity": {
-      "role": "Junior Frontend dasturchi",
+      "role": "Junior Frontend & Mobile Developer",
       "available": "Ishga tayyor"
     }
+  },
+  "hero": {
+    "name": "Asadbek",
+    "surname": "Umarov",
+    "role": "Junior Frontend & Mobile Developer",
+    "tagline": "React, Next.js va React Native yordamida tezkor, responsiv veb va mobil ilovalar yarataman. Real loyihalarda (E-commerce, Dashboard, Blog) toza UI va unumdorlikni (performance) optimallashtirishga e'tibor qarataman.",
+    "location": "Toshkent, O'zbekiston",
+    "open_to_work": "Full-time, Junior va Stajirovka uchun ochiq",
+    "cta_view": "Loyihalarimni ko'rish",
+    "cta_contact": "Bog'lanish"
   },
   "skills": {
     "label": "Texnik bilimlar",
     "title": "Ko'nikmalar va",
     "title_accent": "Texnologiyalar",
-    "description": "Real loyihalar va doimiy o'rganish orqali shakllangan bilimlar to'plami.",
-    "bottom_note": "Doimiy o'rganishda · Hozirda o'rganilmoqda",
-    "advanced_next": "Next.js ning murakkab patternlari",
-    "performance": "unumdorlikni optimallashtirish",
+    "description": "Haqiqiy loyihalar va doimiy o'rganish orqali shakllangan bilimlar to'plami.",
     "categories": {
-      "core": "Asosiy tillar",
-      "frameworks": "Frameworklar va kutubxonalar",
-      "styling": "Styling",
-      "state": "State va ma'lumotlar",
-      "tools": "Asboblar va ish jarayoni",
-      "soft": "Yumshoq ko'nikmalar"
+      "core": {
+        "title": "Asosiy tillar",
+        "description": "Har bir loyihaning poydevori"
+      },
+      "frameworks": {
+        "title": "Freymvorklar",
+        "description": "Zamonaviy, kengaytiriladigan interfeyslar qurish"
+      },
+      "styling": {
+        "title": "Stillashtirish",
+        "description": "Chiroyli, responsiv layoutlar yaratish"
+      },
+      "state": {
+        "title": "Holat boshqaruvi",
+        "description": "Samarali ma'lumot oqimi va boshqaruv"
+      },
+      "tools": {
+        "title": "Vositalar",
+        "description": "Professional ishlab chiqish amaliyotlari"
+      },
+      "soft": {
+        "title": "Shaxsiy ko'nikmalar",
+        "description": "Yaxshi jamoadosh bo'lish uchun kerak sifatlar"
+      }
     }
   },
   "experience": {
     "label": "Ish tajribasi",
     "title": "Professional",
-    "title_accent": "Tajriba",
-    "description": "Haqiqiy foydalanuvchilarga xizmat ko'rsatadigan ilovalar yaratishdagi ishlab chiqarish tajribasi.",
-    "current": "Hozirda",
-    "open_to_work": "Yangi imkoniyatlar uchun ochiq",
-    "seeking": "Butun dunyo bo'ylab junior frontend dasturchi va stajirovka rollarini faol qidirmoqda.",
-    "cta_talk": "Gaplashamiz"
+    "title_accent": "Yo'l",
+    "description": "Mening professional tajribam va ishlagan loyihalarim.",
+    "current": "Hozirgi vaqt",
+    "items": {
+      "soft_turtkul": {
+        "role": "Frilanser",
+        "company": "SoftTurtkul — \"Darrov\" WebApp",
+        "location": "Masofaviy",
+        "type": "Frilanser",
+        "description": "3 kishilik masofaviy jamoa tarkibida (1 backend, 2 frontend) Yandex Go konseptsiyasiga o'xshash multi-xizmat ko'rsatuvchi 'Darrov' Telegram Web App ilovasini birgalikda ishlab chiqdim.",
+        "achievements": [
+          "Bir nechta xizmat kategoriyalari bo'yicha band qilish va buyurtma berish oqimlarini yaratdim: taksi, taom yetkazib berish, usta xizmatlari (elektrchilar, santexniklar, texniklar) va do'konlardan mahsulot buyurtmalari.",
+          "Telegram'ning cheklangan brauzeri uchun optimallashtirilgan React.js, TypeScript va Tailwind CSS bilan moslashuvchan (responsive) UI qurdim.",
+          "Real vaqtdagi buyurtmalar va xizmat so'rovlarini boshqarish uchun REST API'larni integratsiya qildim; platforma admin panel orqali kuzatilgan jami 5000+ dan ortiq buyurtmalarni qayta ishladi."
+        ]
+      }
+    }
   },
   "projects": {
-    "label": "Portfolio",
+    "label": "Loyihalar",
     "title": "Tanlangan",
-    "title_accent": "Loyihalar",
-    "description": "E-tijoratdan tortib e-sport, xizmat ko'rsatish platformalari va mobil ta'limgacha bo'lgan turli sohalarda yaratilgan real loyihalar.",
-    "cta_full": "To'liq portfolioni ko'rish"
+    "title_accent": "Ishlar",
+    "description": "Men ishlab chiqqan va ishtirok etgan ba'zi loyihalar.",
+    "status": {
+      "development": "Ish jarayonida",
+      "completed": "Tugallangan"
+    },
+    "categories": {
+      "web_app": "Veb ilova",
+      "telegram_app": "Telegram Mini-ilova",
+      "mobile_app": "Mobil ilova"
+    },
+    "items": {
+      "darrow": {
+        "subtitle": "Multi-xizmat platformasi",
+        "description": "Taxi va oziq-ovqat yetkazib berish xizmatlarini birlashtirgan platforma.",
+        "highlights": [
+          "Telegram API",
+          "Taxi va yetkazib berish oqimlari",
+          "Mobile-first yondashuv"
+        ]
+      },
+      "smart_life": {
+        "subtitle": "Telefon va gadjetlar onlayn do'koni",
+        "description": "Smartfonlar, gadjetlar va maishiy texnikalarga ixtisoslashgan Smart Life onlayn do'koni uchun mo'ljallangan zamonaviy e-commerce platformasi.",
+        "highlights": [
+          "Smartfon va gadjetlar uchun filtrlarga ega interaktiv katalog",
+          "RTK Query orqali savat va onlayn buyurtmalarni samarali boshqarish",
+          "Mobile-first formatda optimallashtirilgan foydalanuvchi interfeysi"
+        ]
+      }
+    }
   },
   "education": {
-    "label": "Ma'lumot",
-    "title": "Ta'lim va",
-    "title_accent": "Tayyorgarlik",
-    "description": "Taniqli texnologik ta'lim muassasasida intensiv, amaliy mashg'ulotlar orqali qurilgan mustahkam akademik poydevor.",
-    "curriculum": "O'quv dasturining asosiy qismlari",
-    "technologies": "O'rganilgan texnologiyalar",
-    "continuous_learning": "Doimiy mustaqil ta'lim",
-    "learning_note": "Rasmiy ta'limdan tashqari — har kuni real loyihalar qurish orqali {tech} bo'yicha tajribani faol ravishda chuqurlashtirib bormoqda."
+    "label": "Ta'lim",
+    "title": "Akademik",
+    "title_accent": "Bilim",
+    "description": "Mening ta'lim va o'quv jarayonim.",
+    "curriculum": "O'quv dasturi",
+    "technologies": "Texnologiyalar",
+    "continuous_learning": "Doimiy o'rganish",
+    "status": {
+      "completed": "Tugatilgan"
+    },
+    "learning_note": "Men har doim yangi texnologiyalarni o'rganishga tayyorman. Hozirda {item1}, {item2} va {item3} bo'yicha chuqurlashmoqdaman.",
+    "exploring": {
+      "item1": "ilg'or React patternlari",
+      "item2": "Next.js App Router",
+      "item3": "veb unumdorlikni optimallashtirish"
+    },
+    "items": {
+      "najot_talim": {
+        "program": "Frontend dasturlash",
+        "credential": "Veb dasturlash sertifikati",
+        "description": "O'zbekistonning yetakchi texnik ta'lim markazlaridan birida jadal, loyihaga asoslangan frontend dasturlash kursini tamomladim. O'quv dasturi zamonaviy JavaScript asoslarini React ekotizimi bo'yicha amaliy mashg'ulotlar va real UI ishlab chiqish tajribasi bilan birlashtirgan.",
+        "highlights": [
+          "Zamonaviy JavaScript (ES6+) — closures, async/await, modullar va boshqalar",
+          "TypeScript asoslari — qat'iy tiplashtirish, interfeyslar va generiklar",
+          "React.js ekotizimi — komponentlar, hooklar, context va state boshqaruvi",
+          "Tailwind CSS va CSS best practices bilan responsiv dizayn",
+          "Git versiya nazorati va professional hamkorlikdagi ish jarayonlari",
+          "Real natijalar va kod ko'rib chiqish bilan loyihaga asoslangan o'qitish"
+        ]
+      }
+    }
+  },
+  "footer": {
+    "tagline": "React, TypeScript va Next.js yordamida zamonaviy, moslashuvchan veb-interfeyslarni yaratuvchi Junior Frontend dasturchi.",
+    "all_rights_reserved": "Barcha huquqlar himoyalangan.",
+    "back_to_top": "Tepaga",
+    "download_cv": "CV yuklab olish",
+    "social": {
+      "linkedin": "Mening LinkedIn profilim",
+      "github": "Mening GitHub profilim",
+      "telegram": "Mening Telegram profilim",
+      "portfolio": "Mening portfoliom",
+      "email": "Xabar yuborish",
+      "phone": "Qo'ng'iroq qilish"
+    }
   },
   "contact": {
     "label": "Bog'lanish",
-    "title": "Keling,",
-    "title_accent": "birga ishlaymiz",
-    "description": "Men junior frontend dasturchi lavozimlari va stajirovkalarni faol qidiryapman. Loyihangiz bormi yoki shunchaki bog'lanmoqchimisiz — men doim tayyorman.",
-    "or_reach_out": "yoki to'g'ridan-to'g'ri bog'laning",
-    "cta_email": "Menga xabar yuboring",
-    "response_time": "Odatda 24 soat ichida javob beraman · UTC+5 vaqti bilan"
+    "title": "Birga",
+    "title_accent": "Ishlaylik",
+    "description": "Men junior frontend dasturchi lavozimlari va stajirovkalarni faol izlab yapman. Loyihangiz bo'lsa yoki shunchaki bog'lanishni istasangiz — mening pochtam doim ochiq.",
+    "cards": {
+      "email": "Email",
+      "phone": "Telefon",
+      "linkedin": "LinkedIn",
+      "telegram": "Telegram"
+    },
+    "divider_text": "yoki to'g'ridan-to'g'ri bog'laning",
+    "cta_email": "Menga email yuboring"
   },
-  "footer": {
-    "tagline": "React, TypeScript va Next.js yordamida zamonaviy, responsiv veb-tajribalar yaratuvchi Junior Frontend dasturchi.",
-    "rights": "Barcha huquqlar himoyalangan.",
-    "built_with": "Yaratilgan",
-    "deployed_on": "Serverga yuklangan"
+  "seo": {
+    "title": "Asadbek Umarov — Frontend Dasturchisi",
+    "description": "Junior Frontend dasturchisi, React, TypeScript va Next.js bo'yicha mutaxassis. Zamonaviy, tezkor va foydalanuvchi uchun qulay veb-ilovalar yaratish. Toshkent, O'zbekistonda joylashgan — butun dunyo bo'ylab masofaviy ish imkoniyatlari uchun ochiq.",
+    "author": "Asadbek Umarov",
+    "keywords": "frontend developer, react, typescript, next.js, nuxt, vue, web developer, toshkent, o'zbekiston",
+    "og_title": "Asadbek Umarov — Frontend Dasturchisi",
+    "og_description": "Junior Frontend dasturchisi, React, TypeScript va Next.js bo'yicha mutaxassis. Toshkent, O'zbekistonda joylashgan.",
+    "twitter_title": "Asadbek Umarov — Frontend Dasturchisi",
+    "twitter_description": "Junior Frontend dasturchisi, React, TypeScript va Next.js bo'yicha mutaxassis."
   }
 }

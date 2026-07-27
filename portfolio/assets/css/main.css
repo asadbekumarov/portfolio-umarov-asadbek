@@ -17,16 +17,6 @@
     }
 }
 
-@keyframes gradientShift {
-    0%,
-    100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
 @keyframes floatY {
     0%,
     100% {
@@ -38,7 +28,7 @@
 }
 
 /* =============================================
-   BASE
+   BASE (Canvas Cloud & Electric Blue Theme)
    ============================================= */
 
 @layer base {
@@ -54,8 +44,10 @@
     }
 
     body {
-        background-color: #030712;
-        color: #e2e8f0;
+        /* Asosiy fon — Canvas Cloud (#EDF1F5 bo'yoq effekti uchun to'q quyuq fon) */
+        background-color: #080d1a;
+        /* Asosiy matn — Ochiq bo'z rang (#EDF1F5) */
+        color: #EDF1F5;
         font-family:
             "Inter",
             system-ui,
@@ -74,19 +66,19 @@
         width: 5px;
     }
     ::-webkit-scrollbar-track {
-        background: #030712;
+        background: #080d1a;
     }
     ::-webkit-scrollbar-thumb {
-        background: #0284c7;
+        background: #0145F2; /* Electric Blue */
         border-radius: 999px;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: #0369a1;
+        background: #0033b8;
     }
 
     /* ── Focus ring ── */
     :focus-visible {
-        outline: 2px solid #0284c7;
+        outline: 2px solid #0145F2;
         outline-offset: 3px;
         border-radius: 4px;
     }
@@ -159,13 +151,13 @@
         font-weight: 700;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        color: #0284c7;
+        color: #0145F2; /* Electric Blue */
     }
 
     .section-title {
         font-size: 2.0625rem;
         font-weight: 700;
-        color: #e2e8f0;
+        color: #ffffff;
         line-height: 1.2;
     }
 
@@ -175,30 +167,20 @@
         }
     }
 
-    /* ── Gradient text: blue → teal ── */
+    /* ── Accent Text (Electric Blue) ── */
 
-    .gradient-text {
-        background: linear-gradient(135deg, #0284c7 0%, #047c58 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
+    .gradient-text,
     .gradient-text-animated {
-        background: linear-gradient(135deg, #0284c7, #047c58, #0e91c5, #0284c7);
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: gradientShift 6s ease infinite;
+        color: #0145F2;
+        background: transparent;
+        -webkit-text-fill-color: initial;
     }
 
     /* ── Glass card ── */
-    /* Base surface drawn from #0d2138 at partial opacity */
 
     .glass-card {
-        background: rgba(13, 33, 56, 0.6);
-        border: 1px solid rgba(2, 132, 199, 0.13);
+        background: rgba(13, 21, 41, 0.7);
+        border: 1px solid rgba(1, 69, 242, 0.25);
         border-radius: 1rem;
         transition:
             border-color 0.3s ease,
@@ -207,11 +189,11 @@
     }
 
     .glass-card:hover {
-        border-color: rgba(2, 132, 199, 0.3);
-        background: rgba(13, 33, 56, 0.8);
+        border-color: rgba(1, 69, 242, 0.6);
+        background: rgba(13, 21, 41, 0.95);
     }
 
-    /* ── Primary button: blue → teal gradient ── */
+    /* ── Primary button (Electric Blue) ── */
 
     .btn-primary {
         display: inline-flex;
@@ -222,28 +204,28 @@
         border-radius: 0.75rem;
         font-size: 1.0625rem;
         font-weight: 600;
-        color: #e2e8f0;
-        background: linear-gradient(135deg, #0284c7 0%, #047c58 100%);
-        box-shadow: 0 4px 15px rgba(2, 132, 199, 0.28);
+        color: #ffffff;
+        background-color: #0145F2;
+        box-shadow: 0 4px 18px rgba(1, 69, 242, 0.4);
         transition:
             transform 0.25s ease,
-            box-shadow 0.25s ease,
-            filter 0.25s ease;
+            background-color 0.25s ease,
+            box-shadow 0.25s ease;
         white-space: nowrap;
         border: none;
     }
 
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 28px rgba(2, 132, 199, 0.42);
-        filter: brightness(1.1);
+        background-color: #0036ca;
+        box-shadow: 0 8px 28px rgba(1, 69, 242, 0.6);
     }
 
     .btn-primary:active {
         transform: translateY(0);
     }
 
-    /* ── Secondary button: dark surface + blue border ── */
+    /* ── Secondary button (Canvas Cloud border) ── */
 
     .btn-secondary {
         display: inline-flex;
@@ -254,12 +236,12 @@
         border-radius: 0.75rem;
         font-size: 1.0625rem;
         font-weight: 600;
-        color: #e2e8f0;
-        background: rgba(14, 22, 40, 0.75);
-        border: 1px solid rgba(2, 132, 199, 0.22);
+        color: #EDF1F5;
+        background: rgba(237, 241, 245, 0.05);
+        border: 1px solid rgba(237, 241, 245, 0.2);
         transition:
             transform 0.25s ease,
-            background 0.25s ease,
+            background-color 0.25s ease,
             border-color 0.25s ease,
             box-shadow 0.25s ease;
         white-space: nowrap;
@@ -267,9 +249,9 @@
 
     .btn-secondary:hover {
         transform: translateY(-2px);
-        background: rgba(14, 22, 40, 0.95);
-        border-color: rgba(2, 132, 199, 0.5);
-        box-shadow: 0 4px 20px rgba(2, 132, 199, 0.14);
+        background-color: rgba(237, 241, 245, 0.1);
+        border-color: #EDF1F5;
+        box-shadow: 0 4px 20px rgba(237, 241, 245, 0.15);
     }
 
     .btn-secondary:active {
@@ -285,9 +267,9 @@
         font-weight: 500;
         padding: 0.25rem 0.625rem;
         border-radius: 999px;
-        background: rgba(2, 132, 199, 0.09);
-        color: rgba(226, 232, 240, 0.82);
-        border: 1px solid rgba(2, 132, 199, 0.2);
+        background: rgba(1, 69, 242, 0.15);
+        color: #EDF1F5;
+        border: 1px solid rgba(1, 69, 242, 0.35);
         transition:
             background 0.2s ease,
             border-color 0.2s ease;
@@ -309,24 +291,12 @@
     }
 
     /* ── Stagger delay helpers ── */
-    .delay-100 {
-        transition-delay: 0.1s;
-    }
-    .delay-150 {
-        transition-delay: 0.15s;
-    }
-    .delay-200 {
-        transition-delay: 0.2s;
-    }
-    .delay-300 {
-        transition-delay: 0.3s;
-    }
-    .delay-400 {
-        transition-delay: 0.4s;
-    }
-    .delay-500 {
-        transition-delay: 0.5s;
-    }
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-150 { transition-delay: 0.15s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+    .delay-500 { transition-delay: 0.5s; }
 }
 
 /* =============================================
@@ -334,19 +304,17 @@
    ============================================= */
 
 @layer utilities {
-    /* Dot-grid background using blue accent */
     .bg-grid {
         background-image:
-            linear-gradient(rgba(2, 132, 199, 0.045) 1px, transparent 1px),
+            linear-gradient(rgba(1, 69, 242, 0.07) 1px, transparent 1px),
             linear-gradient(
                 90deg,
-                rgba(2, 132, 199, 0.045) 1px,
+                rgba(1, 69, 242, 0.07) 1px,
                 transparent 1px
             );
         background-size: 64px 64px;
     }
 
-    /* Vertical gradient line between sections */
     .section-divider {
         position: absolute;
         top: 0;
@@ -354,61 +322,40 @@
         transform: translateX(-50%);
         width: 1px;
         height: 6rem;
-        background: linear-gradient(
-            to bottom,
-            transparent,
-            rgba(2, 132, 199, 0.38),
-            transparent
-        );
+        background-color: rgba(1, 69, 242, 0.3);
     }
 
-    /* Floating animation for decorative elements */
     .animate-float {
         animation: floatY 5s ease-in-out infinite;
     }
 }
 
 /* =============================================
-   PALETTE OVERRIDES
-   Unlayered rules sit above every @layer block
-   in the CSS cascade, so they reliably override
-   Tailwind's generated utility classes.
+   HEADER & FOOTER OVERRIDE
    ============================================= */
 
-/* Text hierarchy — all derived from #e2e8f0 at decreasing opacity */
-.text-slate-400 {
-    color: rgba(226, 232, 240, 0.62);
-}
-.text-slate-500 {
-    color: rgba(226, 232, 240, 0.44);
-}
-.text-slate-600 {
-    color: rgba(226, 232, 240, 0.3);
-}
-.text-slate-700 {
-    color: rgba(226, 232, 240, 0.2);
+header *,
+footer * {
+    color: #EDF1F5 !important;
+    opacity: 1 !important;
 }
 
-/* Hover white → palette white */
-.hover\:text-white:hover {
-    color: #e2e8f0;
+header p,
+header span,
+footer p,
+footer span {
+    color: #cbd5e1 !important;
 }
 
-/* Remap all Tailwind indigo hover text to the blue accent */
-.hover\:text-indigo-300:hover {
-    color: rgba(226, 232, 240, 0.88);
-}
-.hover\:text-indigo-400:hover {
-    color: #0284c7;
-}
-.group:hover .group-hover\:text-indigo-300 {
-    color: rgba(226, 232, 240, 0.88);
-}
-.group:hover .group-hover\:text-indigo-400 {
-    color: #0284c7;
+header a:hover,
+footer a:hover {
+    color: #0145F2 !important;
 }
 
-/* Remap SVG stroke hover classes */
-.group:hover .group-hover\:stroke-indigo-400 {
-    stroke: #0284c7;
+[class*="text-slate"],
+[class*="text-gray"],
+[class*="text-zinc"],
+[class*="text-neutral"],
+[class*="text-white/"] {
+    color: #cbd5e1 !important;
 }

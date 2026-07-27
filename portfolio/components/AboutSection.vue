@@ -22,15 +22,33 @@ const quickInfo: InfoItem[] = [
     { emoji: "📍", labelKey: "about.info.location", valueKey: "hero.location" },
     { emoji: "💼", labelKey: "about.info.status", valueKey: "about.info.open_to_work" },
     { emoji: "🌐", labelKey: "about.info.availability", valueKey: "about.info.remote_onsite" },
-    { emoji: "⚡", labelKey: "about.info.focus", valueKey: "about.info.focus" },
+    { emoji: "⚡", labelKey: "about.info.focus", valueKey: "about.info.focus_value" },
 ];
+
+// Rich text translations
+const description1 = computed(() => t('about.description_1', {
+    name: `<strong class="text-slate-200 font-semibold">Asadbek Umarov</strong>`,
+    role: `<strong class="text-slate-200 font-semibold">Junior Frontend & Mobile Developer</strong>`,
+    tech: `<strong class="text-slate-200 font-semibold">React, Next.js, React Native</strong>`
+}));
+
+const description2 = computed(() => t('about.description_2', {
+    projects: `<strong class="text-slate-200 font-semibold">e-commerce platforms, dashboards, blog systems</strong>`,
+    tools: `<strong class="text-slate-200 font-semibold">TypeScript, Tailwind CSS</strong>`,
+    focus: `<strong class="text-slate-200 font-semibold">clean UI, responsive layouts, optimized performance</strong>`
+}));
+
+const description3 = computed(() => t('about.description_3', {
+    roles: `<strong class="text-slate-200 font-semibold">Junior, Internship</strong>`,
+    availability: `<strong class="text-slate-200 font-semibold">remote, on-site</strong>`
+}));
 </script>
 
 <template>
     <section id="about" class="section-padding relative" aria-labelledby="about-heading">
         <!-- Top divider -->
         <div class="section-divider" aria-hidden="true" />
-        
+
 
         <!-- Widened container — max-w-7xl breaks out of the narrow section-container -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,32 +59,21 @@ const quickInfo: InfoItem[] = [
                 ══════════════════════════════════════ -->
                 <div class="w-full max-w-xl">
                     <span class="section-label mb-3 scroll-animate">
-                        {{ $t('about.label') }}
+                        {{ t('about.label') }}
                     </span>
 
                     <h2 id="about-heading" class="section-title mt-2 mb-8 scroll-animate delay-100">
-                        {{ $t('about.title') }}
-                        <span class="gradient-text"> {{ $t('about.title_accent') }}</span>
+                        {{ t('about.title') }}
+                        <span class="gradient-text">{{ t('about.title_accent') }}</span>
                     </h2>
 
                     <div class="space-y-5 leading-relaxed text-[0.9375rem] scroll-animate delay-200 text-slate-400/60">
 
-                        <p v-html="$t('about.description_1', { 
-                            name: `<strong class='text-slate-200 font-semibold'>Asadbek Umarov</strong>`,
-                            role: `<strong class='text-slate-200 font-semibold'>Junior Frontend & Mobile Developer</strong>`,
-                            tech: `<strong class='text-slate-200 font-semibold'>React, Next.js, React Native</strong>`
-                        })"></p>
+                        <p v-html="description1"></p>
 
-                        <p v-html="$t('about.description_2', { 
-                            projects: `<strong class='text-slate-200 font-semibold'>e-commerce platforms, dashboards, blog systems</strong>`,
-                            tools: `<strong class='text-slate-200 font-semibold'>TypeScript, Tailwind CSS</strong>`,
-                            focus: `<strong class='text-slate-200 font-semibold'>clean UI, responsive layouts, optimized performance</strong>`
-                        })"></p>
+                        <p v-html="description2"></p>
 
-                        <p v-html="$t('about.description_3', { 
-                            roles: `<strong class='text-slate-200 font-semibold'>Junior, Internship</strong>`,
-                            availability: `<strong class='text-slate-200 font-semibold'>remote, on-site</strong>`
-                        })"></p>
+                        <p v-html="description3"></p>
 
                     </div>
 
@@ -88,28 +95,7 @@ const quickInfo: InfoItem[] = [
                         </div>
                     </div>
 
-                    <!-- CTAs -->
-                    <div class="flex flex-wrap sm:flex-nowrap gap-3 mt-10 scroll-animate delay-400">
-                        <a href="mailto:asadbekumarov922@gmail.com"
-                            class="btn-primary flex-1 sm:flex-none justify-center">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" aria-hidden="true">
-                                <path
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            {{ $t('about.ctas.email') }}
-                        </a>
-                        <a href="https://www.linkedin.com/in/asadbek-umarov-ab9385376" target="_blank"
-                            rel="noopener noreferrer" class="btn-secondary flex-1 sm:flex-none justify-center">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
-                                <path
-                                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg>
-                            {{ $t('nav.connect') }}
-                        </a>
-                    </div>
+
                 </div>
 
                 <!-- ══════════════════════════════════════
@@ -117,34 +103,17 @@ const quickInfo: InfoItem[] = [
                 ══════════════════════════════════════ -->
                 <div class="w-full max-w-md mx-auto lg:mx-0 space-y-5 scroll-animate delay-150">
                     <!-- Identity / Avatar Card -->
-                    <div class="glass-card relative overflow-hidden p-10 text-center border-sky-500/20">
+                    <div class="glass-card relative overflow-hidden text-center border-sky-500/20 p-4">
                         <!-- Glow backdrop -->
                         <div class="absolute inset-0 pointer-events-none glow-backdrop" aria-hidden="true" />
 
-                        <div class="relative z-10">
-                            <!-- Avatar initials -->
-                            <div class="w-24 h-24 mx-auto rounded-2xl flex items-center justify-center text-2xl font-black mb-5 avatar-gradient shadow-[0_8px_32px_rgba(2,132,199,0.35)] text-slate-200" aria-hidden="true">
-                                AU
-                            </div>
-
-                            <h3 class="text-xl font-bold text-slate-200">
-                                Asadbek Umarov
-                            </h3>
-                            <p class="text-sm mt-1.5 text-slate-400/55">
-                                {{ $t('about.identity.role') }}
-                            </p>
-
-                            <!-- Availability badge -->
-                            <div class="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30">
-                                <span class="relative flex h-2 w-2" aria-hidden="true">
-                                    <span
-                                        class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-emerald-600" />
-                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
-                                </span>
-                                <span class="text-xs font-semibold text-slate-200/90">
-                                    {{ $t('about.identity.available') }}
-                                </span>
-                            </div>
+                        <div class="relative z-10 flex justify-center">
+                            <!-- Rasmga h-64 yoki h-80 kabi cheklov beramiz -->
+                            <img
+                                src="/user.jpg"
+                                alt="Asadbek Umarov"
+                                class="w-full h-72 object-cover rounded-xl shadow-md"
+                            />
                         </div>
                     </div>
 
@@ -190,7 +159,7 @@ const quickInfo: InfoItem[] = [
                     </a>
 
                     <!-- Portfolio Link -->
-                    <a href="https://portfolio-umarov-asadbek.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    <a href="https://github.com/asadbekumarov" target="_blank" rel="noopener noreferrer"
                         class="glass-card flex items-center gap-4 p-5 group"
                         aria-label="View Asadbek's existing portfolio">
                         <!-- Globe icon box — teal -->
@@ -209,7 +178,7 @@ const quickInfo: InfoItem[] = [
                                 {{ $t('about.ctas.portfolio') }}
                             </p>
                             <p class="text-xs truncate mt-0.5 text-slate-400/40">
-                                portfolio-umarov-asadbek.vercel.app
+                                https://github.com/asadbekumarov
                             </p>
                         </div>
 

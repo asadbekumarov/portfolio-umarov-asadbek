@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 const techStack = [
     "React.js",
     "TypeScript",
@@ -14,8 +16,11 @@ const scrollToSection = (hash: string): void => {
 </script>
 
 <template>
-    <section id="hero" class="relative min-h-screen flex items-center bg-grid overflow-hidden"
-        aria-label="Introduction">
+    <section
+        id="hero"
+        class="relative min-h-screen flex items-center bg-grid overflow-hidden"
+        aria-label="Introduction"
+    >
         <!-- Background orb — top right (blue) -->
         <div class="pointer-events-none absolute orb-blue" aria-hidden="true" />
 
@@ -26,18 +31,21 @@ const scrollToSection = (hash: string): void => {
         <div class="section-container relative z-10 pt-32 pb-24 w-full">
             <div class="max-w-4xl mx-auto text-center">
 
+                <!-- Role Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-sky-400 mb-6 hero-badge scroll-animate">
+                    <span>{{ t('hero.role') }}</span>
+                </div>
+
                 <!-- Name -->
-                <h1 class="font-black tracking-tight leading-none mb-5 hero-title scroll-animate">
-                    <span class="text-slate-200">{{ $t('hero.name') }}</span>
+                <h1 class="font-black tracking-tight leading-none mb-6 hero-title scroll-animate">
+                    <span class="text-slate-200">{{ t('hero.name') }}</span>
                     <br />
-                    <span class="gradient-text-animated">{{ $t('hero.surname') }}</span>
+                    <span class="gradient-text-animated">{{ t('hero.surname') }}</span>
                 </h1>
 
                 <!-- Tagline -->
-                <p class="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-12 text-slate-400/45 hero-tagline scroll-animate">
-                    {{ $t('hero.tagline') }}
-                    <strong class="text-slate-200 font-semibold">{{ $t('hero.location') }}</strong>
-                    — {{ $t('hero.open_to_work') }}
+                <p class="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10 text-slate-300 hero-tagline scroll-animate">
+                    {{ t('hero.tagline') }}
                 </p>
 
                 <!-- CTA Buttons -->
@@ -49,16 +57,10 @@ const scrollToSection = (hash: string): void => {
                             <line x1="8" y1="21" x2="16" y2="21" />
                             <line x1="12" y1="17" x2="12" y2="21" />
                         </svg>
-                        {{ $t('hero.cta_view') }}
+                        {{ t('hero.cta_view') }}
                     </a>
 
-                    <a href="#contact" class="btn-secondary" @click.prevent="scrollToSection('#contact')">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-                        </svg>
-                        {{ $t('hero.cta_contact') }}
-                    </a>
+
                 </div>
 
             </div>
@@ -94,14 +96,17 @@ const scrollToSection = (hash: string): void => {
     );
     filter: blur(65px);
 }
+.hero-badge {
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
 .hero-title {
     font-size: clamp(3rem, 10vw, 5.5rem);
     animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
 }
 .hero-tagline {
-    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
 }
 .hero-ctas {
-    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
 }
 </style>
