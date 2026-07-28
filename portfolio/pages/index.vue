@@ -17,11 +17,11 @@ useHead({
     <div class="min-h-screen" style="background-color: #030712">
         <AppNavbar />
         <main id="main-content">
-            <HeroSection />
-            <AboutSection />
-            <SkillsSection />
-            <ExperienceSection />
-            <ProjectsSection />
+             <HeroSection />
+             <AboutSection />
+             <SkillsSection />
+             <ExperienceSection />
+             <ProjectsSection />
             <EducationSection />
             <ContactSection />
         </main>

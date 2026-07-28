@@ -61,6 +61,18 @@
         line-height: 1.6;
     }
 
+    /* ── Sarlavhalar — Space Grotesk (@nuxt/fonts orqali avtomatik yuklanadi) ── */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+        letter-spacing: normal;
+        font-synthesis: none; /* brauzer "soxta bold" yasab, harflarni yopishtirib yubormasligi uchun */
+    }
+
     /* ── Custom scrollbar ── */
     ::-webkit-scrollbar {
         width: 5px;
@@ -155,10 +167,13 @@
     }
 
     .section-title {
+        font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
         font-size: 2.0625rem;
         font-weight: 700;
         color: #ffffff;
         line-height: 1.2;
+        letter-spacing: normal;
+        font-synthesis: none;
     }
 
     @media (min-width: 640px) {
