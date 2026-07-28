@@ -51,7 +51,7 @@ const learningNote = computed(() => t('education.learning_note', {
 
         <div class="section-container relative">
             <!-- ── Section Header ── -->
-            <div class="text-center mb-14">
+            <div class="text-center mb-10 sm:mb-14 px-2">
                 <span class="section-label mb-3 scroll-animate">{{ $t('education.label') }}</span>
                 <h2
                     id="education-heading"
@@ -60,7 +60,7 @@ const learningNote = computed(() => t('education.learning_note', {
                     {{ $t('education.title') }} <span class="gradient-text">{{ $t('education.title_accent') }}</span>
                 </h2>
                 <p
-                    class="mt-4 max-w-xl mx-auto text-base leading-relaxed scroll-animate delay-200 text-slate-400/45"
+                    class="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/45"
                 >
                     {{ $t('education.description') }}
                 </p>
@@ -71,18 +71,19 @@ const learningNote = computed(() => t('education.learning_note', {
                 <div
                     v-for="edu in education"
                     :key="edu.key"
-                    class="glass-card p-7 sm:p-10 scroll-animate delay-200 border-sky-500/20"
+                    class="glass-card p-5 sm:p-7 md:p-10 scroll-animate delay-200 border-sky-500/20"
                 >
                     <!-- ── Card Header ── -->
-                    <div class="flex flex-wrap items-start gap-5 mb-7">
+                    <div class="flex flex-wrap items-start gap-4 sm:gap-5 mb-6 sm:mb-7">
                         <!-- Institution icon — blue → teal gradient -->
                         <div
-                            class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 edu-icon-box"
+                            class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center flex-shrink-0 edu-icon-box"
                             aria-hidden="true"
                         >
                             <svg
-                                width="26"
-                                height="26"
+                                width="22"
+                                height="22"
+                                class="sm:w-[26px] sm:h-[26px]"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="#0284c7"
@@ -98,24 +99,24 @@ const learningNote = computed(() => t('education.learning_note', {
                         <!-- Institution details -->
                         <div class="flex-1 min-w-0">
                             <h3
-                                class="text-xl font-bold leading-tight text-slate-200"
+                                class="text-lg sm:text-xl font-bold leading-tight text-slate-200"
                             >
                                 {{ edu.institution }}
                             </h3>
                             <p
-                                class="text-base font-semibold mt-0.5 text-sky-600"
+                                class="text-sm sm:text-base font-semibold mt-0.5 text-sky-600"
                             >
                                 {{ $t(`education.items.${edu.key}.program`) }}
                             </p>
                             <p
-                                class="text-sm mt-0.5 text-slate-400/45"
+                                class="text-xs sm:text-sm mt-0.5 text-slate-400/45"
                             >
                                 {{ $t(`education.items.${edu.key}.credential`) }}
                             </p>
 
                             <!-- Meta badges: period + location -->
                             <div
-                                class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-3"
+                                class="flex flex-wrap items-center gap-x-3 gap-y-1.5 mt-3"
                             >
                                 <!-- Period -->
                                 <span
@@ -128,6 +129,7 @@ const learningNote = computed(() => t('education.learning_note', {
                                         fill="none"
                                         stroke="currentColor"
                                         stroke-width="2"
+                                        class="flex-shrink-0"
                                         aria-hidden="true"
                                     >
                                         <rect
@@ -142,7 +144,7 @@ const learningNote = computed(() => t('education.learning_note', {
                                         <line x1="8" y1="2" x2="8" y2="6" />
                                         <line x1="3" y1="10" x2="21" y2="10" />
                                     </svg>
-                                    {{ $t('education.status.completed') }} {{ edu.periodDate }}
+                                    <span class="whitespace-nowrap">{{ $t('education.status.completed') }} {{ edu.periodDate }}</span>
                                 </span>
 
                                 <!-- Location -->
@@ -156,6 +158,7 @@ const learningNote = computed(() => t('education.learning_note', {
                                         fill="none"
                                         stroke="currentColor"
                                         stroke-width="2"
+                                        class="flex-shrink-0"
                                         aria-hidden="true"
                                     >
                                         <path
@@ -163,7 +166,7 @@ const learningNote = computed(() => t('education.learning_note', {
                                         />
                                         <circle cx="12" cy="10" r="3" />
                                     </svg>
-                                    {{ $t('hero.location') }}
+                                    <span class="whitespace-nowrap">{{ $t('hero.location') }}</span>
                                 </span>
                             </div>
                         </div>
@@ -171,19 +174,19 @@ const learningNote = computed(() => t('education.learning_note', {
 
                     <!-- Horizontal divider -->
                     <div
-                        class="w-full h-px mb-7 bg-sky-500/10"
+                        class="w-full h-px mb-6 sm:mb-7 bg-sky-500/10"
                         aria-hidden="true"
                     />
 
                     <!-- Description -->
                     <p
-                        class="text-sm leading-relaxed mb-7 text-slate-400/60"
+                        class="text-sm leading-relaxed mb-6 sm:mb-7 text-slate-400/60"
                     >
                         {{ $t(`education.items.${edu.key}.description`) }}
                     </p>
 
                     <!-- Curriculum Highlights -->
-                    <div class="mb-7">
+                    <div class="mb-6 sm:mb-7">
                         <h4
                             class="text-xs font-bold uppercase tracking-widest mb-4 text-slate-400/30"
                         >
@@ -252,15 +255,15 @@ const learningNote = computed(() => t('education.learning_note', {
 
                 <!-- ── Continuous Learning Note ── -->
                 <div
-                    class="glass-card mt-5 p-5 flex items-center gap-4 scroll-animate delay-300 border-sky-500/15 bg-sky-500/5"
+                    class="glass-card mt-5 p-4 sm:p-5 flex items-start sm:items-center gap-3 sm:gap-4 scroll-animate delay-300 border-sky-500/15 bg-sky-500/5"
                 >
                     <div
-                        class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl bg-sky-500/10 border border-sky-500/20"
+                        class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-lg sm:text-xl bg-sky-500/10 border border-sky-500/20"
                         aria-hidden="true"
                     >
                         📚
                     </div>
-                    <div>
+                    <div class="min-w-0">
                         <p class="text-sm font-semibold text-slate-200">
                             {{ $t('education.continuous_learning') }}
                         </p>

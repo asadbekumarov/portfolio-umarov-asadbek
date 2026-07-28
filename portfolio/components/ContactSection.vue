@@ -12,7 +12,7 @@ const contacts: ContactCard[] = [
         icon: "email",
         labelKey: "contact.cards.email",
         value: "asadbekumarov922@gmail.com",
-        href: "asadbekumarov922@gmail.com",
+        href: "mailto:asadbekumarov922@gmail.com",
         external: true,
     },
     {
@@ -56,7 +56,7 @@ const contacts: ContactCard[] = [
 
         <div class="section-container relative">
             <!-- ── Section Header ── -->
-            <div class="text-center mb-14">
+            <div class="text-center mb-10 sm:mb-14 px-2">
                 <span class="section-label mb-3 scroll-animate">
                     {{ $t('contact.label') }}
                 </span>
@@ -69,7 +69,7 @@ const contacts: ContactCard[] = [
                 </h2>
 
                 <p
-                    class="mt-4 max-w-lg mx-auto text-base leading-relaxed scroll-animate delay-200 text-slate-400/45"
+                    class="mt-4 max-w-lg mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/45"
                 >
                     {{ $t('contact.description') }}
                 </p>
@@ -77,27 +77,28 @@ const contacts: ContactCard[] = [
 
             <!-- ── Contact Cards Grid ── -->
             <div class="max-w-3xl mx-auto">
-                <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                <div class="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
                     <a
                         v-for="(card, index) in contacts"
                         :key="card.icon"
                         :href="card.href"
                         :target="card.external ? '_blank' : undefined"
                         :rel="card.external ? 'noopener noreferrer' : undefined"
-                        class="glass-card flex items-center gap-4 p-5 group scroll-animate"
+                        class="glass-card flex items-center gap-3 sm:gap-4 p-4 sm:p-5 group scroll-animate"
                         :style="`transition-delay: ${0.1 + index * 0.08}s;`"
                         :aria-label="`${$t(card.labelKey)}: ${card.value}`"
                     >
                         <!-- Icon box — blue accent -->
                         <div
-                            class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-sky-500/10 border border-sky-500/20 group-hover:bg-sky-500/20"
+                            class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-sky-500/10 border border-sky-500/20 group-hover:bg-sky-500/20"
                             aria-hidden="true"
                         >
                             <!-- Email -->
                             <svg
                                 v-if="card.icon === 'email'"
-                                width="20"
-                                height="20"
+                                width="18"
+                                height="18"
+                                class="sm:w-5 sm:h-5"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="#0284c7"
@@ -113,8 +114,9 @@ const contacts: ContactCard[] = [
                             <!-- Phone -->
                             <svg
                                 v-else-if="card.icon === 'phone'"
-                                width="20"
-                                height="20"
+                                width="18"
+                                height="18"
+                                class="sm:w-5 sm:h-5"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="#0284c7"
@@ -130,8 +132,9 @@ const contacts: ContactCard[] = [
                             <!-- LinkedIn -->
                             <svg
                                 v-else-if="card.icon === 'linkedin'"
-                                width="20"
-                                height="20"
+                                width="18"
+                                height="18"
+                                class="sm:w-5 sm:h-5"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="#0284c7"
@@ -148,8 +151,9 @@ const contacts: ContactCard[] = [
                             <!-- Telegram -->
                             <svg
                                 v-else-if="card.icon === 'telegram'"
-                                width="20"
-                                height="20"
+                                width="18"
+                                height="18"
+                                class="sm:w-5 sm:h-5"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="#0284c7"
@@ -205,7 +209,7 @@ const contacts: ContactCard[] = [
                             aria-hidden="true"
                         />
                         <span
-                            class="text-xs font-semibold tracking-widest uppercase text-slate-400/20"
+                            class="text-xs font-semibold tracking-widest uppercase text-slate-400/20 whitespace-nowrap"
                         >
                             {{ $t('contact.divider_text') }}
                         </span>
@@ -216,12 +220,13 @@ const contacts: ContactCard[] = [
                     </div>
 
                     <a
-                        href="asadbekumarov922@gmail.com"
-                        class="btn-primary py-3.5 px-10 text-base"
+                        href="mailto:asadbekumarov922@gmail.com"
+                        class="btn-primary w-full sm:w-auto justify-center py-3.5 px-6 sm:px-10 text-sm sm:text-base"
                     >
                         <svg
                             width="18"
                             height="18"
+                            class="flex-shrink-0"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"

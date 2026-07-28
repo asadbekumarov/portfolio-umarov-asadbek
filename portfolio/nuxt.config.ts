@@ -8,11 +8,8 @@ export default defineNuxtConfig({
     preset: "vercel",
   },
 
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/i18n",
-    "nuxt-schema-org" // Modul shu yerga qo'shildi
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n", // Modul shu yerga qo'shildi
+  "nuxt-schema-org", "@nuxt/fonts"],
 
   i18n: {
     locales: [

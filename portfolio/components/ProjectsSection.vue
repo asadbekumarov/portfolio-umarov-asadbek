@@ -51,7 +51,7 @@ const projects: Project[] = [
 
         <div class="section-container relative">
             <!-- ── Section Header ── -->
-            <div class="text-center mb-14">
+            <div class="text-center mb-10 sm:mb-14 px-2">
                 <span class="section-label mb-3 scroll-animate">{{ $t('projects.label') }}</span>
 
                 <h2
@@ -62,14 +62,15 @@ const projects: Project[] = [
                 </h2>
 
                 <p
-                    class="mt-4 max-w-xl mx-auto text-base leading-relaxed scroll-animate delay-200 text-slate-400/45"
+                    class="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/45"
                 >
                     {{ $t('projects.description') }}
                 </p>
             </div>
 
             <!-- ── Project Cards Grid ── -->
-            <div class="grid sm:grid-cols-2 gap-6">
+            <!-- Mobil: 1 ustun, matn/kontent siqilib qolmasligi uchun md (768px) gacha 1 ustun saqlanadi -->
+            <div class="grid md:grid-cols-2 gap-5 sm:gap-6">
                 <article
                     v-for="(project, index) in projects"
                     :key="project.key"
@@ -78,11 +79,12 @@ const projects: Project[] = [
                     :aria-label="`Project: ${project.title}`"
                 >
                     <div
-                        class="flex flex-col flex-1 p-7 rounded-2xl transition-transform duration-300 group-hover:-translate-y-1 h-full"
+                        class="flex flex-col flex-1 p-5 sm:p-7 rounded-2xl transition-transform duration-300 group-hover:-translate-y-1 h-full"
                     >
                         <!-- ── Card Header ── -->
+                        <!-- Juda tor ekranlarda (320-374px) status+link matn/badge bilan bir qatorga sig'maganda pastga tushadi -->
                         <div
-                            class="flex items-start justify-between gap-4 mb-5"
+                            class="flex flex-col xs:flex-row xs:items-start justify-between gap-3 xs:gap-4 mb-5"
                         >
                             <div class="flex-1 min-w-0">
                                 <!-- Category badge -->
@@ -99,7 +101,7 @@ const projects: Project[] = [
 
                                 <!-- Title -->
                                 <h3
-                                    class="text-lg font-bold leading-tight mb-0.5 text-slate-200"
+                                    class="text-base sm:text-lg font-bold leading-tight mb-0.5 text-slate-200"
                                 >
                                     {{ project.title }}
                                 </h3>
@@ -113,7 +115,7 @@ const projects: Project[] = [
                             </div>
 
                             <!-- Status chip & External Link -->
-                            <div class="flex items-center gap-2">
+                            <div class="flex items-center gap-2 flex-shrink-0">
                                 <!-- Status badge -->
                                 <span
                                     class="text-xs font-semibold px-2.5 py-1 rounded-full border flex-shrink-0 whitespace-nowrap"
@@ -221,4 +223,18 @@ const projects: Project[] = [
     background: rgba(2, 132, 199, 0.1);
     border-color: rgba(2, 132, 199, 0.28);
 }
+
+/* Tailwind config'da "xs" breakpoint bo'lmasligi mumkin, shu uchun fallback: 420px dan boshlab qator holatiga o'tadi */
+@media (min-width: 420px) {
+    .xs\:flex-row {
+        flex-direction: row;
+    }
+    .xs\:items-start {
+        align-items: flex-start;
+    }
+    .xs\:gap-4 {
+        gap: 1rem;
+    }
+}
+
 </style>
