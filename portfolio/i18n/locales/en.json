@@ -108,7 +108,8 @@
         ]
       }
     }
-  },  "projects": {
+  },
+  "projects": {
     "label": "Projects",
     "title": "Selected",
     "title_accent": "Works",
@@ -177,19 +178,20 @@
     }
   },
   "footer": {
-      "tagline": "Junior Frontend Developer crafting modern, responsive web experiences with React, TypeScript & Next.js.",
-      "all_rights_reserved": "All rights reserved.",
-      "back_to_top": "Back to top",
-      "download_cv": "Download CV",
-      "social": {
-        "linkedin": "My LinkedIn profile",
-        "github": "My GitHub profile",
-        "telegram": "My Telegram profile",
-        "portfolio": "My portfolio website",
-        "email": "Send me an email",
-        "phone": "Call me"
-      }
-    },  "contact": {
+    "tagline": "Junior Frontend Developer crafting modern, responsive web experiences with React, TypeScript & Next.js.",
+    "all_rights_reserved": "All rights reserved.",
+    "back_to_top": "Back to top",
+    "download_cv": "Download CV",
+    "social": {
+      "linkedin": "My LinkedIn profile",
+      "github": "My GitHub profile",
+      "telegram": "My Telegram profile",
+      "portfolio": "My portfolio website",
+      "email": "Send me an email",
+      "phone": "Call me"
+    }
+  },
+  "contact": {
     "label": "Get In Touch",
     "title": "Let's Work",
     "title_accent": "Together",
@@ -198,19 +200,30 @@
       "email": "Email",
       "phone": "Telefon",
       "linkedin": "LinkedIn",
-          "telegram": "Telegram"
+      "telegram": "Telegram"
     },
     "divider_text": "or reach out directly",
     "cta_email": "Send Me an Email"
   },
   "seo": {
-    "title": "Asadbek Umarov — Frontend Developer",
-    "description": "Junior Frontend Developer specializing in React, TypeScript & Next.js. Building fast, modern, and user-friendly web applications. Based in Tashkent, Uzbekistan — open to remote opportunities worldwide.",
+    "title": "Asadbek Umarov — Frontend & Mobile Developer (React, Next.js, React Native)",
+    "description": "Frontend & Mobile Developer specializing in React, Next.js, TypeScript, and React Native. Building fast, responsive, and user-friendly applications in Tashkent, Uzbekistan.",
     "author": "Asadbek Umarov",
-    "keywords": "frontend developer, react, typescript, next.js, nuxt, vue, web developer, tashkent, uzbekistan",
-    "og_title": "Asadbek Umarov — Frontend Developer",
-    "og_description": "Junior Frontend Developer specializing in React, TypeScript & Next.js. Based in Tashkent, Uzbekistan.",
-    "twitter_title": "Asadbek Umarov — Frontend Developer",
-    "twitter_description": "Junior Frontend Developer specializing in React, TypeScript & Next.js."
+    "keywords": "Asadbek Umarov, Frontend Developer, Mobile Developer, React developer Tashkent, Next.js, React Native, TypeScript, Web Developer Uzbekistan, Portfolio",
+    "siteUrl": "https://portfolio-umarov-asadbek.vercel.app",
+    "og": {
+      "title": "Asadbek Umarov — Frontend & Mobile Developer",
+      "description": "React, Next.js & React Native Developer based in Tashkent. Check out my latest projects and skills.",
+      "type": "website",
+      "url": "https://portfolio-umarov-asadbek.vercel.app",
+      "image": "https://portfolio-umarov-asadbek.vercel.app/api/og",
+      "imageAlt": "Asadbek Umarov — Portfolio Preview"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Asadbek Umarov — Frontend & Mobile Developer",
+      "description": "React, Next.js & React Native Developer. Building modern web and mobile apps.",
+      "image": "https://portfolio-umarov-asadbek.vercel.app/api/og"
+    }
   }
 }
