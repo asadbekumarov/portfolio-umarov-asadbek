@@ -127,11 +127,7 @@
       "darrow": {
         "subtitle": "Multi-service Platform",
         "description": "A platform combining taxi and food delivery services.",
-        "highlights": [
-          "Telegram API",
-          "Taxi & Food flows",
-          "Mobile-first"
-        ]
+        "highlights": ["Telegram API", "Taxi & Food flows", "Mobile-first"]
       }
     },
     "smart_life": {
@@ -209,21 +205,12 @@
     "title": "Asadbek Umarov — Frontend & Mobile Developer (React, Next.js, React Native)",
     "description": "Frontend & Mobile Developer specializing in React, Next.js, TypeScript, and React Native. Building fast, responsive, and user-friendly applications in Tashkent, Uzbekistan.",
     "author": "Asadbek Umarov",
-    "keywords": "Asadbek Umarov, Frontend Developer, Mobile Developer, React developer Tashkent, Next.js, React Native, TypeScript, Web Developer Uzbekistan, Portfolio",
-    "siteUrl": "https://portfolio-umarov-asadbek.vercel.app",
-    "og": {
-      "title": "Asadbek Umarov — Frontend & Mobile Developer",
-      "description": "React, Next.js & React Native Developer based in Tashkent. Check out my latest projects and skills.",
-      "type": "website",
-      "url": "https://portfolio-umarov-asadbek.vercel.app",
-      "image": "https://portfolio-umarov-asadbek.vercel.app/api/og",
-      "imageAlt": "Asadbek Umarov — Portfolio Preview"
-    },
-    "twitter": {
-      "card": "summary_large_image",
-      "title": "Asadbek Umarov — Frontend & Mobile Developer",
-      "description": "React, Next.js & React Native Developer. Building modern web and mobile apps.",
-      "image": "https://portfolio-umarov-asadbek.vercel.app/api/og"
-    }
+    "keywords": "Asadbek Umarov, Frontend Developer, Mobile Developer, React Developer, Next.js, React Native, TypeScript, Portfolio",
+
+    "og_title": "Asadbek Umarov — Frontend & Mobile Developer",
+    "og_description": "React, Next.js & React Native Developer based in Tashkent. Check out my latest projects and skills.",
+
+    "twitter_title": "Asadbek Umarov — Frontend & Mobile Developer",
+    "twitter_description": "React, Next.js & React Native Developer. Building modern web and mobile applications."
   }
 }

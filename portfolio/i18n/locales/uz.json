@@ -204,12 +204,14 @@
   },
   "seo": {
     "title": "Asadbek Umarov — Frontend Dasturchisi",
-    "description": "Junior Frontend dasturchisi, React, TypeScript va Next.js bo'yicha mutaxassis. Zamonaviy, tezkor va foydalanuvchi uchun qulay veb-ilovalar yaratish. Toshkent, O'zbekistonda joylashgan — butun dunyo bo'ylab masofaviy ish imkoniyatlari uchun ochiq.",
+    "description": "Junior Frontend dasturchisi. React, Next.js, TypeScript va React Native yordamida zamonaviy, tezkor va foydalanuvchi uchun qulay veb hamda mobil ilovalar yarataman.",
     "author": "Asadbek Umarov",
-    "keywords": "frontend developer, react, typescript, next.js, nuxt, vue, web developer, toshkent, o'zbekiston",
+    "keywords": "Asadbek Umarov, Frontend Dasturchi, React, Next.js, TypeScript, React Native, Portfolio",
+
     "og_title": "Asadbek Umarov — Frontend Dasturchisi",
-    "og_description": "Junior Frontend dasturchisi, React, TypeScript va Next.js bo'yicha mutaxassis. Toshkent, O'zbekistonda joylashgan.",
+    "og_description": "React, Next.js va React Native dasturchisi. Mening loyihalarim va texnik ko'nikmalarim bilan tanishing.",
+
     "twitter_title": "Asadbek Umarov — Frontend Dasturchisi",
-    "twitter_description": "Junior Frontend dasturchisi, React, TypeScript va Next.js bo'yicha mutaxassis."
+    "twitter_description": "React, Next.js va React Native yordamida zamonaviy veb va mobil ilovalar yarataman."
   }
 }
