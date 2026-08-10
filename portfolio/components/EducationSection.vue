@@ -40,8 +40,7 @@ const learningNote = computed(() => t('education.learning_note', {
         class="section-padding relative"
         aria-labelledby="education-heading"
     >
-        <!-- Top gradient divider -->
-        <div class="section-divider" aria-hidden="true" />
+
 
         <!-- Background glow — teal -->
         <div

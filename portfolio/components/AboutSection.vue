@@ -45,7 +45,6 @@ const quickInfo: InfoItem[] = [
 const description1 = computed(() =>
   t('about.description_1', {
     name: `<strong class="text-slate-200 font-semibold">Asadbek Umarov</strong>`,
-    role: `<strong class="text-slate-200 font-semibold">Junior Frontend & Mobile Developer</strong>`,
     tech: `<strong class="text-slate-200 font-semibold">React, Next.js, React Native</strong>`,
   })
 )
@@ -60,7 +59,7 @@ const description2 = computed(() =>
 
 const description3 = computed(() =>
   t('about.description_3', {
-    roles: `<strong class="text-slate-200 font-semibold">Junior, Internship</strong>`,
+    roles: `<strong class="text-slate-200 font-semibold">Internship, Entry-level</strong>`,
     availability: `<strong class="text-slate-200 font-semibold">remote, on-site</strong>`,
   })
 )
@@ -72,8 +71,7 @@ const description3 = computed(() =>
     class="section-padding relative"
     aria-labelledby="about-heading"
   >
-    <!-- Top divider -->
-    <div class="section-divider" aria-hidden="true" />
+
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start">
@@ -115,7 +113,7 @@ const description3 = computed(() =>
               <div
                 class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0
                        bg-sky-500/10 border border-sky-500/20 text-sky-400
-                       transition-all duration-300 group-hover:bg-sky-500/15 group-hover:border-sky-500/35 group-hover:text-sky-300"
+                       transition-colors duration-200"
                 aria-hidden="true"
               >
                 <!-- Location -->
@@ -226,7 +224,7 @@ const description3 = computed(() =>
               class="glass-card p-5 text-center group"
             >
               <p
-                class="text-2xl font-black gradient-text transition-transform duration-300 group-hover:scale-105"
+                class="text-2xl font-black gradient-text"
               >
                 {{ stat.value }}
               </p>
@@ -248,8 +246,7 @@ const description3 = computed(() =>
           >
             <div
               class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0
-                     transition-all duration-300 bg-sky-500/10 border border-sky-500/25
-                     group-hover:bg-sky-500/20 group-hover:border-sky-500/40"
+                     transition-colors duration-200 bg-sky-500/10 border border-sky-500/25"
             >
               <svg
                 width="18"
@@ -269,7 +266,7 @@ const description3 = computed(() =>
 
             <div class="flex-1 min-w-0">
               <p
-                class="text-sm font-semibold transition-colors duration-200 text-slate-200 group-hover:text-sky-400"
+                class="text-sm font-semibold transition-colors duration-200 text-slate-200 group-hover:text-sky-400/80"
               >
                 {{ t('about.ctas.linkedin') }}
               </p>
@@ -279,7 +276,7 @@ const description3 = computed(() =>
             </div>
 
             <svg
-              class="flex-shrink-0 transition-all duration-200 text-slate-200/25 group-hover:text-sky-400/60 group-hover:translate-x-0.5"
+              class="flex-shrink-0 transition-colors duration-200 text-slate-200/25 group-hover:text-sky-400/50"
               width="15"
               height="15"
               viewBox="0 0 24 24"
@@ -304,8 +301,7 @@ const description3 = computed(() =>
           >
             <div
               class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0
-                     transition-all duration-300 bg-emerald-500/10 border border-emerald-500/25
-                     group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40"
+                     transition-colors duration-200 bg-emerald-500/10 border border-emerald-500/25"
             >
               <svg
                 width="18"
@@ -325,7 +321,7 @@ const description3 = computed(() =>
 
             <div class="flex-1 min-w-0">
               <p
-                class="text-sm font-semibold transition-colors duration-200 text-slate-200 group-hover:text-emerald-400"
+                class="text-sm font-semibold transition-colors duration-200 text-slate-200 group-hover:text-emerald-400/80"
               >
                 {{ t('about.ctas.portfolio') }}
               </p>
@@ -335,7 +331,7 @@ const description3 = computed(() =>
             </div>
 
             <svg
-              class="flex-shrink-0 transition-all duration-200 text-slate-200/25 group-hover:text-emerald-400/60 group-hover:translate-x-0.5"
+              class="flex-shrink-0 transition-colors duration-200 text-slate-200/25 group-hover:text-emerald-400/50"
               width="15"
               height="15"
               viewBox="0 0 24 24"

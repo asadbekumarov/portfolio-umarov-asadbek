@@ -16,7 +16,7 @@
     "label": "Men haqimda",
     "title": "Dasturlash va yaratishga bo'lgan",
     "title_accent": "ishtiyoq",
-    "description_1": "Mening ismim {name}, men {role}man. {tech} texnologiyalari yordamida zamonaviy veb va kross-platforma mobil ilovalari yarataman.",
+    "description_1": "Mening ismim {name}. {tech} texnologiyalari yordamida zamonaviy veb va kross-platforma mobil ilovalari yarataman.",
     "description_2": "{tools} yordamida {projects} kabi real loyihalarni ishlab chiqqanman. Asosiy e'tiborimni {focus}ga qarataman.",
     "description_3": "Hozirda tajribali jamoaga qo'shilish uchun {roles} lavozimlarini ko'rib chiqyapman. {availability} formatidagi takliflar uchun ochiqman.",
     "stats": {
@@ -39,17 +39,15 @@
       "portfolio": "GitHub"
     },
     "identity": {
-      "role": "Junior Frontend & Mobile Developer",
       "available": "Ishga tayyor"
     }
   },
   "hero": {
     "name": "Asadbek",
     "surname": "Umarov",
-    "role": "Junior Frontend & Mobile Developer",
     "tagline": "React, Next.js va React Native yordamida tezkor, responsiv veb va mobil ilovalar yarataman. Real loyihalarda (E-commerce, Dashboard, Blog) toza UI va unumdorlikni (performance) optimallashtirishga e'tibor qarataman.",
     "location": "Toshkent, O'zbekiston",
-    "open_to_work": "Full-time, Junior va Stajirovka uchun ochiq",
+    "open_to_work": "Full-time va Stajirovka uchun ochiq",
     "cta_view": "Loyihalarimni ko'rish",
     "cta_contact": "Bog'lanish"
   },
@@ -175,7 +173,7 @@
     }
   },
   "footer": {
-    "tagline": "React, TypeScript va Next.js yordamida zamonaviy, moslashuvchan veb-interfeyslarni yaratuvchi Junior Frontend dasturchi.",
+    "tagline": "React, TypeScript va Next.js yordamida zamonaviy, moslashuvchan veb-interfeyslarni yaratuvchi Frontend dasturchi.",
     "all_rights_reserved": "Barcha huquqlar himoyalangan.",
     "back_to_top": "Tepaga",
     "download_cv": "CV yuklab olish",
@@ -192,7 +190,7 @@
     "label": "Bog'lanish",
     "title": "Birga",
     "title_accent": "Ishlaylik",
-    "description": "Men junior frontend dasturchi lavozimlari va stajirovkalarni faol izlab yapman. Loyihangiz bo'lsa yoki shunchaki bog'lanishni istasangiz — mening pochtam doim ochiq.",
+    "description": "Men frontend dasturchi lavozimlari va stajirovkalarni faol izlab yapman. Loyihangiz bo'lsa yoki shunchaki bog'lanishni istasangiz — mening pochtam doim ochiq.",
     "cards": {
       "email": "Email",
       "phone": "Telefon",
@@ -204,7 +202,7 @@
   },
   "seo": {
     "title": "Asadbek Umarov — Frontend Dasturchisi",
-    "description": "Junior Frontend dasturchisi. React, Next.js, TypeScript va React Native yordamida zamonaviy, tezkor va foydalanuvchi uchun qulay veb hamda mobil ilovalar yarataman.",
+    "description": "Frontend dasturchisi. React, Next.js, TypeScript va React Native yordamida zamonaviy, tezkor va foydalanuvchi uchun qulay veb hamda mobil ilovalar yarataman.",
     "author": "Asadbek Umarov",
     "keywords": "Asadbek Umarov, Frontend Dasturchi, React, Next.js, TypeScript, React Native, Portfolio",
 

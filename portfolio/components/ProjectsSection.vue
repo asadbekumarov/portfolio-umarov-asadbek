@@ -40,8 +40,6 @@ const projects: Project[] = [
         class="section-padding relative"
         aria-labelledby="projects-heading"
     >
-        <!-- Top divider -->
-        <div class="section-divider" aria-hidden="true" />
 
         <!-- Subtle teal glow at bottom -->
         <div
@@ -79,7 +77,7 @@ const projects: Project[] = [
                     :aria-label="`Project: ${project.title}`"
                 >
                     <div
-                        class="flex flex-col flex-1 p-5 sm:p-7 rounded-2xl transition-transform duration-300 group-hover:-translate-y-1 h-full"
+                        class="flex flex-col flex-1 p-5 sm:p-7 rounded-2xl h-full"
                     >
                         <!-- ── Card Header ── -->
                         <!-- Juda tor ekranlarda (320-374px) status+link matn/badge bilan bir qatorga sig'maganda pastga tushadi -->

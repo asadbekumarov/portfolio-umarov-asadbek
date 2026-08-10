@@ -195,17 +195,16 @@
 
     .glass-card {
         background: rgba(13, 21, 41, 0.7);
-        border: 1px solid rgba(1, 69, 242, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 1rem;
         transition:
-            border-color 0.3s ease,
-            background 0.3s ease,
-            transform 0.3s ease;
+            border-color 0.2s ease,
+            background 0.2s ease;
     }
 
     .glass-card:hover {
-        border-color: rgba(1, 69, 242, 0.6);
-        background: rgba(13, 21, 41, 0.95);
+        border-color: rgba(255, 255, 255, 0.15);
+        background: rgba(13, 21, 41, 0.85);
     }
 
     /* ── Primary button (Electric Blue) ── */
@@ -217,27 +216,22 @@
         gap: 0.5rem;
         padding: 0.75rem 1.5rem;
         border-radius: 0.75rem;
-        font-size: 1.0625rem;
+        font-size: 1rem;
         font-weight: 600;
         color: #ffffff;
         background-color: #0145F2;
-        box-shadow: 0 4px 18px rgba(1, 69, 242, 0.4);
-        transition:
-            transform 0.25s ease,
-            background-color 0.25s ease,
-            box-shadow 0.25s ease;
+        transition: background-color 0.2s ease;
         white-space: nowrap;
-        border: none;
+        border: 1px solid #0145F2;
     }
 
     .btn-primary:hover {
-        transform: translateY(-2px);
-        background-color: #0036ca;
-        box-shadow: 0 8px 28px rgba(1, 69, 242, 0.6);
+        background-color: #0039ce;
+        border-color: #0039ce;
     }
 
     .btn-primary:active {
-        transform: translateY(0);
+        background-color: #002ea6;
     }
 
     /* ── Secondary button (Canvas Cloud border) ── */
@@ -249,28 +243,26 @@
         gap: 0.5rem;
         padding: 0.75rem 1.5rem;
         border-radius: 0.75rem;
-        font-size: 1.0625rem;
+        font-size: 1rem;
         font-weight: 600;
         color: #EDF1F5;
-        background: rgba(237, 241, 245, 0.05);
-        border: 1px solid rgba(237, 241, 245, 0.2);
+        background: transparent;
+        border: 1px solid rgba(237, 241, 245, 0.15);
         transition:
-            transform 0.25s ease,
-            background-color 0.25s ease,
-            border-color 0.25s ease,
-            box-shadow 0.25s ease;
+            background-color 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease;
         white-space: nowrap;
     }
 
     .btn-secondary:hover {
-        transform: translateY(-2px);
-        background-color: rgba(237, 241, 245, 0.1);
-        border-color: #EDF1F5;
-        box-shadow: 0 4px 20px rgba(237, 241, 245, 0.15);
+        background-color: rgba(237, 241, 245, 0.06);
+        border-color: rgba(237, 241, 245, 0.25);
+        color: #ffffff;
     }
 
     .btn-secondary:active {
-        transform: translateY(0);
+        background-color: rgba(237, 241, 245, 0.1);
     }
 
     /* ── Tag pill ── */
@@ -329,16 +321,7 @@
             );
         background-size: 64px 64px;
     }
-
-    .section-divider {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 1px;
-        height: 6rem;
-        background-color: rgba(1, 69, 242, 0.3);
-    }
+    
 
     .animate-float {
         animation: floatY 5s ease-in-out infinite;

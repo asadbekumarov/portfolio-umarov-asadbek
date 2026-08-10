@@ -16,7 +16,7 @@
     "label": "About Me",
     "title": "Passionate about building",
     "title_accent": "impactful products",
-    "description_1": "My name is {name}, a {role}. I build web and cross-platform mobile applications using {tech}.",
+    "description_1": "My name is {name}. I build web and cross-platform mobile applications using {tech}.",
     "description_2": "I have built {projects} using {tools}, always focusing on {focus}.",
     "description_3": "Currently looking for {roles} roles to join a professional engineering team. Open to {availability} opportunities worldwide.",
     "stats": {
@@ -39,17 +39,15 @@
       "portfolio": "Portfolio Website"
     },
     "identity": {
-      "role": "Junior Frontend & Mobile Developer",
       "available": "Open to Work"
     }
   },
   "hero": {
     "name": "Asadbek",
     "surname": "Umarov",
-    "role": "Junior Frontend & Mobile Developer",
     "tagline": "Building modern, responsive web and mobile applications with React, Next.js, and React Native. Focused on clean UI, performance optimization, and scalable solutions across real-world projects like e-commerce, dashboards, and blogs.",
     "location": "Tashkent, Uzbekistan",
-    "open_to_work": "Open to full-time, junior, and internship roles",
+    "open_to_work": "Open to full-time and internship roles",
     "cta_view": "View My Projects",
     "cta_contact": "Get in Touch"
   },
@@ -174,7 +172,7 @@
     }
   },
   "footer": {
-    "tagline": "Junior Frontend Developer crafting modern, responsive web experiences with React, TypeScript & Next.js.",
+    "tagline": "Frontend Developer crafting modern, responsive web experiences with React, TypeScript & Next.js.",
     "all_rights_reserved": "All rights reserved.",
     "back_to_top": "Back to top",
     "download_cv": "Download CV",
@@ -191,7 +189,7 @@
     "label": "Get In Touch",
     "title": "Let's Work",
     "title_accent": "Together",
-    "description": "I'm actively seeking junior frontend developer roles and internships. Whether you have a project in mind or simply want to connect — my inbox is always open.",
+    "description": "I'm actively seeking frontend developer roles and internships. Whether you have a project in mind or simply want to connect — my inbox is always open.",
     "cards": {
       "email": "Email",
       "phone": "Telefon",

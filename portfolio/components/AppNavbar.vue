@@ -90,15 +90,17 @@ const scrollToSection = (href: string): void => {
           @click.prevent="scrollToTop"
         >
           <div
-            class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center text-[11px] sm:text-xs font-black select-none transition-all duration-300 group-hover:scale-105 text-white"
+            class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center text-[11px] sm:text-xs font-black select-none text-white"
             style="
               background-color: #0145F2;
-              box-shadow: 0 4px 14px rgba(1, 69, 242, 0.4);
             "
             aria-hidden="true"
           >
             AU
           </div>
+          <span class="hidden sm:block text-base font-bold tracking-wide text-white">
+            Asadbek Umarov
+          </span>
         </a>
 
         <!-- Desktop Navigation -->

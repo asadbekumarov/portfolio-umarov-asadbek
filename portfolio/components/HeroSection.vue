@@ -28,24 +28,6 @@ const scrollToSection = (hash: string): void => {
     <!-- Content -->
     <div class="section-container relative z-10 pt-32 pb-24 w-full">
       <div class="max-w-4xl mx-auto text-center">
-        <!-- Role Badge -->
-        <div
-          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full
-                 bg-sky-500/10 border border-sky-500/20
-                 text-xs font-semibold text-sky-400 mb-7
-                 hero-badge scroll-animate"
-        >
-          <span class="relative flex h-2 w-2">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-60"
-            ></span>
-            <span
-              class="relative inline-flex rounded-full h-2 w-2 bg-sky-400"
-            ></span>
-          </span>
-          {{ t('hero.role') }}
-        </div>
-
         <!-- Name -->
         <h1
           class="font-black tracking-tight leading-[0.95] mb-6 hero-title scroll-animate"
