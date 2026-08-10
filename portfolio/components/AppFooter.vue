@@ -106,15 +106,15 @@ const scrollToSection = (href: string): void => {
           >
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black select-none
-                     transition-all duration-300 group-hover:scale-105 text-white
-                     bg-[#0145F2] shadow-[0_4px_18px_rgba(1,69,242,0.35)]"
+                     text-white
+                     bg-[#0145F2]"
               aria-hidden="true"
             >
               AU
             </div>
             <span
               class="text-base font-bold tracking-wide text-white
-                     group-hover:text-[#0145F2] transition-colors duration-200"
+                     transition-colors duration-200"
             >
               Asadbek Umarov
             </span>
@@ -124,51 +124,6 @@ const scrollToSection = (href: string): void => {
             {{ t('footer.tagline') }}
           </p>
 
-          <!-- Status Badge -->
-          <div
-            class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full
-                   bg-white/[0.04] border border-white/[0.08] mb-5"
-          >
-            <span class="relative flex h-2 w-2" aria-hidden="true">
-              <span
-                class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60 bg-[#0145F2]"
-              />
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#0145F2]" />
-            </span>
-            <span class="text-xs font-medium text-slate-200">
-              {{ t('about.info.open_to_work') }}
-            </span>
-            <span class="text-slate-600">•</span>
-            <span class="text-xs text-slate-400">
-              {{ t('hero.location') }}
-            </span>
-          </div>
-
-          <!-- Download CV -->
-          <a
-            href="/resume.pdf"
-            download
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold
-                   bg-white/[0.04] border border-white/[0.08] text-slate-200
-                   hover:bg-[#0145F2] hover:border-[#0145F2] hover:text-white
-                   transition-all duration-200"
-          >
-            <span>{{ t('footer.download_cv') || 'Download CV' }}</span>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-          </a>
         </div>
 
         <!-- Navigation -->
@@ -209,10 +164,10 @@ const scrollToSection = (href: string): void => {
               :rel="social.external ? 'noopener noreferrer' : undefined"
               :aria-label="t(social.labelKey)"
               class="w-9 h-9 rounded-xl flex items-center justify-center
-                     transition-all duration-200
+                     transition-colors duration-200
                      bg-white/[0.04] border border-white/[0.08]
                      text-slate-400 hover:text-white
-                     hover:bg-[#0145F2] hover:border-[#0145F2] hover:scale-105"
+                     hover:bg-white/[0.08] hover:border-white/[0.15]"
             >
               <!-- LinkedIn -->
               <svg
@@ -342,8 +297,8 @@ const scrollToSection = (href: string): void => {
             class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl
                    bg-white/[0.04] border border-white/[0.08]
                    text-slate-400 hover:text-white
-                   hover:bg-[#0145F2] hover:border-[#0145F2]
-                   transition-all duration-200"
+                   hover:bg-white/[0.08] hover:border-white/[0.15]
+                   transition-colors duration-200"
             aria-label="Back to top"
             @click="scrollToTop"
           >

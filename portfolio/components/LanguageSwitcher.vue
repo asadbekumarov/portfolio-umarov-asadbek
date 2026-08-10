@@ -1,22 +1,79 @@
 <script setup lang="ts">
 const { locale, locales, setLocale } = useI18n();
+const router = useRouter();
 
 const currentLocale = computed(() => locale.value);
 const availableLocales = computed(() => {
   return locales.value.filter((loc) => loc.code !== currentLocale.value);
 });
 
-const switchLanguage = (localeCode: string) => {
-  setLocale(localeCode);
-};
-
-// Get locale path for navigation
-const localePath = useLocalePath();
-
-// Add reactive state for dropdown
 const showDropdown = ref(false);
 
-// Close dropdown when clicking outside
+const SCROLL_KEY = 'lang-switch-scroll';
+const HASH_KEY = 'lang-switch-hash';
+
+const restoreScroll = () => {
+  const storedY = sessionStorage.getItem(SCROLL_KEY);
+  if (storedY == null) return false;
+  const y = Number(storedY);
+  const storedHash = sessionStorage.getItem(HASH_KEY);
+
+  if (storedHash && storedHash.length > 1 && typeof window !== 'undefined') {
+    const el = document.getElementById(storedHash.slice(1));
+    if (el) {
+      el.scrollIntoView({ block: 'start', behavior: 'auto' });
+    } else {
+      window.scrollTo(0, y);
+    }
+  } else {
+    window.scrollTo(0, y);
+  }
+  return true;
+};
+
+const cleanup = () => {
+  sessionStorage.removeItem(SCROLL_KEY);
+  sessionStorage.removeItem(HASH_KEY);
+};
+
+const switchLanguage = async (localeCode: string) => {
+  const savedScrollY = window.scrollY;
+  const savedHash = window.location.hash || '';
+  sessionStorage.setItem(SCROLL_KEY, String(savedScrollY));
+  if (savedHash) sessionStorage.setItem(HASH_KEY, savedHash);
+
+  showDropdown.value = false;
+
+  await setLocale(localeCode);
+
+  // Scrollni router scroll resetidan keyin 2 bosqichda tiklash
+  await nextTick();
+  requestAnimationFrame(() => {
+    if (restoreScroll()) {
+      requestAnimationFrame(() => {
+        restoreScroll();
+        window.setTimeout(() => {
+          restoreScroll();
+          cleanup();
+        }, 80);
+      });
+    }
+  });
+};
+
+// Har qanday locale o'zgargandan keyin yana bir marta javobgarlik bilan tiklash
+watch(() => locale.value, () => {
+  nextTick(() => {
+    requestAnimationFrame(() => {
+      restoreScroll();
+      window.setTimeout(() => {
+        if (restoreScroll()) cleanup();
+      }, 120);
+    });
+  });
+}, { flush: 'post' });
+
+// Router har bir navigatsiyadan keyin til o'zgarish bo'lsa scrollni tiklash
 onMounted(() => {
   const handleClickOutside = (event: MouseEvent) => {
     const target = event.target as HTMLElement;
@@ -26,8 +83,8 @@ onMounted(() => {
   };
 
   document.addEventListener('click', handleClickOutside);
-  
-  onUnmounted(() => {
+
+  onBeforeUnmount(() => {
     document.removeEventListener('click', handleClickOutside);
   });
 });
@@ -37,33 +94,32 @@ onMounted(() => {
   <div class="relative">
     <!-- Dropdown Button -->
     <button
-      class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50 hover:border-slate-600/50 focus:outline-none focus:ring-2 focus:ring-sky-500/50 focus:ring-offset-2 focus:ring-offset-slate-900"
+      class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-colors duration-200
+             bg-white/[0.04] border border-white/[0.08] text-slate-200
+             hover:bg-white/[0.08] hover:border-white/[0.15]
+             focus:outline-none"
       @click="showDropdown = !showDropdown"
       :aria-expanded="showDropdown"
       aria-haspopup="listbox"
     >
-      <!-- Current Locale Flag/Icon -->
-      <div class="flex items-center gap-2">
-        <span class="text-sm font-medium text-slate-200">
-          {{ currentLocale === 'uz' ? '🇺🇿 UZ' : '🇺🇸 EN' }}
-        </span>
-        <!-- Dropdown Arrow -->
-        <svg
-          class="w-4 h-4 text-slate-400 transition-transform duration-200"
-          :class="{ 'rotate-180': showDropdown }"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
-      </div>
+      <!-- Current Locale Code -->
+      <span class="text-xs sm:text-sm font-semibold tracking-wide uppercase select-none">
+        {{ currentLocale }}
+      </span>
+      <!-- Dropdown Arrow -->
+      <svg
+        class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200 shrink-0"
+        :class="{ 'rotate-180': showDropdown }"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
     </button>
 
     <!-- Dropdown Menu -->
@@ -77,39 +133,41 @@ onMounted(() => {
     >
       <div
         v-if="showDropdown"
-        class="absolute top-full left-0 mt-2 w-48 bg-slate-800/95 backdrop-blur-lg border border-slate-700/50 rounded-lg shadow-xl z-50"
+        class="absolute top-full right-0 mt-2 w-40 rounded-xl
+               bg-[#0a1124]/95 backdrop-blur-md border border-white/[0.08] z-50"
         role="listbox"
       >
         <div class="py-1">
           <button
             v-for="loc in availableLocales"
             :key="loc.code"
-            class="w-full flex items-center gap-3 px-3 py-2 text-sm transition-colors duration-150 hover:bg-slate-700/50 focus:outline-none focus:bg-slate-700/50"
+            class="w-full flex items-center gap-3 px-3 py-2 text-sm transition-colors duration-150
+                   text-slate-200 hover:bg-white/[0.08] focus:outline-none"
             @click="switchLanguage(loc.code)"
             role="option"
             :aria-selected="loc.code === currentLocale"
           >
-            <!-- Language Flag -->
-            <span class="text-lg">
-              {{ loc.code === 'uz' ? '🇺🇿' : '🇺🇸' }}
+            <!-- Language Code -->
+            <span class="text-xs font-semibold tracking-wide uppercase w-7 shrink-0 text-slate-400">
+              {{ loc.code }}
             </span>
             <!-- Language Name -->
-            <span class="font-medium text-slate-200">
+            <span class="font-medium flex-1 text-left">
               {{ loc.name }}
             </span>
             <!-- Current Indicator -->
             <svg
               v-if="loc.code === currentLocale"
-              class="w-4 h-4 text-sky-500 ml-auto"
-              fill="currentColor"
-              viewBox="0 0 20 20"
+              class="w-4 h-4 text-[#0145F2] shrink-0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
               aria-hidden="true"
             >
-              <path
-                fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
+              <polyline points="20 6 9 17 4 12" />
             </svg>
           </button>
         </div>
@@ -119,28 +177,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Additional styles if needed */
 .relative {
   position: relative;
-}
-
-/* Smooth transitions */
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-/* Focus styles */
-.focus\:ring-2:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-/* Backdrop blur */
-.backdrop-blur-lg {
-  --tw-backdrop-blur: blur(16px);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 </style>

@@ -147,7 +147,7 @@ useSchemaOrg([
 
     name: "Asadbek Umarov",
 
-    jobTitle: "Junior Frontend Developer",
+    jobTitle: "Frontend Developer",
 
     description:
       seoData.value.description,

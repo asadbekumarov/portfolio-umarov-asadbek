@@ -145,7 +145,6 @@ const skillCategories: SkillCategory[] = [
     class="section-padding relative overflow-hidden"
     aria-labelledby="skills-heading"
   >
-    <div class="section-divider" aria-hidden="true" />
 
     <div
       class="pointer-events-none absolute inset-0 skills-glow"
@@ -193,7 +192,7 @@ const skillCategories: SkillCategory[] = [
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0
                      bg-sky-500/10 border border-sky-500/20 text-sky-400
-                     transition-all duration-300 group-hover:scale-110 group-hover:bg-sky-500/15 group-hover:border-sky-500/35 group-hover:text-sky-300"
+                     transition-colors duration-200"
               aria-hidden="true"
             >
               <!-- Core -->
@@ -254,10 +253,7 @@ const skillCategories: SkillCategory[] = [
               v-for="skill in cat.skills"
               :key="skill.name"
               class="tag-pill inline-flex items-center gap-1.5
-                     transition-all duration-200
-                     group-hover:border-indigo-500/30
-                     group-hover:bg-indigo-500/12
-                     group-hover:text-slate-200"
+                     transition-colors duration-200"
               role="listitem"
             >
               <img

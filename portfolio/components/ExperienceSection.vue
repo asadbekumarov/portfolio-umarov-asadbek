@@ -24,8 +24,6 @@ const experiences: ExperienceItem[] = [
     class="section-padding relative overflow-hidden py-12 sm:py-20"
     aria-labelledby="experience-heading"
   >
-    <!-- Top gradient divider -->
-    <div class="section-divider" aria-hidden="true" />
 
     <!-- Subtle background glow (blue) -->
     <div
@@ -60,29 +58,12 @@ const experiences: ExperienceItem[] = [
         <div
           v-for="(exp, index) in experiences"
           :key="exp.key + index"
-          class="relative pl-6 sm:pl-10 pb-8 sm:pb-12 last:pb-0 scroll-animate delay-200"
+          class="relative pb-8 sm:pb-12 last:pb-0 scroll-animate delay-200"
         >
-          <!-- Vertical timeline line -->
-          <div
-            class="absolute left-2 sm:left-3.5 top-3 bottom-0 w-0.5 timeline-line"
-            aria-hidden="true"
-          />
-
-          <!-- Timeline dot -->
-          <div
-            class="absolute left-0 sm:left-1.5 top-2.5 w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 border-sky-500 bg-[#030712] z-10 flex items-center justify-center"
-            aria-hidden="true"
-          >
-            <!-- Pulsing inner dot for current role -->
-            <template v-if="exp.current">
-              <span class="absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75 animate-ping" />
-              <span class="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-sky-500" />
-            </template>
-          </div>
 
           <!-- ── Card ── -->
           <div
-            class="glass-card p-5 sm:p-7 md:p-8 rounded-2xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-sky-500/20"
+            class="glass-card p-5 sm:p-7 md:p-8 rounded-2xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-sm transition-colors duration-200"
           >
             <!-- Card header -->
             <div
@@ -179,14 +160,6 @@ const experiences: ExperienceItem[] = [
     ellipse 55% 35% at 20% 60%,
     rgba(2, 132, 199, 0.08) 0%,
     transparent 70%
-  );
-}
-.timeline-line {
-  background: linear-gradient(
-    to bottom,
-    #0284c7 0%,
-    rgba(2, 132, 199, 0.3) 60%,
-    transparent 100%
   );
 }
 </style>

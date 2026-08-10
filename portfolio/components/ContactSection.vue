@@ -45,8 +45,6 @@ const contacts: ContactCard[] = [
         class="section-padding relative"
         aria-labelledby="contact-heading"
     >
-        <!-- Top divider -->
-        <div class="section-divider" aria-hidden="true" />
 
         <!-- Bottom glow — teal for visual variety -->
         <div
@@ -90,7 +88,7 @@ const contacts: ContactCard[] = [
                     >
                         <!-- Icon box — blue accent -->
                         <div
-                            class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-sky-500/10 border border-sky-500/20 group-hover:bg-sky-500/20"
+                            class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-200 bg-sky-500/10 border border-sky-500/20"
                             aria-hidden="true"
                         >
                             <!-- Email -->
