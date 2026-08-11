@@ -1,67 +1,11 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-interface SocialLink {
-  labelKey: string
-  href: string
-  icon: 'linkedin' | 'github' | 'telegram' | 'globe' | 'email' | 'phone'
-  external: boolean
-}
-
-interface NavLink {
-  labelKey: string
-  href: string
-}
+import { navLinks, socialLinks } from '~/data';
 
 const currentYear = new Date().getFullYear()
 
-const navLinks: NavLink[] = [
-  { labelKey: 'nav.about', href: '#about' },
-  { labelKey: 'nav.skills', href: '#skills' },
-  { labelKey: 'nav.experience', href: '#experience' },
-  { labelKey: 'nav.projects', href: '#projects' },
-  { labelKey: 'nav.education', href: '#education' },
-  { labelKey: 'nav.contact', href: '#contact' },
-]
 
-const socialLinks: SocialLink[] = [
-  {
-    labelKey: 'footer.social.linkedin',
-    href: 'https://www.linkedin.com/in/asadbek-umarov-ab9385376',
-    icon: 'linkedin',
-    external: true,
-  },
-  {
-    labelKey: 'footer.social.github',
-    href: 'https://github.com/asadbekumarov',
-    icon: 'github',
-    external: true,
-  },
-  {
-    labelKey: 'footer.social.telegram',
-    href: 'https://t.me/asadbek_umarov',
-    icon: 'telegram',
-    external: true,
-  },
-  {
-    labelKey: 'footer.social.portfolio',
-    href: 'https://portfolio-umarov-asadbek.vercel.app/',
-    icon: 'globe',
-    external: true,
-  },
-  {
-    labelKey: 'footer.social.email',
-    href: 'mailto:asadbekumarov922@gmail.com',
-    icon: 'email',
-    external: false,
-  },
-  {
-    labelKey: 'footer.social.phone',
-    href: 'tel:+998772687865',
-    icon: 'phone',
-    external: true,
-  },
-]
 
 const scrollToTop = (): void => {
   window.scrollTo({ top: 0, behavior: 'smooth' })

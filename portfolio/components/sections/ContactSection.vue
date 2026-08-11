@@ -1,42 +1,5 @@
 <script setup lang="ts">
-interface ContactCard {
-    icon: "email" | "phone" | "linkedin" | "telegram";
-    labelKey: string;
-    value: string;
-    href: string;
-    external: boolean;
-}
-
-const contacts: ContactCard[] = [
-    {
-        icon: "email",
-        labelKey: "contact.cards.email",
-        value: "asadbekumarov922@gmail.com",
-        href: "mailto:asadbekumarov922@gmail.com",
-        external: true,
-    },
-    {
-        icon: "phone",
-        labelKey: "contact.cards.phone",
-        value: "+998 77 268 7865",
-        href: "tel:+998772687865",
-        external: false,
-    },
-    {
-        icon: "linkedin",
-        labelKey: "contact.cards.linkedin",
-        value: "asadbek-umarov-ab9385376",
-        href: "https://www.linkedin.com/in/asadbek-umarov-ab9385376",
-        external: true,
-    },
-    {
-        icon: "telegram",
-        labelKey: "contact.cards.telegram",
-        value: "@Asad_umarov",
-        href: "https://t.me/Asad_umarov",
-        external: true,
-    }
-];
+import { contacts } from '~/data';
 </script>
 
 <template>
