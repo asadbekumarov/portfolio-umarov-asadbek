@@ -9,7 +9,6 @@ import { experiences } from '~/data';
     aria-labelledby="experience-heading"
   >
 
-    <!-- Subtle background glow (blue) -->
     <div
       class="pointer-events-none absolute inset-0 experience-glow opacity-80"
       aria-hidden="true"
