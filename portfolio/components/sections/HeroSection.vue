@@ -28,7 +28,6 @@ const scrollToSection = (hash: string): void => {
     <!-- Content -->
     <div class="section-container relative z-10 pt-32 pb-24 w-full">
       <div class="max-w-4xl mx-auto text-center">
-        <!-- Name -->
         <h1
           class="font-black tracking-tight leading-[0.95] mb-6 hero-title scroll-animate"
         >
