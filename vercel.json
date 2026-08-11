@@ -1,7 +1,0 @@
-{
-  "buildCommand": "cd portfolio && npm install && npm run generate",
-  "outputDirectory": "portfolio/.output/public",
-  "installCommand": "echo 'skip root install'",
-  "framework": null
-}
-// div
