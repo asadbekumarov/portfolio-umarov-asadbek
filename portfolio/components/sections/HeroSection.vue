@@ -60,7 +60,6 @@ const scrollToSection = (hash: string): void => {
           </span>
         </div>
 
-        <!-- CTA Buttons -->
         <div
           class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 hero-ctas scroll-animate"
         >
