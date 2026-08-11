@@ -88,7 +88,6 @@ const scrollToSection = (hash: string): void => {
             {{ t('hero.cta_view') }}
           </a>
 
-          <!-- Secondary -->
           <a
             href="#contact"
             class="btn-secondary"
