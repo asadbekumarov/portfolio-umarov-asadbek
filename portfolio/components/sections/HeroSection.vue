@@ -35,7 +35,6 @@ const scrollToSection = (hash: string): void => {
           <span class="gradient-text-animated">{{ t('hero.surname') }}</span>
         </h1>
 
-        <!-- Tagline -->
         <p
           class="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-8
                  text-slate-400/80 hero-tagline scroll-animate"
