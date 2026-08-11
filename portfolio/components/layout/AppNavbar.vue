@@ -1,10 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-interface NavLink {
-  labelKey: string
-  href: string
-}
+import { navLinks } from '~/data';
 
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
@@ -32,14 +29,7 @@ watch(isMenuOpen, (open) => {
   }
 })
 
-const navLinks: NavLink[] = [
-  { labelKey: 'nav.about', href: '#about' },
-  { labelKey: 'nav.skills', href: '#skills' },
-  { labelKey: 'nav.experience', href: '#experience' },
-  { labelKey: 'nav.projects', href: '#projects' },
-  { labelKey: 'nav.education', href: '#education' },
-  { labelKey: 'nav.contact', href: '#contact' },
-]
+
 
 const handleScroll = (): void => {
   isScrolled.value = window.scrollY > 24

@@ -1,45 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-interface StatItem {
-  value: string
-  labelKey: string
-}
-
-interface InfoItem {
-  icon: 'location' | 'status' | 'availability' | 'focus'
-  labelKey: string
-  valueKey: string
-}
-
-const stats: StatItem[] = [
-  { value: '4+', labelKey: 'about.stats.projects' },
-  { value: '1+', labelKey: 'about.stats.experience' },
-  { value: '100%', labelKey: 'about.stats.remote' },
-]
-
-const quickInfo: InfoItem[] = [
-  {
-    icon: 'location',
-    labelKey: 'about.info.location',
-    valueKey: 'hero.location',
-  },
-  {
-    icon: 'status',
-    labelKey: 'about.info.status',
-    valueKey: 'about.info.open_to_work',
-  },
-  {
-    icon: 'availability',
-    labelKey: 'about.info.availability',
-    valueKey: 'about.info.remote_onsite',
-  },
-  {
-    icon: 'focus',
-    labelKey: 'about.info.focus',
-    valueKey: 'about.info.focus_value',
-  },
-]
+import { stats, quickInfo } from '~/data';
 
 // Rich text translations
 const description1 = computed(() =>

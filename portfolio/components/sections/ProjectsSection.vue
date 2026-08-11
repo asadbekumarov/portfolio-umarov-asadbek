@@ -1,37 +1,5 @@
 <script setup lang="ts">
-interface Project {
-    key: string;
-    title: string;
-    categoryKey: string;
-    icon: string;
-    statusKey: string;
-    link?: string;
-    highlightCount: number;
-    technologies: string[];
-}
-
-const projects: Project[] = [
-    {
-        key: "smart_life",
-        title: "Smart Life",
-        categoryKey: "E-commerce",
-        icon: "📱",
-        link: "https://www.smartlife.uz/uz",
-        statusKey: "projects.status.completed",
-        highlightCount: 3,
-        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "RTK Query"],
-    },
-    {
-        key: "darrow",
-        title: "Darrow",
-        categoryKey: "telegram_app",
-        icon: "✈️",
-        link: "https://t.me/darrov_bot", // Darrow uchun demo link
-        statusKey: "projects.status.completed",
-        highlightCount: 3,
-        technologies: ["React.js", "TypeScript", "Tailwind CSS", "Telegram API"],
-    },
-];
+import { projects } from '~/data';
 </script>
 
 <template>

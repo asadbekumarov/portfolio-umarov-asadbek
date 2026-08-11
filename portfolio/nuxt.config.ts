@@ -4,6 +4,19 @@ export default defineNuxtConfig({
   devtools: { enabled: process.env.NODE_ENV !== "production" },
   telemetry: false,
 
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
+
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://portfolio-umarov-asadbek.vercel.app',
+    }
+  },
+
   nitro: {
     preset: "vercel",
   },

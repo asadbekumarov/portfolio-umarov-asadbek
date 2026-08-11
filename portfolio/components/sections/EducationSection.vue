@@ -1,31 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
 
-interface EducationItem {
-    key: string;
-    institution: string;
-    periodDate: string;
-    highlightCount: number;
-    tags: string[];
-}
-
-const education: EducationItem[] = [
-    {
-        key: "najot_talim",
-        institution: "Najot Ta'lim",
-        periodDate: "Mar 2024",
-        highlightCount: 6,
-        tags: [
-            "JavaScript",
-            "TypeScript",
-            "React.js",
-            "Tailwind CSS",
-            "Git",
-            "HTML5",
-            "CSS3",
-        ],
-    },
-];
+import { education } from '~/data';
 
 const learningNote = computed(() => t('education.learning_note', {
     item1: `<strong class="text-sky-600 font-medium">${t('education.exploring.item1')}</strong>`,

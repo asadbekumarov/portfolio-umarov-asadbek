@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t, locale } = useI18n();
 const route = useRoute();
+const config = useRuntimeConfig();
 
 const seoData = computed(() => ({
   title: t("seo.title"),
@@ -12,7 +13,7 @@ const seoData = computed(() => ({
   ogDescription: t("seo.og_description"),
 
   ogImage:
-    "https://portfolio-umarov-asadbek.vercel.app/og-image.png",
+    `${config.public.siteUrl}/og-image.png`,
 
   twitterTitle: t("seo.twitter_title"),
   twitterDescription: t("seo.twitter_description"),
@@ -20,7 +21,7 @@ const seoData = computed(() => ({
   currentLocale: locale.value,
 
   canonicalUrl:
-    `https://portfolio-umarov-asadbek.vercel.app${route.path}`,
+    `${config.public.siteUrl}${route.path}`,
 }));
 
 useHead(() => ({
@@ -157,7 +158,7 @@ useSchemaOrg([
 
     sameAs: [
       "https://www.linkedin.com/in/asadbek-umarov-ab9385376",
-      "https://portfolio-umarov-asadbek.vercel.app",
+      config.public.siteUrl,
     ],
 
     knowsAbout: [

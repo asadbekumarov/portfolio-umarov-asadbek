@@ -1,21 +1,5 @@
 <script setup lang="ts">
-interface ExperienceItem {
-  key: string;
-  periodStart: string;
-  periodEnd: string | null;
-  current: boolean;
-  achievementCount: number;
-}
-
-const experiences: ExperienceItem[] = [
-  {
-    key: "soft_turtkul",
-    periodStart: "Aug 2025",
-    periodEnd: "Nov 2025",
-    current: false,
-    achievementCount: 3,
-  },
-];
+import { experiences } from '~/data';
 </script>
 
 <template>
