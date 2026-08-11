@@ -25,7 +25,6 @@ const scrollToSection = (hash: string): void => {
     <div class="pointer-events-none absolute orb-blue" aria-hidden="true" />
     <div class="pointer-events-none absolute orb-teal" aria-hidden="true" />
 
-    <!-- Content -->
     <div class="section-container relative z-10 pt-32 pb-24 w-full">
       <div class="max-w-4xl mx-auto text-center">
         <h1
