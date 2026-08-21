@@ -45,9 +45,8 @@
   "hero": {
     "name": "Asadbek",
     "surname": "Umarov",
-    "tagline": "React, Next.js va React Native yordamida tezkor, responsiv veb va mobil ilovalar yarataman. Real loyihalarda (E-commerce, Dashboard, Blog) toza UI va unumdorlikni (performance) optimallashtirishga e'tibor qarataman.",
+    "tagline": "Ishlab chiqarishga tayyor ilovalar yaratuvchi frontend dasturchi. Haqiqiy mijozlarga xizmat qiluvchi e-commerce platforma va 5000+ buyurtmalarni qayta ishlagan multi-xizmat Telegram WebApp ilovasini React, Next.js, TypeScript va RTK Query yordamida yaratdim.",
     "location": "Toshkent, O'zbekiston",
-    "open_to_work": "Full-time va Stajirovka uchun ochiq",
     "cta_view": "Loyihalarimni ko'rish",
     "cta_contact": "Bog'lanish"
   },
@@ -120,21 +119,21 @@
     },
     "items": {
       "darrow": {
-        "subtitle": "Multi-xizmat platformasi",
-        "description": "Taxi va oziq-ovqat yetkazib berish xizmatlarini birlashtirgan platforma.",
+        "subtitle": "Multi-xizmat Telegram Web App — Taksi, Taom Yetkazish va Usta Xizmatlari",
+        "description": "3 kishilik masofaviy jamoa tarkibida (1 backend, 2 frontend) Yandex Go uslubidagi super-ilovani Telegram brauzerida ishlaydigan qilib yaratdim. 4 xizmat kategoriyasi bo'yicha band qilish va buyurtma oqimlarini qurdim, Telegram WebView cheklovlari uchun UI optimallashtirildi va real vaqtdagi buyurtmalarni qayta ishlash uchun REST APIlar integratsiya qilindi.",
         "highlights": [
-          "Telegram API",
-          "Taxi va yetkazib berish oqimlari",
-          "Mobile-first yondashuv"
+          "Taksi, taom yetkazish, usta xizmatlari va do'kon buyurtmalari uchun band qilish oqimlari — barchasi birlashgan UI komponent kutubxonasidan foydalanadi",
+          "Telegram WebView cheklovlari uchun optimallashtirilgan: CSS dvh birliklar ishlamagan joyda JS asosidagi viewport balandligini hisoblash amalga oshirildi",
+          "Jami 5000+ buyurtmani qayta ishlagan REST API integratsiyasi — markazlashgan xato boshqaruvi va yuklash holatlari bilan"
         ]
       },
       "smart_life": {
-        "subtitle": "Telefon va gadjetlar onlayn do'koni",
-        "description": "Smartfonlar, gadjetlar va maishiy texnikalarga ixtisoslashgan Smart Life onlayn do'koni uchun mo'ljallangan zamonaviy e-commerce platformasi.",
+        "subtitle": "To'liq masshtabli E-Commerce Platforma — smartlife.uz saytida jonli",
+        "description": "O'zbekistondagi elektronika sotuvchisi Smart Life uchun mijozlarga mo'ljallangan to'liq onlayn do'konni yaratdim. Mahsulot katalogi, savat tizimi va checkout uchun yagona frontend dasturchisi sifatida Figmadan Next.js da ishlab chiqarish joylashuvigacha javobgar bo'ldim.",
         "highlights": [
-          "Smartfon va gadjetlar uchun filtrlarga ega interaktiv katalog",
-          "RTK Query orqali savat va onlayn buyurtmalarni samarali boshqarish",
-          "Mobile-first formatda optimallashtirilgan foydalanuvchi interfeysi"
+          "URL-ga asoslangan filtrlash (almashish/xatlama uchun filter holatlari) va API chaqiriqlarini kamaytirish uchun debounced qidiruv bilan mahsulot katalogi yaratildi",
+          "RTK Query bilan savat va buyurtma boshqaruvi amalga oshirildi — tezkor UI uchun optimistik yangilanishlar, mutatsiyalarda avtomatik kesh bekor qilish",
+          "70%+ mobil foydalanuvchilarga xizmat qiluvchi mobile-first dizayn — har bir komponent avval 320px da loyihalashtirildi, keyin desktop uchun kengaytirildi"
         ]
       }
     }

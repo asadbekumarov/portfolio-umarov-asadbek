@@ -7,14 +7,7 @@ const currentYear = new Date().getFullYear()
 
 
 
-const scrollToTop = (): void => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-
-const scrollToSection = (href: string): void => {
-  const el = document.querySelector(href)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
-}
+const { scrollToTop, scrollToSection } = useNavigation()
 </script>
 
 <template>

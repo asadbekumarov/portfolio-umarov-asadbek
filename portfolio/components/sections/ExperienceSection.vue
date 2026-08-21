@@ -9,10 +9,7 @@ import { experiences } from '~/data';
     aria-labelledby="experience-heading"
   >
 
-    <div
-      class="pointer-events-none absolute inset-0 experience-glow opacity-80"
-      aria-hidden="true"
-    />
+
 
     <div class="section-container relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
       <!-- ── Section Header ── -->
@@ -137,12 +134,4 @@ import { experiences } from '~/data';
   </section>
 </template>
 
-<style scoped>
-.experience-glow {
-  background: radial-gradient(
-    ellipse 55% 35% at 20% 60%,
-    rgba(2, 132, 199, 0.08) 0%,
-    transparent 70%
-  );
-}
-</style>
+

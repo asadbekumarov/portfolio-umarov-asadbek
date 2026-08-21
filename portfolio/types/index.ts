@@ -44,6 +44,8 @@ export interface Project {
   icon: string;
   statusKey: string;
   link?: string;
+  github?: string;
+  image?: string;
   highlightCount: number;
   technologies: string[];
 }

@@ -9,6 +9,8 @@ import type {
   EducationItem,
   SkillCategory
 } from '~/types';
+import smartlifeImg from '~/assets/images/smartlife.png';
+import notimageImg from '~/assets/images/notimage.jpg';
 
 export const stats: StatItem[] = [
   { value: '4+', labelKey: 'about.stats.projects' },
@@ -54,9 +56,11 @@ export const projects: Project[] = [
   {
     key: 'smart_life',
     title: 'Smart Life',
-    categoryKey: 'E-commerce',
+    categoryKey: 'web_app',
     icon: '📱',
     link: 'https://www.smartlife.uz/uz',
+    github: 'https://github.com/asadbekumarov',
+    image: smartlifeImg,
     statusKey: 'projects.status.completed',
     highlightCount: 3,
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'RTK Query'],
@@ -67,6 +71,8 @@ export const projects: Project[] = [
     categoryKey: 'telegram_app',
     icon: '✈️',
     link: 'https://t.me/darrov_bot',
+    github: 'https://github.com/asadbekumarov',
+    image: notimageImg,
     statusKey: 'projects.status.completed',
     highlightCount: 3,
     technologies: ['React.js', 'TypeScript', 'Tailwind CSS', 'Telegram API'],
@@ -134,14 +140,5 @@ export const skillCategories: SkillCategory[] = [
       { name: 'npm / yarn', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg' },
     ],
   },
-  {
-    categoryKey: 'skills.categories.soft',
-    icon: 'soft',
-    skills: [
-      { name: 'Problem Solving', icon: '🧠', isEmoji: true },
-      { name: 'Team Collaboration', icon: '🤝', isEmoji: true },
-      { name: 'Attention to Detail', icon: '🔍', isEmoji: true },
-      { name: 'Fast Learner', icon: '🚀', isEmoji: true },
-    ],
-  }
 ];
+

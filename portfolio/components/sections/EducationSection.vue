@@ -18,11 +18,7 @@ const learningNote = computed(() => t('education.learning_note', {
     >
 
 
-        <!-- Background glow — teal -->
-        <div
-            class="pointer-events-none absolute inset-0 education-glow"
-            aria-hidden="true"
-        />
+
 
         <div class="section-container relative">
             <!-- ── Section Header ── -->
@@ -35,7 +31,7 @@ const learningNote = computed(() => t('education.learning_note', {
                     {{ $t('education.title') }} <span class="gradient-text">{{ $t('education.title_accent') }}</span>
                 </h2>
                 <p
-                    class="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/45"
+                    class="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/70"
                 >
                     {{ $t('education.description') }}
                 </p>
@@ -84,7 +80,7 @@ const learningNote = computed(() => t('education.learning_note', {
                                 {{ $t(`education.items.${edu.key}.program`) }}
                             </p>
                             <p
-                                class="text-xs sm:text-sm mt-0.5 text-slate-400/45"
+                                class="text-xs sm:text-sm mt-0.5 text-slate-500"
                             >
                                 {{ $t(`education.items.${edu.key}.credential`) }}
                             </p>
@@ -95,7 +91,7 @@ const learningNote = computed(() => t('education.learning_note', {
                             >
                                 <!-- Period -->
                                 <span
-                                    class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-lg bg-[#0d2138]/80 border border-sky-500/15 text-slate-200/60"
+                                    class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-lg bg-[#0d2138]/80 border border-sky-500/15 text-slate-300"
                                 >
                                     <svg
                                         width="11"
@@ -124,7 +120,7 @@ const learningNote = computed(() => t('education.learning_note', {
 
                                 <!-- Location -->
                                 <span
-                                    class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-lg bg-[#0d2138]/80 border border-sky-500/15 text-slate-200/60"
+                                    class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-lg bg-[#0d2138]/80 border border-sky-500/15 text-slate-300"
                                 >
                                     <svg
                                         width="10"
@@ -155,7 +151,7 @@ const learningNote = computed(() => t('education.learning_note', {
 
                     <!-- Description -->
                     <p
-                        class="text-sm leading-relaxed mb-6 sm:mb-7 text-slate-400/60"
+                        class="text-sm leading-relaxed mb-6 sm:mb-7 text-slate-400/80"
                     >
                         {{ $t(`education.items.${edu.key}.description`) }}
                     </p>
@@ -243,7 +239,7 @@ const learningNote = computed(() => t('education.learning_note', {
                             {{ $t('education.continuous_learning') }}
                         </p>
                         <p
-                            class="text-xs mt-0.5 text-slate-400/45"
+                            class="text-xs mt-0.5 text-slate-500"
                             v-html="learningNote"
                         ></p>
                     </div>
@@ -254,13 +250,6 @@ const learningNote = computed(() => t('education.learning_note', {
 </template>
 
 <style scoped>
-.education-glow {
-    background: radial-gradient(
-        ellipse 55% 35% at 80% 40%,
-        rgba(4, 124, 88, 0.06) 0%,
-        transparent 70%
-    );
-}
 .edu-icon-box {
     background: linear-gradient(
         135deg,

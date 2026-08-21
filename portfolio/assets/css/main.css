@@ -45,7 +45,7 @@
 
     body {
         /* Asosiy fon — Canvas Cloud (#EDF1F5 bo'yoq effekti uchun to'q quyuq fon) */
-        background-color: #080d1a;
+        background-color: #030712;
         /* Asosiy matn — Ochiq bo'z rang (#EDF1F5) */
         color: #EDF1F5;
         font-family:
@@ -78,7 +78,7 @@
         width: 5px;
     }
     ::-webkit-scrollbar-track {
-        background: #080d1a;
+        background: #030712;
     }
     ::-webkit-scrollbar-thumb {
         background: #0145F2; /* Electric Blue */
@@ -168,18 +168,12 @@
 
     .section-title {
         font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
-        font-size: 2.0625rem;
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
         font-weight: 700;
         color: #ffffff;
         line-height: 1.2;
         letter-spacing: normal;
         font-synthesis: none;
-    }
-
-    @media (min-width: 640px) {
-        .section-title {
-            font-size: 2.4375rem;
-        }
     }
 
     /* ── Accent Text (Electric Blue) ── */
@@ -199,12 +193,16 @@
         border-radius: 1rem;
         transition:
             border-color 0.2s ease,
-            background 0.2s ease;
+            background 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
     }
 
     .glass-card:hover {
         border-color: rgba(255, 255, 255, 0.15);
         background: rgba(13, 21, 41, 0.85);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px -5px rgba(1, 69, 242, 0.08);
     }
 
     /* ── Primary button (Electric Blue) ── */
@@ -329,31 +327,37 @@
 }
 
 /* =============================================
-   HEADER & FOOTER OVERRIDE
+   ACCESSIBILITY & MOTION FALLBACKS
    ============================================= */
 
-header *,
-footer * {
-    color: #EDF1F5 !important;
-    opacity: 1 !important;
+/* No-JS fallback: if scripting is disabled, scroll-animate content must still be visible */
+@media (scripting: none) {
+    .scroll-animate {
+        opacity: 1;
+        transform: none;
+    }
 }
 
-header p,
-header span,
-footer p,
-footer span {
-    color: #cbd5e1 !important;
-}
-
-header a:hover,
-footer a:hover {
-    color: #0145F2 !important;
-}
-
-[class*="text-slate"],
-[class*="text-gray"],
-[class*="text-zinc"],
-[class*="text-neutral"],
-[class*="text-white/"] {
-    color: #cbd5e1 !important;
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-animate {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+    .hero-title,
+    .hero-badge,
+    .hero-tagline,
+    .hero-tech,
+    .hero-ctas {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    .glass-card {
+        transition: none;
+    }
+    .glass-card:hover {
+        transform: none;
+    }
 }

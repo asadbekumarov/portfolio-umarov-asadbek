@@ -9,11 +9,7 @@ import { contacts } from '~/data';
         aria-labelledby="contact-heading"
     >
 
-        <!-- Bottom glow — teal for visual variety -->
-        <div
-            class="pointer-events-none absolute inset-0 contact-glow"
-            aria-hidden="true"
-        />
+
 
         <div class="section-container relative">
             <!-- ── Section Header ── -->
@@ -30,7 +26,7 @@ import { contacts } from '~/data';
                 </h2>
 
                 <p
-                    class="mt-4 max-w-lg mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/45"
+                    class="mt-4 max-w-lg mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/70"
                 >
                     {{ $t('contact.description') }}
                 </p>
@@ -129,7 +125,7 @@ import { contacts } from '~/data';
                         <!-- Text -->
                         <div class="flex-1 min-w-0">
                             <p
-                                class="text-xs font-semibold mb-0.5 text-slate-400/40"
+                                class="text-xs font-semibold mb-0.5 text-slate-500"
                             >
                                 {{ $t(card.labelKey) }}
                             </p>
@@ -208,12 +204,4 @@ import { contacts } from '~/data';
     </section>
 </template>
 
-<style scoped>
-.contact-glow {
-    background: radial-gradient(
-        ellipse 65% 45% at 50% 105%,
-        rgba(4, 124, 88, 0.08) 0%,
-        transparent 68%
-    );
-}
-</style>
+

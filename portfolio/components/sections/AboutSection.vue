@@ -2,6 +2,7 @@
 const { t } = useI18n()
 
 import { stats, quickInfo } from '~/data';
+import { MapPin, Briefcase, Clock, Target, Linkedin, Github, ExternalLink } from 'lucide-vue-next';
 
 // Rich text translations
 const description1 = computed(() =>
@@ -13,9 +14,9 @@ const description1 = computed(() =>
 
 const description2 = computed(() =>
   t('about.description_2', {
-    projects: `<strong class="text-slate-200 font-semibold">e-commerce platforms, dashboards, blog systems</strong>`,
-    tools: `<strong class="text-slate-200 font-semibold">TypeScript, Tailwind CSS</strong>`,
-    focus: `<strong class="text-slate-200 font-semibold">clean UI, responsive layouts, optimized performance</strong>`,
+    projects: `<strong class="text-slate-200 font-semibold">an e-commerce platform and a multi-service Telegram app</strong>`,
+    tools: `<strong class="text-slate-200 font-semibold">TypeScript, Tailwind CSS, RTK Query</strong>`,
+    focus: `<strong class="text-slate-200 font-semibold">clean architecture, responsive design, and real-world performance</strong>`,
   })
 )
 
@@ -33,8 +34,6 @@ const description3 = computed(() =>
     class="section-padding relative"
     aria-labelledby="about-heading"
   >
-
-
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start">
         <!-- ══════════════════════════════════════
@@ -54,7 +53,7 @@ const description3 = computed(() =>
           </h2>
 
           <div
-            class="space-y-5 leading-relaxed text-[0.9375rem] scroll-animate delay-200 text-slate-400/60"
+            class="space-y-5 leading-relaxed text-[0.9375rem] scroll-animate delay-200 text-slate-400/80"
           >
             <p v-html="description1"></p>
             <p v-html="description2"></p>
@@ -79,76 +78,20 @@ const description3 = computed(() =>
                 aria-hidden="true"
               >
                 <!-- Location -->
-                <svg
-                  v-if="item.icon === 'location'"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
+                <MapPin v-if="item.icon === 'location'" class="w-[18px] h-[18px] text-sky-400" :stroke-width="1.75" />
 
                 <!-- Status -->
-                <svg
-                  v-else-if="item.icon === 'status'"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                </svg>
+                <Briefcase v-else-if="item.icon === 'status'" class="w-[18px] h-[18px] text-sky-400" :stroke-width="1.75" />
 
                 <!-- Availability -->
-                <svg
-                  v-else-if="item.icon === 'availability'"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                  <path d="M2 12h20" />
-                </svg>
+                <Clock v-else-if="item.icon === 'availability'" class="w-[18px] h-[18px] text-sky-400" :stroke-width="1.75" />
 
                 <!-- Focus -->
-                <svg
-                  v-else-if="item.icon === 'focus'"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg>
+                <Target v-else-if="item.icon === 'focus'" class="w-[18px] h-[18px] text-sky-400" :stroke-width="1.75" />
               </div>
 
               <div class="min-w-0">
-                <p class="text-xs font-medium mb-0.5 text-slate-400/40">
+                <p class="text-xs font-medium mb-0.5 text-slate-500">
                   {{ t(item.labelKey) }}
                 </p>
                 <p class="text-sm font-semibold truncate text-slate-200">
@@ -165,15 +108,14 @@ const description3 = computed(() =>
         <div class="w-full max-w-md mx-auto lg:mx-0 space-y-5 scroll-animate delay-150">
           <!-- Identity / Avatar Card -->
           <div class="glass-card relative overflow-hidden text-center border-sky-500/20 p-4">
-            <div
-              class="absolute inset-0 pointer-events-none glow-backdrop"
-              aria-hidden="true"
-            />
             <div class="relative z-10 flex justify-center">
               <img
                 src="/user.jpg"
                 alt="Asadbek Umarov"
                 class="w-full h-72 object-cover rounded-xl shadow-md"
+                loading="lazy"
+                width="400"
+                height="288"
               />
             </div>
           </div>
@@ -185,14 +127,10 @@ const description3 = computed(() =>
               :key="stat.labelKey"
               class="glass-card p-5 text-center group"
             >
-              <p
-                class="text-2xl font-black gradient-text"
-              >
+              <p class="text-2xl font-black gradient-text">
                 {{ stat.value }}
               </p>
-              <p
-                class="text-xs font-medium mt-1.5 leading-tight text-slate-400/40"
-              >
+              <p class="text-xs font-medium mt-1.5 leading-tight text-slate-500">
                 {{ t(stat.labelKey) }}
               </p>
             </div>
@@ -210,47 +148,23 @@ const description3 = computed(() =>
               class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0
                      transition-colors duration-200 bg-sky-500/10 border border-sky-500/25"
             >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#0284c7"
-                stroke-width="2"
-                aria-hidden="true"
-              >
-                <path
-                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
+              <Linkedin class="w-[18px] h-[18px] text-sky-500" :stroke-width="2" aria-hidden="true" />
             </div>
 
             <div class="flex-1 min-w-0">
-              <p
-                class="text-sm font-semibold transition-colors duration-200 text-slate-200 group-hover:text-sky-400/80"
-              >
+              <p class="text-sm font-semibold transition-colors duration-200 text-slate-200 group-hover:text-sky-400/80">
                 {{ t('about.ctas.linkedin') }}
               </p>
-              <p class="text-xs truncate mt-0.5 text-slate-400/40">
+              <p class="text-xs truncate mt-0.5 text-slate-500">
                 asadbek-umarov-ab9385376
               </p>
             </div>
 
-            <svg
-              class="flex-shrink-0 transition-colors duration-200 text-slate-200/25 group-hover:text-sky-400/50"
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
+            <ExternalLink
+              class="w-[15px] h-[15px] flex-shrink-0 transition-colors duration-200 text-slate-200/25 group-hover:text-sky-400/50"
+              :stroke-width="2"
               aria-hidden="true"
-            >
-              <path
-                d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
-              />
-            </svg>
+            />
           </a>
 
           <!-- GitHub Card -->
@@ -265,60 +179,26 @@ const description3 = computed(() =>
               class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0
                      transition-colors duration-200 bg-emerald-500/10 border border-emerald-500/25"
             >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#10b981"
-                stroke-width="2"
-                aria-hidden="true"
-              >
-                <path
-                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
-                />
-                <path d="M9 18c-4.51 2-5-2-7-2" />
-              </svg>
+              <Github class="w-[18px] h-[18px] text-emerald-500" :stroke-width="2" aria-hidden="true" />
             </div>
 
             <div class="flex-1 min-w-0">
-              <p
-                class="text-sm font-semibold transition-colors duration-200 text-slate-200 group-hover:text-emerald-400/80"
-              >
+              <p class="text-sm font-semibold transition-colors duration-200 text-slate-200 group-hover:text-emerald-400/80">
                 {{ t('about.ctas.portfolio') }}
               </p>
-              <p class="text-xs truncate mt-0.5 text-slate-400/40">
+              <p class="text-xs truncate mt-0.5 text-slate-500">
                 github.com/asadbekumarov
               </p>
             </div>
 
-            <svg
-              class="flex-shrink-0 transition-colors duration-200 text-slate-200/25 group-hover:text-emerald-400/50"
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
+            <ExternalLink
+              class="w-[15px] h-[15px] flex-shrink-0 transition-colors duration-200 text-slate-200/25 group-hover:text-emerald-400/50"
+              :stroke-width="2"
               aria-hidden="true"
-            >
-              <path
-                d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
-              />
-            </svg>
+            />
           </a>
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.glow-backdrop {
-  background: radial-gradient(
-    ellipse 80% 50% at 50% -10%,
-    rgba(2, 132, 199, 0.16) 0%,
-    transparent 70%
-  );
-}
-</style>

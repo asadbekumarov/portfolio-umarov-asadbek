@@ -31,8 +31,15 @@ watch(isMenuOpen, (open) => {
 
 
 
+let ticking = false
 const handleScroll = (): void => {
-  isScrolled.value = window.scrollY > 24
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      isScrolled.value = window.scrollY > 24
+      ticking = false
+    })
+    ticking = true
+  }
 }
 
 onMounted(() => {
@@ -43,16 +50,11 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
-const scrollToTop = (): void => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
+const { scrollToTop, scrollToSection: navScrollToSection } = useNavigation()
 
 const scrollToSection = (href: string): void => {
   isMenuOpen.value = false
-  const el = document.querySelector(href)
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
-  }
+  navScrollToSection(href)
 }
 </script>
 

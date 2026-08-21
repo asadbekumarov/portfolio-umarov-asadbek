@@ -9,10 +9,7 @@ import { skillCategories } from '~/data';
     aria-labelledby="skills-heading"
   >
 
-    <div
-      class="pointer-events-none absolute inset-0 skills-glow"
-      aria-hidden="true"
-    />
+
 
     <div class="section-container relative">
       <!-- Header -->
@@ -30,7 +27,7 @@ import { skillCategories } from '~/data';
         </h2>
 
         <p
-          class="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/50 px-2"
+          class="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/70 px-2"
         >
           {{ $t('skills.description') }}
         </p>
@@ -94,7 +91,7 @@ import { skillCategories } from '~/data';
               <h3 class="text-sm font-semibold leading-tight text-slate-200">
                 {{ $t(`${cat.categoryKey}.title`) }}
               </h3>
-              <p class="text-xs mt-0.5 text-slate-400/45 leading-snug">
+              <p class="text-xs mt-0.5 text-slate-500 leading-snug">
                 {{ $t(`${cat.categoryKey}.description`) }}
               </p>
             </div>
@@ -143,13 +140,6 @@ import { skillCategories } from '~/data';
 </template>
 
 <style scoped>
-.skills-glow {
-  background: radial-gradient(
-    ellipse 70% 40% at 50% 50%,
-    rgba(2, 132, 199, 0.06) 0%,
-    transparent 70%
-  );
-}
 
 @media (max-width: 380px) {
   .tag-pill {

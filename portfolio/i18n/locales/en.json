@@ -45,7 +45,7 @@
   "hero": {
     "name": "Asadbek",
     "surname": "Umarov",
-    "tagline": "Building modern, responsive web and mobile applications with React, Next.js, and React Native. Focused on clean UI, performance optimization, and scalable solutions across real-world projects like e-commerce, dashboards, and blogs.",
+    "tagline": "Frontend developer who ships production apps. Built an e-commerce platform serving real customers and a multi-service Telegram Web App that processed 5,000+ orders — using React, Next.js, TypeScript, and RTK Query.",
     "location": "Tashkent, Uzbekistan",
     "open_to_work": "Open to full-time and internship roles",
     "cta_view": "View My Projects",
@@ -123,19 +123,23 @@
     },
     "items": {
       "darrow": {
-        "subtitle": "Multi-service Platform",
-        "description": "A platform combining taxi and food delivery services.",
-        "highlights": ["Telegram API", "Taxi & Food flows", "Mobile-first"]
+        "subtitle": "Multi-service Telegram Web App — Taxi, Food Delivery & Handyman Services",
+        "description": "Co-developed a Yandex Go-style super-app running inside Telegram's in-app browser. Part of a 3-person remote team (1 backend, 2 frontend). Built booking and ordering flows across 4 service categories, optimized UI for Telegram's constrained WebView, and integrated REST APIs for real-time order processing.",
+        "highlights": [
+          "Architected booking flows for taxi, food delivery, handyman services, and shop orders — all sharing a unified UI component library",
+          "Optimized for Telegram WebView limitations: implemented JS-based viewport height calculations where CSS dvh units failed",
+          "Integrated REST APIs handling 5,000+ total orders with centralized error handling and loading states"
+        ]
+      },
+      "smart_life": {
+        "subtitle": "Full-scale E-Commerce Platform — Live at smartlife.uz",
+        "description": "Built the complete customer-facing storefront for Smart Life, an electronics retailer in Uzbekistan. Solo frontend developer responsible for product catalog, cart system, and checkout — from Figma to production deployment on Next.js.",
+        "highlights": [
+          "Built product catalog with URL-based filtering (shareable/bookmarkable filter states) and debounced search to minimize API calls",
+          "Implemented cart and order management with RTK Query — optimistic updates for instant-feeling UI, automatic cache invalidation on mutations",
+          "Mobile-first responsive design serving 70%+ mobile users — every component designed at 320px first, then enhanced for desktop"
+        ]
       }
-    },
-    "smart_life": {
-      "subtitle": "Electronics & Mobile Store Platform",
-      "description": "Modern e-commerce platform for Smart Life, an online store specializing in smartphones, gadgets, and consumer electronics.",
-      "highlights": [
-        "Interactive smartphone and gadget catalog with filtering",
-        "Seamless cart and online order management with RTK Query",
-        "Optimized mobile-first e-commerce interface"
-      ]
     }
   },
   "education": {
@@ -192,7 +196,7 @@
     "description": "I'm actively seeking frontend developer roles and internships. Whether you have a project in mind or simply want to connect — my inbox is always open.",
     "cards": {
       "email": "Email",
-      "phone": "Telefon",
+      "phone": "Phone",
       "linkedin": "LinkedIn",
       "telegram": "Telegram"
     },
