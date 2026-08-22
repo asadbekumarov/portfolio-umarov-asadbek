@@ -45,9 +45,10 @@
   "hero": {
     "name": "Asadbek",
     "surname": "Umarov",
-    "tagline": "Ishlab chiqarishga tayyor ilovalar yaratuvchi frontend dasturchi. Haqiqiy mijozlarga xizmat qiluvchi e-commerce platforma va 5000+ buyurtmalarni qayta ishlagan multi-xizmat Telegram WebApp ilovasini React, Next.js, TypeScript va RTK Query yordamida yaratdim.",
+    "role": "React & Next.js Ilovalar Yaratish Bo'yicha Mutaxassis",
+    "tagline": "Ishlab chiqarishga tayyor ilovalar yaratuvchi frontend dasturchi. 5000+ buyurtmalarni qayta ishlagan Telegram WebApp va haqiqiy mijozlarga xizmat qiluvchi e-commerce platformasini React, Next.js, TypeScript va RTK Query yordamida yaratdim.",
     "location": "Toshkent, O'zbekiston",
-    "cta_view": "Loyihalarimni ko'rish",
+    "cta_view": "Loyihalarni ko'rish",
     "cta_contact": "Bog'lanish"
   },
   "skills": {
@@ -100,6 +101,19 @@
           "Telegram'ning cheklangan brauzeri uchun optimallashtirilgan React.js, TypeScript va Tailwind CSS bilan moslashuvchan (responsive) UI qurdim.",
           "Real vaqtdagi buyurtmalar va xizmat so'rovlarini boshqarish uchun REST API'larni integratsiya qildim; platforma admin panel orqali kuzatilgan jami 5000+ dan ortiq buyurtmalarni qayta ishladi."
         ]
+      },
+      "najot_talim_teacher": {
+        "role": "Support O'qituvchi",
+        "company": "Najot Ta'lim",
+        "location": "Toshkent, O'zbekiston · Masofaviy",
+        "type": "Part-time",
+        "description": "Asosiy mentor rahbarligida frontend dasturlash bo'yicha darslar va texnik savollarda junior talabalarni qo'llab-quvvatladim.",
+        "achievements": [
+          "Junior talabalarni Frontend dasturlash bo'yicha topshiriqlar va texnik savollar bilan qo'llab-quvvatladim.",
+          "Topshiriqlarni ko'rib chiqdim va asosiy mentor rahbarligida tuzilgan fikr-mulohazalar bildirdim.",
+          "Talabalarning dasturlash tushunchalarini tushunishiga va kodlash ko'nikmalarini yaxshilashiga yordam berdim.",
+          "3 oy davomida hamkorlikdagi masofaviy o'quv muhitida talabalarga yordam berdim."
+        ]
       }
     }
   },
@@ -134,6 +148,42 @@
           "URL-ga asoslangan filtrlash (almashish/xatlama uchun filter holatlari) va API chaqiriqlarini kamaytirish uchun debounced qidiruv bilan mahsulot katalogi yaratildi",
           "RTK Query bilan savat va buyurtma boshqaruvi amalga oshirildi — tezkor UI uchun optimistik yangilanishlar, mutatsiyalarda avtomatik kesh bekor qilish",
           "70%+ mobil foydalanuvchilarga xizmat qiluvchi mobile-first dizayn — har bir komponent avval 320px da loyihalashtirildi, keyin desktop uchun kengaytirildi"
+        ]
+      },
+      "dna_technology": {
+        "subtitle": "Korporativ Veb-sayt va Tibbiy Uskunalar Katalogi",
+        "description": "O'zbekistondagi yuqori texnologiyali tibbiy laboratoriya jihozlari distribyutori uchun to'liq korporativ veb-sayt va mahsulotlar katalogini yaratdim. B2B mijozlar (shifokorlar va laborantlar) uchun ilmiy va tibbiy ma'lumotlarni sodda va qulay taqdim etuvchi frontend arxitekturasini ishlab chiqdim.",
+        "highlights": [
+          "Texnik parametrlar (.ini) va drayverlar uchun yuklab olish markazi — foydalanuvchilar apparat sozlamalari fayllarini qidiruv filtrlari yordamida tez topishi va uzilishlarsiz yuklab olishi ta'minlandi",
+          "Ko'p bosqichli tibbiy katalog — yuzlab PSR kitlari va laboratoriya uskunalarini (DTprime, DTlite) toifalar bo'yicha dinamik nested filtrlash tizimi yaratildi",
+          "Tibbiy hujjatlar va og'ir sahifalar SSR orqali optimallashtirilib, qidiruv tizimlari (SEO) va foydalanuvchilar uchun soniyalar ichida ochiladi"
+        ]
+      },
+      "tola_bot": {
+        "subtitle": "Muntazam To'lovlar Eslatmasi",
+        "description": "O'zbekistonda har oy takrorlanadigan maishiy to'lovlar muddati o'tib ketishining oldini oluvchi Telegram Web App ilovasini yaratdim. 1 soniyada ochiladigan qulay interfeys, avtomatlashtirilgan eslatmalar va ma'lumotlar bazasi integratsiyasiga javobgar bo'ldim.",
+        "highlights": [
+          "Smart eslatmalar va abonent kodlari — foydalanuvchi ma'lumotlarni 1 marta kiritadi, tizim to'lov kunidan 2 kun oldin va o'sha kuni ertalab eslatma xabari yuboradi",
+          "0 so'm xarajatli server arxitekturasi — loyihaning to'liq backend va ma'lumotlar bazasi qismi bepul bulutli infratuzilmalarda (Vercel + Supabase) ishlashi ta'minlandi",
+          "Yuklab olish to'sig'isiz dizayn — foydalanuvchi alohida ilova yuklab olmaydi, Telegram brauzeri ichida tezkor yuklanish uchun UI optimallashtirildi"
+        ]
+      },
+      "auto_quiz": {
+        "subtitle": "O'qituvchilar uchun Avtomatlashtirilgan Test Yaratish Platformasi — Veb-ilova",
+        "description": "O'qituvchilar uchun Excel yoki Word o'rniga ishlatiladigan, professional testlarni bir necha daqiqada tayyorlovchi zamonaviy avtomatlashtirilgan tizimni yaratdim. Platformaning to'liq UI/UX dizayni va frontend arxitekturasini ishlab chiqdim.",
+        "highlights": [
+          "A4 formatdagi avtomatik layout algoritmi — savollarni sahifalarga taqsimlab, har bir A4 varog'iga 2 ta ustunda 10 ta savolni mukammal joylashtiradi",
+          "Eksport va chop etish tizimi — tayyorlangan test materiallarini dizayni va shriftlari buzilmagan holda yuqori sifatli PDF va PNG formatlarida yuklab olish imkonini beradi",
+          "Ko'p sahifali SPA marshrutlash — shablonlar, test yaratish paneli va foydalanuvchining shaxsiy testlar arxivini yuklanishlarsiz boshqaruvchi tezkor routing tizimi"
+        ]
+      },
+      "vocab_app": {
+        "subtitle": "Til o'rganuvchilar uchun vocabulary yodlash va takrorlash ilovasi — personal mobile app",
+        "description": "Til o'rganuvchilarga yangi so'zlarni tartibli o'rganish, saqlash va muntazam takrorlash uchun React Native mobil ilovasini yaratdim. Ilovada so'zlarni guruhlab qo'shish, kunlik takrorlash jarayonini rejalashtirish va bilimni tekshirish uchun tasodifiy recall testlari mavjud.",
+        "highlights": [
+          "Batch word entry — foydalanuvchi bir nechta yangi so'zlarni bir vaqtning o'zida tez va qulay tarzda qo'shishi mumkin",
+          "Kunlik takrorlash tizimi — o'rganilgan so'zlarni belgilangan vaqt asosida qayta takrorlash orqali vocabulary'ni mustahkamlash",
+          "Randomized recall testlar — so'zlar tasodifiy tartibda chiqarilib, foydalanuvchining eslab qolish darajasi tekshiriladi"
         ]
       }
     }

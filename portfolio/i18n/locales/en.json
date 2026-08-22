@@ -45,10 +45,11 @@
   "hero": {
     "name": "Asadbek",
     "surname": "Umarov",
+    "role": "Frontend Engineer building production-ready applications",
     "tagline": "Frontend developer who ships production apps. Built an e-commerce platform serving real customers and a multi-service Telegram Web App that processed 5,000+ orders — using React, Next.js, TypeScript, and RTK Query.",
     "location": "Tashkent, Uzbekistan",
     "open_to_work": "Open to full-time and internship roles",
-    "cta_view": "View My Projects",
+    "cta_view": "View Projects",
     "cta_contact": "Get in Touch"
   },
   "skills": {
@@ -104,6 +105,19 @@
           "Built a responsive UI with React.js, TypeScript and Tailwind CSS, optimized for Telegram's constrained in-app browser.",
           "Integrated REST APIs to handle real-time orders and service requests; the platform processed 5000+ orders in total, tracked via the admin panel."
         ]
+      },
+      "najot_talim_teacher": {
+        "role": "Support Teacher",
+        "company": "Najot Ta'lim",
+        "location": "Tashkent, Uzbekistan · Remote",
+        "type": "Part-time",
+        "description": "Supported junior students with Frontend Development assignments and technical questions under the guidance of the main mentor in a collaborative remote learning environment.",
+        "achievements": [
+          "Supported junior students with Frontend Development assignments and technical questions.",
+          "Reviewed assignments and provided structured feedback under the guidance of the main mentor.",
+          "Helped students understand core programming concepts and improve their coding skills.",
+          "Assisted students for 3 months in a collaborative remote learning environment."
+        ]
       }
     }
   },
@@ -138,6 +152,42 @@
           "Built product catalog with URL-based filtering (shareable/bookmarkable filter states) and debounced search to minimize API calls",
           "Implemented cart and order management with RTK Query — optimistic updates for instant-feeling UI, automatic cache invalidation on mutations",
           "Mobile-first responsive design serving 70%+ mobile users — every component designed at 320px first, then enhanced for desktop"
+        ]
+      },
+      "dna_technology": {
+        "subtitle": "Corporate Website & Medical Equipment Catalog",
+        "description": "Built a full corporate website and product catalog for a high-tech medical laboratory equipment distributor in Uzbekistan, serving B2B clients (doctors and lab technicians). Architected a frontend that presents complex scientific and medical data in a clear, accessible way.",
+        "highlights": [
+          "Download hub for technical specs (.ini) and drivers — users can quickly locate hardware config files via search filters and download them without interruption",
+          "Multi-level medical catalog for hundreds of complex PCR kits and lab equipment (DTprime, DTlite) with a nested dynamic filtering and category sorting system",
+          "Optimized pages for heavy medical documents with SSR — pages open in seconds for both search engines (SEO) and end users"
+        ]
+      },
+      "tola_bot": {
+        "subtitle": "Recurring Payment Reminder",
+        "description": "Built a Telegram Web App that prevents missed monthly utility payment deadlines in Uzbekistan. Responsible for a fast 1-second-load UI, automated reminders, and database integration.",
+        "highlights": [
+          "Smart reminders & subscriber codes — user enters data once; the system sends a reminder 2 days before and on the morning of the payment due date",
+          "Zero-cost server architecture — the full backend and database run on free cloud infrastructure (Vercel + Supabase) at no expense",
+          "No-install design — users need no separate app download; the UI is optimized for instant loading inside Telegram's in-app browser"
+        ]
+      },
+      "auto_quiz": {
+        "subtitle": "Automated Test Generation Platform for Teachers — Web App",
+        "description": "Built a modern automated system for teachers to create professional tests in minutes — replacing Excel and Word. Designed the full UI/UX and frontend architecture of the platform.",
+        "highlights": [
+          "Auto A4 layout algorithm — distributes questions across pages, perfectly placing 10 questions in 2 columns per A4 sheet",
+          "Export & print system — ready test materials can be downloaded as high-quality PDF and PNG files with intact design and fonts",
+          "Multi-page SPA routing — fast client-side routing manages templates, test creation panel, and user's personal test archive without reloads"
+        ]
+      },
+      "vocab_app": {
+        "subtitle": "Vocabulary Memorization & Review App for Language Learners — Personal Mobile App",
+        "description": "Developed a React Native mobile application for language learners to systematically learn, store, and regularly review new words. The app features categorized word entry, daily review scheduling, and randomized recall tests to assess knowledge.",
+        "highlights": [
+          "Batch word entry — users can quickly and conveniently add multiple new words at the same time",
+          "Daily review system — reinforces vocabulary through scheduled spaced repetition of learned words",
+          "Randomized recall tests — words are presented in random order to effectively test the user's retention rate"
         ]
       }
     }

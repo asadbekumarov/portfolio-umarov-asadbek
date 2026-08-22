@@ -11,6 +11,10 @@ import type {
 } from '~/types';
 import smartlifeImg from '~/assets/images/smartlife.png';
 import notimageImg from '~/assets/images/notimage.jpg';
+import dnkImg from '~/assets/images/dnk.png';
+import tolaBotImg from '~/assets/images/tolaBot.png';
+import autoQuizImg from '~/assets/images/autoQuiz.png';
+import vocabAppImg from '~/assets/images/vocabApp.png';
 
 export const stats: StatItem[] = [
   { value: '4+', labelKey: 'about.stats.projects' },
@@ -50,6 +54,7 @@ export const socialLinks: SocialLink[] = [
 
 export const experiences: ExperienceItem[] = [
   { key: 'soft_turtkul', periodStart: 'Aug 2025', periodEnd: 'Nov 2025', current: false, achievementCount: 3 },
+  { key: 'najot_talim_teacher', periodStart: 'Feb 2024', periodEnd: 'Jun 2024', current: false, achievementCount: 4 },
 ];
 
 export const projects: Project[] = [
@@ -76,6 +81,52 @@ export const projects: Project[] = [
     statusKey: 'projects.status.completed',
     highlightCount: 3,
     technologies: ['React.js', 'TypeScript', 'Tailwind CSS', 'Telegram API'],
+  },
+  {
+    key: 'dna_technology',
+    title: 'DNA-Technology',
+    categoryKey: 'web_app',
+    icon: '🧬',
+    link: 'https://dnk-expert.vercel.app/uz',
+    github: 'https://github.com/asadbekumarov',
+    image: dnkImg,
+    statusKey: 'projects.status.completed',
+    highlightCount: 3,
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'REST API'],
+  },
+  {
+    key: 'tola_bot',
+    title: "To'la Bot",
+    categoryKey: 'telegram_app',
+    icon: '🔔',
+    link: 'https://tola-bot.vercel.app/',
+    github: 'https://github.com/asadbekumarov',
+    image: tolaBotImg,
+    statusKey: 'projects.status.development',
+    highlightCount: 3,
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'Telegram API'],
+  },
+  {
+    key: 'auto_quiz',
+    title: 'AutoQuiz',
+    categoryKey: 'web_app',
+    icon: '📝',
+    github: 'https://github.com/asadbekumarov',
+    image: autoQuizImg,
+    statusKey: 'projects.status.development',
+    highlightCount: 3,
+    technologies: ['React 19', 'Vite', 'Tailwind CSS', 'jsPDF'],
+  },
+  {
+    key: 'vocab_app',
+    title: 'VocabApp',
+    categoryKey: 'mobile_app',
+    icon: '📚',
+    github: 'https://github.com/asadbekumarov',
+    image: vocabAppImg,
+    statusKey: 'projects.status.development',
+    highlightCount: 3,
+    technologies: ['React Native', 'Expo', 'TypeScript', 'AsyncStorage'],
   }
 ];
 
