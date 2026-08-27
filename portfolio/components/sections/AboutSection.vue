@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
-import { MapPin, Briefcase, Clock, Code2, Linkedin, Github, ExternalLink, CheckCircle2 } from 'lucide-vue-next'
+import { MapPin, Briefcase, Clock, Code2, Linkedin, Github } from 'lucide-vue-next'
 
 const techBadges = [
   { name: 'React.js',     color: '#61dafb' },
@@ -11,345 +11,163 @@ const techBadges = [
 ]
 
 const bentoStats = [
-  { value: '1+',   labelUz: 'Yillik amaliy tajriba',        suffix: '' },
-  { value: '5K+',  labelUz: 'Telegram WebApp tranzaksiyasi', suffix: '' },
-  { value: '100%', labelUz: 'Clean code & responsiv arxitektura', suffix: '' },
+  { value: '1+',   labelUz: 'Yillik tajriba',        suffix: '' },
+  { value: '5K+',  labelUz: 'Tranzaksiya', suffix: '' },
+  { value: '100%', labelUz: 'Clean code', suffix: '' },
 ]
 
 const quickInfoItems = [
-  { icon: 'location',     labelUz: 'Joylashuv',    valueUz: "Toshkent, O'zbekiston" },
+  { icon: 'location',     labelUz: 'Joylashuv',    valueUz: "Toshkent, UZ" },
   { icon: 'status',       labelUz: 'Holat',         valueUz: 'Ishga tayyor' },
-  { icon: 'availability', labelUz: 'Ish formati',   valueUz: 'Masofaviy va Ofis' },
-  { icon: 'focus',        labelUz: "Yo'nalish",     valueUz: 'Frontend & Mobile' },
+  { icon: 'availability', labelUz: 'Format',   valueUz: 'Masofaviy / Ofis' },
+  { icon: 'focus',        labelUz: "Yo'nalish",     valueUz: 'Frontend' },
 ]
 </script>
 
 <template>
   <section
     id="about"
-    class="section-padding relative"
+    class="py-20 sm:py-28 relative bg-[#080c14]"
     aria-labelledby="about-heading"
   >
-    <div class="section-container">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-      <!-- ═══════════════════════════════════════
-           12-col grid layout
-           ═══════════════════════════════════════ -->
-      <div class="about-grid">
+      <!-- Section Title for Mobile (Hidden on Desktop where it's in the Bio card) -->
+      <div class="md:hidden mb-8 text-center">
+        <span class="text-xs font-bold tracking-widest uppercase text-blue-500 mb-3 block">
+          {{ t('about.label') }}
+        </span>
+        <h2 id="about-heading" class="text-3xl font-bold text-white mt-2" style="font-family: 'Space Grotesk', sans-serif;">
+          {{ t('about.title') }}
+          <span class="text-blue-500"> {{ t('about.title_accent') }}</span>
+        </h2>
+      </div>
 
-        <!-- ── LEFT: bio text + quick info (col-span-7) ── -->
-        <div class="about-left">
-
-          <!-- Section label & heading -->
-          <div class="mb-8 scroll-animate">
-            <span class="section-label mb-3">{{ t('about.label') }}</span>
-            <h2 id="about-heading" class="section-title mt-2">
-              {{ t('about.title') }}
-              <span class="gradient-text"> {{ t('about.title_accent') }}</span>
-            </h2>
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 auto-rows-[minmax(0,auto)]">
+        
+        <!-- 1. Photo Card (Tall, Spans 2 Rows on Desktop) -->
+        <div class="md:col-span-5 lg:col-span-4 md:row-span-2 relative overflow-hidden rounded-[2rem] border border-[#1e293b] bg-[#0d1522] group h-64 md:h-full min-h-[300px] shadow-lg shadow-black/20">
+          <img
+            src="/user.jpg"
+            alt="Asadbek Umarov"
+            class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#080c14]/90 via-[#080c14]/20 to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full z-10">
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-1.5" style="font-family: 'Space Grotesk', sans-serif;">Asadbek Umarov</h3>
+            <p class="text-blue-400 font-semibold tracking-wide text-sm uppercase">Frontend Developer</p>
           </div>
-
-          <!-- Bio text -->
-          <div class="space-y-4 text-[0.9375rem] leading-relaxed text-slate-400 scroll-animate delay-100">
-            <p>
-              Dasturlashga bo'lgan ishtiyoqim real muammolarni hal qiluvchi, tezkor va qulay
-              interfeyslar yaratishga qaratilgan. <strong class="text-slate-200 font-semibold">React.js, Next.js</strong>
-              va <strong class="text-slate-200 font-semibold">TypeScript</strong> yordamida ishlab chiqarishga
-              tayyor ilovalar quraman — qoralama bosqichidan production joylashuvigacha.
-            </p>
-            <p>
-              Haqiqiy foydalanuvchilarga xizmat qiluvchi
-              <strong class="text-slate-200 font-semibold">e-commerce platforma</strong> va
-              <strong class="text-slate-200 font-semibold">5 000+ buyurtmani</strong> qayta ishlagan
-              multi-xizmat Telegram WebApp ilovasini yaratdim. Asosiy e'tiborimni toza arxitektura,
-              moslashuvchan dizayn va real ishlash unumdorligiga qarataman.
-            </p>
-          </div>
-
-          <!-- Tech badges -->
-          <div class="flex flex-wrap gap-2 mt-6 scroll-animate delay-150">
-            <span
-              v-for="badge in techBadges"
-              :key="badge.name"
-              class="tech-badge-inline"
-              :style="{ '--dot': badge.color }"
-            >
-              <span class="tech-dot" aria-hidden="true" />
-              {{ badge.name }}
-            </span>
-          </div>
-
-          <!-- Quick info -->
-          <div class="bento-card mt-6 scroll-animate delay-200">
-            <p class="bento-card-title">Qisqacha ma'lumot</p>
-            <ul class="space-y-3 mt-4">
-              <li
-                v-for="item in quickInfoItems"
-                :key="item.icon"
-                class="quick-info-row"
-              >
-                <MapPin        v-if="item.icon === 'location'"     class="qi-icon" :stroke-width="1.75" aria-hidden="true" />
-                <Briefcase     v-else-if="item.icon === 'status'"       class="qi-icon" :stroke-width="1.75" aria-hidden="true" />
-                <Clock         v-else-if="item.icon === 'availability'" class="qi-icon" :stroke-width="1.75" aria-hidden="true" />
-                <Code2         v-else-if="item.icon === 'focus'"        class="qi-icon" :stroke-width="1.75" aria-hidden="true" />
-                <span class="qi-label">{{ item.labelUz }}</span>
-                <span class="qi-value">{{ item.valueUz }}</span>
-              </li>
-            </ul>
-          </div>
-
         </div>
 
-        <!-- ── RIGHT: photo + stats + social (col-span-5) ── -->
-        <div class="about-right">
-
-          <!-- Photo -->
-          <div class="bento-photo scroll-animate delay-100">
-            <img
-              src="/user.jpg"
-              alt="Asadbek Umarov"
-              class="w-full h-full object-cover object-center"
-              loading="lazy"
-              width="400"
-              height="500"
-            />
+        <!-- 2. Bio Card (Wide) -->
+        <div class="md:col-span-7 lg:col-span-8 p-6 sm:p-8 lg:p-10 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20 flex flex-col justify-center">
+          <div class="hidden md:block mb-6">
+            <span class="text-xs font-bold tracking-widest uppercase text-blue-500 mb-2 block">
+              {{ t('about.label') }}
+            </span>
+            <h2 class="text-3xl lg:text-4xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">
+              {{ t('about.title') }} <span class="text-blue-500">{{ t('about.title_accent') }}</span>
+            </h2>
           </div>
+          
+          <p class="text-lg sm:text-xl font-medium text-slate-200 leading-relaxed mb-5">
+            Dasturlashga bo'lgan ishtiyoqim real muammolarni hal qiluvchi, tezkor va qulay interfeyslar yaratishga qaratilgan.
+          </p>
+          <p class="text-sm sm:text-base text-slate-400 leading-relaxed">
+            <strong class="text-white font-semibold">React.js, Next.js</strong> va <strong class="text-white font-semibold">TypeScript</strong> yordamida ishlab chiqarishga tayyor ilovalar quraman. 
+            Haqiqiy foydalanuvchilarga xizmat qiluvchi <strong class="text-white font-semibold">e-commerce platforma</strong> va <strong class="text-white font-semibold">5 000+ buyurtmani</strong> qayta ishlagan multi-xizmat Telegram WebApp ilovasini yaratdim. 
+            Asosiy e'tiborim toza arxitektura, moslashuvchan dizayn va yuqori ishlash unumdorligiga qaratiladi.
+          </p>
+        </div>
 
-          <!-- Stats row -->
-          <div class="stats-row scroll-animate delay-200">
+        <!-- 3. Stats Card (Wide) -->
+        <div class="md:col-span-7 lg:col-span-8 p-6 sm:p-8 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20 flex items-center">
+          <div class="grid grid-cols-3 gap-2 sm:gap-4 divide-x divide-slate-800/60 w-full">
             <div
               v-for="stat in bentoStats"
               :key="stat.value"
-              class="bento-card bento-stat"
+              class="flex flex-col items-center justify-center px-2 text-center"
             >
-              <p class="stat-value">{{ stat.value }}</p>
-              <p class="stat-label">{{ stat.labelUz }}</p>
+              <span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-2" style="font-family: 'Space Grotesk', sans-serif;">{{ stat.value }}</span>
+              <span class="text-[10px] sm:text-xs text-blue-400 uppercase tracking-wider font-semibold">{{ stat.labelUz }}</span>
             </div>
           </div>
-
-          <!-- Social -->
-          <div class="bento-card scroll-animate delay-300">
-            <p class="bento-card-title">Ijtimoiy tarmoqlar</p>
-            <div class="flex flex-col gap-3 mt-4">
-              <a
-                href="https://www.linkedin.com/in/asadbek-umarov-ab9385376"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-btn group"
-                aria-label="LinkedIn profilini ko'rish"
-              >
-                <span class="social-icon-wrap social-li">
-                  <Linkedin class="w-4 h-4" :stroke-width="2" aria-hidden="true" />
-                </span>
-                <span class="flex-1 min-w-0">
-                  <span class="social-name">LinkedIn</span>
-                  <span class="social-sub">asadbek-umarov</span>
-                </span>
-                <ExternalLink class="w-3.5 h-3.5 text-slate-600 group-hover:text-slate-400 transition-colors" :stroke-width="2" aria-hidden="true" />
-              </a>
-              <a
-                href="https://github.com/asadbekumarov"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-btn group"
-                aria-label="GitHub profilini ko'rish"
-              >
-                <span class="social-icon-wrap social-gh">
-                  <Github class="w-4 h-4" :stroke-width="2" aria-hidden="true" />
-                </span>
-                <span class="flex-1 min-w-0">
-                  <span class="social-name">GitHub</span>
-                  <span class="social-sub">asadbekumarov</span>
-                </span>
-                <ExternalLink class="w-3.5 h-3.5 text-slate-600 group-hover:text-slate-400 transition-colors" :stroke-width="2" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-
         </div>
+
+        <!-- 4. Tech Stack -->
+        <div class="md:col-span-6 lg:col-span-5 p-6 sm:p-8 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20">
+          <h3 class="text-xs font-bold tracking-wider uppercase text-slate-500 mb-5">Texnologiyalar</h3>
+          <div class="flex flex-wrap gap-2.5">
+            <span
+              v-for="badge in techBadges"
+              :key="badge.name"
+              class="inline-flex items-center gap-2 bg-[#080c14] border border-[#1e293b] text-slate-300 rounded-xl px-3.5 py-2 text-sm font-medium hover:border-blue-500/30 transition-colors"
+            >
+              <span 
+                class="w-1.5 h-1.5 rounded-full" 
+                :style="{ backgroundColor: badge.color, boxShadow: `0 0 8px ${badge.color}80` }"
+                aria-hidden="true" 
+              />
+              {{ badge.name }}
+            </span>
+          </div>
+        </div>
+
+        <!-- 5. Quick Info -->
+        <div class="md:col-span-6 lg:col-span-4 p-6 sm:p-8 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20">
+          <h3 class="text-xs font-bold tracking-wider uppercase text-slate-500 mb-5">Qisqacha</h3>
+          <ul class="space-y-4">
+            <li
+              v-for="item in quickInfoItems"
+              :key="item.icon"
+              class="flex items-center justify-between gap-4"
+            >
+              <div class="flex items-center gap-3">
+                <MapPin        v-if="item.icon === 'location'"     class="w-4 h-4 text-blue-500" :stroke-width="2.5" aria-hidden="true" />
+                <Briefcase     v-else-if="item.icon === 'status'"  class="w-4 h-4 text-blue-500" :stroke-width="2.5" aria-hidden="true" />
+                <Clock         v-else-if="item.icon === 'availability'" class="w-4 h-4 text-blue-500" :stroke-width="2.5" aria-hidden="true" />
+                <Code2         v-else-if="item.icon === 'focus'"   class="w-4 h-4 text-blue-500" :stroke-width="2.5" aria-hidden="true" />
+                <span class="text-sm font-medium text-slate-400">{{ item.labelUz }}</span>
+              </div>
+              <span class="text-sm font-bold text-slate-200 text-right">{{ item.valueUz }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 6. Socials -->
+        <div class="md:col-span-12 lg:col-span-3 p-6 sm:p-8 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20 flex flex-col justify-center">
+          <h3 class="text-xs font-bold tracking-wider uppercase text-slate-500 mb-5">Tarmoqlar</h3>
+          <div class="flex flex-row lg:flex-col gap-3 h-full justify-center">
+            <a
+              href="https://www.linkedin.com/in/asadbek-umarov-ab9385376"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-center gap-3 bg-[#080c14] border border-[#1e293b] rounded-2xl p-4 hover:bg-[#1e293b] hover:border-blue-500/30 transition-all text-slate-300 group"
+              aria-label="LinkedIn"
+            >
+              <Linkedin class="w-6 h-6 text-blue-500 group-hover:scale-110 transition-transform" />
+              <span class="font-bold text-sm hidden sm:block lg:hidden xl:block">LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/asadbekumarov"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-center gap-3 bg-[#080c14] border border-[#1e293b] rounded-2xl p-4 hover:bg-[#1e293b] hover:border-slate-400/50 transition-all text-slate-300 group"
+              aria-label="GitHub"
+            >
+              <Github class="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+              <span class="font-bold text-sm hidden sm:block lg:hidden xl:block">GitHub</span>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-/* ─── 12-col grid ────────────────────────────── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-@media (min-width: 1024px) {
-  .about-grid {
-    grid-template-columns: 7fr 5fr;
-    gap: 2.5rem;
-  }
-}
-
-.about-left  { display: flex; flex-direction: column; }
-.about-right { display: flex; flex-direction: column; gap: 0.875rem; }
-
-/* ─── Base card ──────────────────────────────── */
-.bento-card {
-  background: rgba(3, 15, 29, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 1.125rem;
-  padding: 1.5rem;
-  transition: border-color 0.2s ease;
-}
-.bento-card:hover {
-  border-color: rgba(255, 255, 255, 0.13);
-}
-
-/* Photo — no padding, full width, aspect ratio */
-.bento-photo {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 1.125rem;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  aspect-ratio: 4 / 3;
-}
-@media (min-width: 1024px) {
-  .bento-photo { aspect-ratio: 4 / 5; }
-}
-
-/* Stats row */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.875rem;
-}
-
-/* ─── Stat card ──────────────────────────────── */
-.bento-stat {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.25rem;
-}
-.stat-value {
-  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-weight: 800;
-  color: #0145F2;
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-.stat-label {
-  font-size: 0.8rem;
-  color: #4a6a96;
-  line-height: 1.4;
-  max-width: 16ch;
-}
-
-/* ─── Tech badge inline ──────────────────────── */
-.tech-badge-inline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #94a8c4;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: border-color 0.2s, background 0.2s;
-}
-.tech-badge-inline:hover {
-  border-color: rgba(1, 69, 242, 0.3);
-  background: rgba(1, 69, 242, 0.06);
-}
-.tech-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--dot);
-  flex-shrink: 0;
-}
-
-/* ─── Card title ─────────────────────────────── */
-.bento-card-title {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #3d5a7a;
-}
-
-/* ─── Quick info ─────────────────────────────── */
-.quick-info-row {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-}
-.qi-icon {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  color: #0145F2;
-  opacity: 0.7;
-}
-.qi-label {
-  font-size: 0.8rem;
-  color: #4a6a96;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.qi-value {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #c5d4ef;
-  margin-left: auto;
-  text-align: right;
-}
-
-/* ─── Social buttons ─────────────────────────── */
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.625rem 0.75rem;
-  border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.02);
-  transition: border-color 0.2s, background 0.2s;
-}
-.social-btn:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-}
-.social-icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 0.5rem;
-  flex-shrink: 0;
-}
-.social-li {
-  background: rgba(1, 69, 242, 0.12);
-  color: #82aaff;
-}
-.social-gh {
-  background: rgba(255, 255, 255, 0.06);
-  color: #c5d4ef;
-}
-.social-name {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #c5d4ef;
-}
-.social-sub {
-  display: block;
-  font-size: 0.73rem;
-  color: #4a6a96;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+/* All styling is done with Tailwind CSS */
 </style>

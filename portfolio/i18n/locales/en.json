@@ -126,6 +126,8 @@
     "title": "Selected",
     "title_accent": "Works",
     "description": "Some of the projects I've developed and participated in.",
+    "view_all": "View All Projects",
+    "show_less": "Show Less",
     "status": {
       "development": "In Development",
       "completed": "Completed"
@@ -134,6 +136,11 @@
       "web_app": "Web App",
       "telegram_app": "Telegram Mini App",
       "mobile_app": "Mobile App"
+    },
+    "actions": {
+      "preview": "Preview",
+      "github": "GitHub",
+      "screenshot": "Screenshot"
     },
     "items": {
       "darrow": {

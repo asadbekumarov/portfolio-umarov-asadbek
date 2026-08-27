@@ -111,6 +111,7 @@ export const projects: Project[] = [
     title: 'AutoQuiz',
     categoryKey: 'web_app',
     icon: '📝',
+    link: 'https://auto-quiz-liard.vercel.app/',
     github: 'https://github.com/asadbekumarov',
     image: autoQuizImg,
     statusKey: 'projects.status.development',

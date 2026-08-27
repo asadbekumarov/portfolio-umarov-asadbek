@@ -122,6 +122,8 @@
     "title": "Tanlangan",
     "title_accent": "Ishlar",
     "description": "Men ishlab chiqqan va ishtirok etgan ba'zi loyihalar.",
+    "view_all": "Barchasini ko'rish",
+    "show_less": "Qisqartirish",
     "status": {
       "development": "Ish jarayonida",
       "completed": "Tugallangan"
@@ -130,6 +132,11 @@
       "web_app": "Veb ilova",
       "telegram_app": "Telegram Mini-ilova",
       "mobile_app": "Mobil ilova"
+    },
+    "actions": {
+      "preview": "Ko'rish",
+      "github": "GitHub",
+      "screenshot": "Rasm"
     },
     "items": {
       "darrow": {
