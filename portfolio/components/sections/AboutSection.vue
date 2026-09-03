@@ -47,11 +47,11 @@ const quickInfoItems = [
       <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 auto-rows-[minmax(0,auto)]">
         
         <!-- 1. Photo Card (Tall, Spans 2 Rows on Desktop) -->
-        <div class="md:col-span-5 lg:col-span-4 md:row-span-2 relative overflow-hidden rounded-[2rem] border border-[#1e293b] bg-[#0d1522] group h-64 md:h-full min-h-[300px] shadow-lg shadow-black/20">
+        <div class="md:col-span-5 lg:col-span-4 md:row-span-2 relative overflow-hidden rounded-[2rem] border border-[#1e293b] bg-[#0d1522] group h-96 sm:h-[440px] md:h-full min-h-[360px] md:min-h-[480px] shadow-lg shadow-black/20">
           <img
             src="/user.jpg"
             alt="Asadbek Umarov"
-            class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+            class="absolute inset-0 w-full h-full object-cover object-[center_45%] group-hover:scale-105 transition-transform duration-700"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#080c14]/90 via-[#080c14]/20 to-transparent pointer-events-none"></div>
