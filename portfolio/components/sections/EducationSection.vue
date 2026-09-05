@@ -2,12 +2,6 @@
 const { t } = useI18n();
 
 import { education } from '~/data';
-
-const learningNote = computed(() => t('education.learning_note', {
-    item1: `<strong class="text-sky-600 font-medium">${t('education.exploring.item1')}</strong>`,
-    item2: `<strong class="text-sky-600 font-medium">${t('education.exploring.item2')}</strong>`,
-    item3: `<strong class="text-sky-600 font-medium">${t('education.exploring.item3')}</strong>`,
-}));
 </script>
 
 <template>
@@ -16,10 +10,6 @@ const learningNote = computed(() => t('education.learning_note', {
         class="section-padding relative"
         aria-labelledby="education-heading"
     >
-
-
-
-
         <div class="section-container relative">
             <!-- ── Section Header ── -->
             <div class="text-center mb-10 sm:mb-14 px-2">
@@ -29,11 +19,6 @@ const learningNote = computed(() => t('education.learning_note', {
                 >
                     {{ $t('education.title') }} <span class="gradient-text">{{ $t('education.title_accent') }}</span>
                 </h2>
-                <p
-                    class="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/70"
-                >
-                    {{ $t('education.description') }}
-                </p>
             </div>
 
             <!-- ── Education Card ── -->
@@ -220,27 +205,6 @@ const learningNote = computed(() => t('education.learning_note', {
                                 {{ tag }}
                             </span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- ── Continuous Learning Note ── -->
-                <div
-                    class="glass-card mt-5 p-4 sm:p-5 flex items-start sm:items-center gap-3 sm:gap-4 scroll-animate delay-300 border-sky-500/15 bg-sky-500/5"
-                >
-                    <div
-                        class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-lg sm:text-xl bg-sky-500/10 border border-sky-500/20"
-                        aria-hidden="true"
-                    >
-                        📚
-                    </div>
-                    <div class="min-w-0">
-                        <p class="text-sm font-semibold text-slate-200">
-                            {{ $t('education.continuous_learning') }}
-                        </p>
-                        <p
-                            class="text-xs mt-0.5 text-slate-500"
-                            v-html="learningNote"
-                        ></p>
                     </div>
                 </div>
             </div>

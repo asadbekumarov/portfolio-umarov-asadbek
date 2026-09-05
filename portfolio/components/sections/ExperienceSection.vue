@@ -23,11 +23,6 @@ import { experiences } from '~/data';
             {{ $t('experience.title_accent') }}
           </span>
         </h2>
-        <p
-          class="mt-3 sm:mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400"
-        >
-          {{ $t('experience.description') }}
-        </p>
       </div>
 
       <!-- ── Timeline ── -->

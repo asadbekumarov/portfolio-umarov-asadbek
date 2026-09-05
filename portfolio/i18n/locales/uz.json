@@ -53,7 +53,6 @@
   "skills": {
     "title": "Ko'nikmalar va",
     "title_accent": "Texnologiyalar",
-    "description": "Haqiqiy loyihalar va doimiy o'rganish orqali shakllangan bilimlar to'plami.",
     "categories": {
       "core": {
         "title": "Asosiy tillar",
@@ -85,7 +84,6 @@
     "label": "Ish tajribasi",
     "title": "Professional",
     "title_accent": "Yo'l",
-    "description": "Mening professional tajribam va ishlagan loyihalarim.",
     "current": "Hozirgi vaqt",
     "items": {
       "soft_turtkul": {
@@ -196,18 +194,10 @@
     "label": "Ta'lim",
     "title": "Akademik",
     "title_accent": "Bilim",
-    "description": "Mening ta'lim va o'quv jarayonim.",
     "curriculum": "O'quv dasturi",
     "technologies": "Texnologiyalar",
-    "continuous_learning": "Doimiy o'rganish",
     "status": {
       "completed": "Tugatilgan"
-    },
-    "learning_note": "Men har doim yangi texnologiyalarni o'rganishga tayyorman. Hozirda {item1}, {item2} va {item3} bo'yicha chuqurlashmoqdaman.",
-    "exploring": {
-      "item1": "ilg'or React patternlari",
-      "item2": "Next.js App Router",
-      "item3": "veb unumdorlikni optimallashtirish"
     },
     "items": {
       "najot_talim": {
@@ -243,14 +233,12 @@
     "label": "Bog'lanish",
     "title": "Birga",
     "title_accent": "Ishlaylik",
-    "description": "Men frontend dasturchi lavozimlari va stajirovkalarni faol izlab yapman. Loyihangiz bo'lsa yoki shunchaki bog'lanishni istasangiz — mening pochtam doim ochiq.",
     "cards": {
       "email": "Email",
       "phone": "Telefon",
       "linkedin": "LinkedIn",
       "telegram": "Telegram"
     },
-    "divider_text": "yoki to'g'ridan-to'g'ri bog'laning",
     "cta_email": "Menga email yuboring"
   },
   "seo": {

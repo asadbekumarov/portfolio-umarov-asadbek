@@ -14,8 +14,6 @@ import { skillCategories } from '~/data';
     <div class="section-container relative">
       <!-- Header -->
       <div class="text-center mb-10 sm:mb-14">
-    
-
         <h2
           id="skills-heading"
           class="section-title mt-2 scroll-animate delay-100"
@@ -23,12 +21,6 @@ import { skillCategories } from '~/data';
           {{ $t('skills.title') }}
           <span class="gradient-text">{{ $t('skills.title_accent') }}</span>
         </h2>
-
-        <p
-          class="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/70 px-2"
-        >
-          {{ $t('skills.description') }}
-        </p>
       </div>
 
       <!-- Skills Grid -->

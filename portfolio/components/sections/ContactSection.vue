@@ -14,20 +14,12 @@ import { contacts } from '~/data';
         <div class="section-container relative">
             <!-- ── Section Header ── -->
             <div class="text-center mb-10 sm:mb-14 px-2">
-           
-
                 <h2
                     id="contact-heading"
                     class="section-title mt-2 scroll-animate delay-100"
                 >
                     {{ $t('contact.title') }} <span class="gradient-text">{{ $t('contact.title_accent') }}</span>
                 </h2>
-
-                <p
-                    class="mt-4 max-w-lg mx-auto text-sm sm:text-base leading-relaxed scroll-animate delay-200 text-slate-400/70"
-                >
-                    {{ $t('contact.description') }}
-                </p>
             </div>
 
             <!-- ── Contact Cards Grid ── -->
@@ -157,22 +149,7 @@ import { contacts } from '~/data';
 
                 <!-- ── Primary CTA ── -->
                 <div class="text-center scroll-animate delay-400">
-                    <!-- Decorative "or" divider -->
-                    <div class="flex items-center gap-4 mb-8">
-                        <div
-                            class="flex-1 h-px bg-slate-200/5"
-                            aria-hidden="true"
-                        />
-                        <span
-                            class="text-xs font-semibold tracking-widest uppercase text-slate-400/20 whitespace-nowrap"
-                        >
-                            {{ $t('contact.divider_text') }}
-                        </span>
-                        <div
-                            class="flex-1 h-px bg-slate-200/5"
-                            aria-hidden="true"
-                        />
-                    </div>
+         
 
                     <a
                         href="mailto:asadbekumarov922@gmail.com"

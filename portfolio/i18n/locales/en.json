@@ -54,7 +54,6 @@
   "skills": {
     "title": "Skills &",
     "title_accent": "Technologies",
-    "description": "A focused toolkit forged through real-world projects and continuous self-driven learning.",
     "categories": {
       "core": {
         "title": "Core Languages",
@@ -85,7 +84,6 @@
   "experience": {
     "title": "Professional",
     "title_accent": "Journey",
-    "description": "My professional path and the projects I've worked on.",
     "current": "Present",
     "open_to_work": "Open to Work",
     "seeking": "Seeking",
@@ -121,7 +119,6 @@
   "projects": {
     "title": "Selected",
     "title_accent": "Works",
-    "description": "Some of the projects I've developed and participated in.",
     "view_all": "View All Projects",
     "show_less": "Show Less",
     "status": {
@@ -198,18 +195,10 @@
   "education": {
     "title": "Academic",
     "title_accent": "Knowledge",
-    "description": "My education and learning process.",
     "curriculum": "Curriculum",
     "technologies": "Technologies",
-    "continuous_learning": "Continuous Learning",
     "status": {
       "completed": "Completed"
-    },
-    "learning_note": "I am always ready to learn new technologies. Currently deepening my skills in {item1}, {item2}, and {item3}.",
-    "exploring": {
-      "item1": "advanced React patterns",
-      "item2": "Next.js App Router",
-      "item3": "web performance optimization"
     },
     "items": {
       "najot_talim": {
@@ -244,14 +233,12 @@
   "contact": {
     "title": "Let's Work",
     "title_accent": "Together",
-    "description": "I'm actively seeking frontend developer roles and internships. Whether you have a project in mind or simply want to connect — my inbox is always open.",
     "cards": {
       "email": "Email",
       "phone": "Phone",
       "linkedin": "LinkedIn",
       "telegram": "Telegram"
     },
-    "divider_text": "or reach out directly",
     "cta_email": "Send Me an Email"
   },
   "seo": {
