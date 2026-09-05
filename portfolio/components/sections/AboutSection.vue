@@ -11,9 +11,8 @@ const techBadges = [
 ]
 
 const bentoStats = [
-  { value: '1+',   labelUz: 'Yillik tajriba',        suffix: '' },
-  { value: '5K+',  labelUz: 'Tranzaksiya', suffix: '' },
-  { value: '100%', labelUz: 'Clean code', suffix: '' },
+  { value: '1+',   labelUz: 'Yillik tajriba', suffix: '' },
+  { value: '100%', labelUz: 'Clean code',     suffix: '' },
 ]
 
 const quickInfoItems = [
@@ -34,9 +33,6 @@ const quickInfoItems = [
 
       <!-- Section Title for Mobile (Hidden on Desktop where it's in the Bio card) -->
       <div class="md:hidden mb-8 text-center">
-        <span class="text-xs font-bold tracking-widest uppercase text-blue-500 mb-3 block">
-          {{ t('about.label') }}
-        </span>
         <h2 id="about-heading" class="text-3xl font-bold text-white mt-2" style="font-family: 'Space Grotesk', sans-serif;">
           {{ t('about.title') }}
           <span class="text-blue-500"> {{ t('about.title_accent') }}</span>
@@ -64,9 +60,6 @@ const quickInfoItems = [
         <!-- 2. Bio Card (Wide) -->
         <div class="md:col-span-7 lg:col-span-8 p-6 sm:p-8 lg:p-10 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20 flex flex-col justify-center">
           <div class="hidden md:block mb-6">
-            <span class="text-xs font-bold tracking-widest uppercase text-blue-500 mb-2 block">
-              {{ t('about.label') }}
-            </span>
             <h2 class="text-3xl lg:text-4xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">
               {{ t('about.title') }} <span class="text-blue-500">{{ t('about.title_accent') }}</span>
             </h2>
@@ -84,14 +77,14 @@ const quickInfoItems = [
 
         <!-- 3. Stats Card (Wide) -->
         <div class="md:col-span-7 lg:col-span-8 p-6 sm:p-8 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20 flex items-center">
-          <div class="grid grid-cols-3 gap-2 sm:gap-4 divide-x divide-slate-800/60 w-full">
+          <div class="grid grid-cols-2 gap-4 sm:gap-6 divide-x divide-slate-800/60 w-full">
             <div
               v-for="stat in bentoStats"
               :key="stat.value"
-              class="flex flex-col items-center justify-center px-2 text-center"
+              class="flex flex-col items-center justify-center px-4 text-center"
             >
               <span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-2" style="font-family: 'Space Grotesk', sans-serif;">{{ stat.value }}</span>
-              <span class="text-[10px] sm:text-xs text-blue-400 uppercase tracking-wider font-semibold">{{ stat.labelUz }}</span>
+              <span class="text-xs sm:text-sm text-blue-400 uppercase tracking-wider font-semibold">{{ stat.labelUz }}</span>
             </div>
           </div>
         </div>

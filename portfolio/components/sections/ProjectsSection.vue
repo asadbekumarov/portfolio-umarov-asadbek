@@ -39,9 +39,7 @@ function onKeydown(e: KeyboardEvent) {
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <!-- ── Section Header ── -->
             <div class="text-center mb-12 sm:mb-16">
-                <span class="text-xs font-bold tracking-widest uppercase text-blue-500 mb-3 block">
-                    {{ $t('projects.label') }}
-                </span>
+     
                 <h2
                     id="projects-heading"
                     class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-2"
@@ -49,11 +47,7 @@ function onKeydown(e: KeyboardEvent) {
                 >
                     {{ $t('projects.title') }} <span class="text-blue-500">{{ $t('projects.title_accent') }}</span>
                 </h2>
-                <p
-                    class="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed text-slate-400"
-                >
-                    {{ $t('projects.description') }}
-                </p>
+          
             </div>
 
             <!-- ── Bento Grid ── -->

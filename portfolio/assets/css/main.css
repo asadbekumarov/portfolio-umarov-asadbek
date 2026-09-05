@@ -1,6 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Italiana&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Prata&family=Sacramento&family=Satisfy&display=swap');
+
+@font-face {
+    font-family: 'Cloudes';
+    src: url('/fonts/clouds.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Malison';
+    src: url('/fonts/malison.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-cloudes {
+    font-family: 'Cloudes', cursive, sans-serif;
+}
+
+.font-baik {
+    font-family: 'Baik', 'Bodoni Moda', 'Playfair Display', 'Cinzel', serif;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+.font-malison {
+    font-family: 'Malison', sans-serif;
+}
+
+.font-signature {
+    font-family: 'Great Vibes', 'Alex Brush', 'Dancing Script', 'Sacramento', cursive, sans-serif;
+}
 
 /* =============================================
    KEYFRAMES

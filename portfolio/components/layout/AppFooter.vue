@@ -21,12 +21,6 @@ const { scrollToTop, scrollToSection } = useNavigation()
       aria-hidden="true"
     />
 
-    <!-- Background glow -->
-    <div
-      class="pointer-events-none absolute -bottom-20 left-1/2 -translate-x-1/2 w-[420px] h-[180px] bg-[#0145F2]/[0.08] blur-[100px] rounded-full"
-      aria-hidden="true"
-    />
-
     <div class="section-container pt-14 sm:pt-16 pb-8 relative z-10">
       <!-- ── Top Main Grid ── -->
       <div

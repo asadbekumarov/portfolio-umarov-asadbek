@@ -22,9 +22,6 @@ const techStack = [
     class="relative min-h-screen flex items-center overflow-hidden hero-bg"
     aria-label="Introduction"
   >
-    <!-- Subtle radial glow -->
-    <div class="hero-glow" aria-hidden="true" />
-
     <div class="section-container relative z-10 w-full py-28 sm:py-32">
       <div class="hero-grid">
 
@@ -89,7 +86,12 @@ const techStack = [
               </svg>
               {{ t('hero.cta_view') }}
             </a>
-            <a href="/resume-asadbek-umarov.pdf" download class="btn-secondary">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              download="Asadbek_Umarov_Resume.pdf"
+              class="btn-secondary"
+            >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="7 10 12 15 17 10" />
@@ -137,16 +139,6 @@ const techStack = [
 /* ─── Background ─── */
 .hero-bg {
   background-color: #030f1d;
-}
-.hero-glow {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse 70% 55% at 35% 45%,
-    rgba(1, 69, 242, 0.065) 0%,
-    transparent 70%
-  );
-  pointer-events: none;
 }
 
 /* ─── Grid ─── */

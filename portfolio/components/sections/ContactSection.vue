@@ -14,9 +14,7 @@ import { contacts } from '~/data';
         <div class="section-container relative">
             <!-- ── Section Header ── -->
             <div class="text-center mb-10 sm:mb-14 px-2">
-                <span class="section-label mb-3 scroll-animate">
-                    {{ $t('contact.label') }}
-                </span>
+           
 
                 <h2
                     id="contact-heading"

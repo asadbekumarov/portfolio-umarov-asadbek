@@ -2,7 +2,7 @@
   "welcome": "Xush kelibsiz!",
   "description": "Bu mening Nuxt 3 portfolio loyiham.",
   "nav": {
-    "about": "Haqida",
+    "about": "Man Haqimda",
     "skills": "Ko'nikmalar",
     "experience": "Tajriba",
     "projects": "Loyihalar",
@@ -13,7 +13,6 @@
     "connect": "Bog'lanish"
   },
   "about": {
-    "label": "Men haqimda",
     "title": "Dasturlash va yaratishga bo'lgan",
     "title_accent": "ishtiyoq",
     "description_1": "Mening ismim {name}. {tech} texnologiyalari yordamida zamonaviy veb va kross-platforma mobil ilovalari yarataman.",
@@ -52,7 +51,6 @@
     "cta_contact": "Bog'lanish"
   },
   "skills": {
-    "label": "Texnik bilimlar",
     "title": "Ko'nikmalar va",
     "title_accent": "Texnologiyalar",
     "description": "Haqiqiy loyihalar va doimiy o'rganish orqali shakllangan bilimlar to'plami.",
@@ -121,7 +119,6 @@
     "label": "Loyihalar",
     "title": "Tanlangan",
     "title_accent": "Ishlar",
-    "description": "Men ishlab chiqqan va ishtirok etgan ba'zi loyihalar.",
     "view_all": "Barchasini ko'rish",
     "show_less": "Qisqartirish",
     "status": {

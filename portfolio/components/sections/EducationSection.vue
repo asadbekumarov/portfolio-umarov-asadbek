@@ -23,7 +23,6 @@ const learningNote = computed(() => t('education.learning_note', {
         <div class="section-container relative">
             <!-- ── Section Header ── -->
             <div class="text-center mb-10 sm:mb-14 px-2">
-                <span class="section-label mb-3 scroll-animate">{{ $t('education.label') }}</span>
                 <h2
                     id="education-heading"
                     class="section-title mt-2 scroll-animate delay-100"

@@ -14,9 +14,6 @@ import { experiences } from '~/data';
     <div class="section-container relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
       <!-- ── Section Header ── -->
       <div class="text-center mb-12 sm:mb-16">
-        <span class="section-label mb-3 inline-block text-xs sm:text-sm font-semibold tracking-wider text-[#0145f2] uppercase scroll-animate">
-          {{ $t('experience.label') }}
-        </span>
         <h2
           id="experience-heading"
           class="section-title text-2xl sm:text-4xl font-extrabold text-slate-100 scroll-animate delay-100"

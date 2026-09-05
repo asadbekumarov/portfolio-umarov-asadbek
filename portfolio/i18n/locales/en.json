@@ -2,7 +2,7 @@
   "welcome": "Welcome!",
   "description": "This is my Nuxt 3 portfolio project.",
   "nav": {
-    "about": "About",
+    "about": "About Me",
     "skills": "Skills",
     "experience": "Experience",
     "projects": "Projects",
@@ -13,7 +13,6 @@
     "connect": "Connect"
   },
   "about": {
-    "label": "About Me",
     "title": "Passionate about building",
     "title_accent": "impactful products",
     "description_1": "My name is {name}. I build web and cross-platform mobile applications using {tech}.",
@@ -53,7 +52,6 @@
     "cta_contact": "Get in Touch"
   },
   "skills": {
-    "label": "Technical Expertise",
     "title": "Skills &",
     "title_accent": "Technologies",
     "description": "A focused toolkit forged through real-world projects and continuous self-driven learning.",
@@ -85,7 +83,6 @@
     }
   },
   "experience": {
-    "label": "Experience",
     "title": "Professional",
     "title_accent": "Journey",
     "description": "My professional path and the projects I've worked on.",
@@ -122,7 +119,6 @@
     }
   },
   "projects": {
-    "label": "Projects",
     "title": "Selected",
     "title_accent": "Works",
     "description": "Some of the projects I've developed and participated in.",
@@ -200,7 +196,6 @@
     }
   },
   "education": {
-    "label": "Education",
     "title": "Academic",
     "title_accent": "Knowledge",
     "description": "My education and learning process.",
@@ -247,7 +242,6 @@
     }
   },
   "contact": {
-    "label": "Get In Touch",
     "title": "Let's Work",
     "title_accent": "Together",
     "description": "I'm actively seeking frontend developer roles and internships. Whether you have a project in mind or simply want to connect — my inbox is always open.",
