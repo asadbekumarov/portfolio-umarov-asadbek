@@ -63,6 +63,16 @@
     }
 }
 
+@keyframes orbPulse {
+    0%, 100% { opacity: 0.30; transform: scale(1);   }
+    50%       { opacity: 0.45; transform: scale(1.08); }
+}
+@keyframes orbDrift {
+    0%, 100% { transform: translate(0, 0);     }
+    33%      { transform: translate(30px, -20px); }
+    66%      { transform: translate(-20px, 25px); }
+}
+
 /* =============================================
    BASE (Canvas Cloud & Electric Blue Theme)
    ============================================= */
@@ -80,8 +90,13 @@
     }
 
     body {
-        /* Asosiy fon — Canvas Cloud (#EDF1F5 bo'yoq effekti uchun to'q quyuq fon) */
+        /* Asosiy fon */
         background-color: #030712;
+        /* Nozik ko'k to'r fon (subtle grid) */
+        background-image:
+            linear-gradient(rgba(1, 69, 242, 0.045) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(1, 69, 242, 0.045) 1px, transparent 1px);
+        background-size: 48px 48px;
         /* Asosiy matn — Ochiq bo'z rang (#EDF1F5) */
         color: #EDF1F5;
         font-family:

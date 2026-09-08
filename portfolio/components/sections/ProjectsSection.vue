@@ -33,7 +33,7 @@ function onKeydown(e: KeyboardEvent) {
 <template>
     <section
         id="projects"
-        class="py-20 sm:py-28 relative bg-[#080c14]"
+        class="py-20 sm:py-28 relative"
         aria-labelledby="projects-heading"
     >
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">

@@ -26,7 +26,7 @@ const quickInfoItems = [
 <template>
   <section
     id="about"
-    class="py-20 sm:py-28 relative bg-[#080c14]"
+    class="py-20 sm:py-28 relatives"
     aria-labelledby="about-heading"
   >
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">

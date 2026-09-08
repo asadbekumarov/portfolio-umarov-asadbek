@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { projects } from '~/data';
 const { t } = useI18n()
 
 const scrollToSection = (hash: string): void => {
@@ -14,12 +15,23 @@ const techStack = [
   { name: 'React Native',  icon: 'mobile'     },
 ]
 
+// CardSwap uchun top 4 project ma'lumotlari
+const heroCards = projects.slice(0, 4).map(p => ({
+  key:          p.key,
+  title:        p.title,
+  icon:         p.icon,
+  technologies: p.technologies.slice(0, 3),
+  link:         p.link,
+  statusKey:    p.statusKey,
+  image:        p.image,
+}))
+
 </script>
 
 <template>
   <section
     id="hero"
-    class="relative min-h-screen flex items-center overflow-hidden hero-bg"
+    class="relative min-h-screen flex items-center overflow-hidden"
     aria-label="Introduction"
   >
     <div class="section-container relative z-10 w-full py-28 sm:py-32">
@@ -28,7 +40,7 @@ const techStack = [
         <!-- ═══════════════════════════════
              LEFT — Text / CTA
              ═══════════════════════════════ -->
-        <div class="hero-left">
+        <div class="hero-left relative z-20">
 
 
           <!-- H1 -->
@@ -103,30 +115,72 @@ const techStack = [
         </div>
 
         <!-- ═══════════════════════════════
-             RIGHT — Terminal code block
+             RIGHT — CardSwap (desktop only)
              ═══════════════════════════════ -->
-        <div class="hero-right hero-code-wrap">
-          <div class="terminal-card">
-            <!-- Window chrome -->
-            <div class="terminal-bar">
-              <span class="dot dot-red"   aria-hidden="true" />
-              <span class="dot dot-amber" aria-hidden="true" />
-              <span class="dot dot-green" aria-hidden="true" />
-              <span class="terminal-file">profile.ts</span>
-            </div>
-            <!-- Code -->
-            <pre class="terminal-body" aria-label="Code sample"><code><span class="c-comment">// profile.ts — TypeScript</span>
+        <div class="hero-right hero-code-wrap hidden lg:flex items-center justify-center relative z-10">
+          <div class="card-swap-stage" aria-label="Featured projects showcase">
+            <VCardSwap
+              :item-count="heroCards.length"
+              :width="340"
+              :height="220"
+              :card-distance="45"
+              :vertical-distance="55"
+              :delay="4000"
+              :pause-on-hover="true"
+              :skew-amount="5"
+              easing="elastic"
+              @card-click="(i) => scrollToSection('#projects')"
+            >
+              <template #default="{ index }">
+                <div class="project-card-inner">
 
-<span class="c-keyword">const</span> <span class="c-var">profile</span> <span class="c-op">=</span> <span class="c-brace">{</span>
-  <span class="c-prop">name</span><span class="c-op">:</span> <span class="c-str">'Asadbek'</span><span class="c-op">,</span>
-  <span class="c-prop">age</span><span class="c-op">:</span> <span class="c-num">19</span><span class="c-op">,</span>
-  <span class="c-prop">phone</span><span class="c-op">:</span> <span class="c-str">'77 268 7865'</span><span class="c-op">,</span>
-<span class="c-brace">}</span>
+                  <!-- Top row: emoji icon + status -->
+                  <div class="pc-header">
+                    <span class="pc-emoji" aria-hidden="true">{{ heroCards[index]?.icon }}</span>
+                    <span
+                      class="pc-status"
+                      :class="heroCards[index]?.statusKey?.includes('development')
+                        ? 'pc-status--dev' : 'pc-status--done'"
+                    >
+                      {{ heroCards[index]?.statusKey?.includes('development') ? 'In Progress' : 'Live' }}
+                    </span>
+                  </div>
 
-<span class="c-fn">console</span><span class="c-op">.</span><span class="c-method">log</span><span class="c-paren">(</span><span class="c-tpl">`Name: <span class="c-interp">${</span><span class="c-var">profile</span><span class="c-op">.</span><span class="c-prop">name</span><span class="c-interp">}</span>`</span><span class="c-paren">)</span>
-<span class="c-fn">console</span><span class="c-op">.</span><span class="c-method">log</span><span class="c-paren">(</span><span class="c-tpl">`Age: <span class="c-interp">${</span><span class="c-var">profile</span><span class="c-op">.</span><span class="c-prop">age</span><span class="c-interp">}</span>`</span><span class="c-paren">)</span>
-<span class="c-fn">console</span><span class="c-op">.</span><span class="c-method">log</span><span class="c-paren">(</span><span class="c-tpl">`Phone: <span class="c-interp">${</span><span class="c-var">profile</span><span class="c-op">.</span><span class="c-prop">phone</span><span class="c-interp">}</span>`</span><span class="c-paren">)</span></code></pre>
+                  <!-- Title -->
+                  <h3 class="pc-title">{{ heroCards[index]?.title }}</h3>
 
+                  <!-- Tech stack pills -->
+                  <div class="pc-techs" aria-label="Technologies used">
+                    <span
+                      v-for="tech in heroCards[index]?.technologies"
+                      :key="tech"
+                      class="pc-tech-pill"
+                    >{{ tech }}</span>
+                  </div>
+
+                  <!-- Footer: link -->
+                  <div class="pc-footer">
+                    <a
+                      v-if="heroCards[index]?.link"
+                      :href="heroCards[index]?.link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="pc-link"
+                      @click.stop
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                      View Live
+                    </a>
+                    <span class="pc-hint">Click to see all →</span>
+                  </div>
+
+                </div>
+              </template>
+            </VCardSwap>
           </div>
         </div>
 
@@ -140,6 +194,125 @@ const techStack = [
 .hero-bg {
   background-color: #030f1d;
 }
+
+/* ─── CardSwap stage ───────────────────────────────────────────────
+   VCardSwap ni markazda ushlab turadi.
+   VCardSwap o'zi relative + centered — absolute bottom-right emas.
+   ─────────────────────────────────────────────────────────────── */
+.card-swap-stage {
+  position: relative;
+  width: 380px;
+  height: 420px;
+  /* Kartalar stage dan biroz chiqishi mumkin — clip bo'lmasin */
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Project card inner content ───────────────────────────────── */
+.project-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem 1.375rem;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 21, 41, 0.96) 0%,
+    rgba(6, 11, 28, 0.98) 100%
+  );
+  gap: 0.625rem;
+}
+
+/* ── Header row: emoji + status badge ── */
+.pc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pc-emoji {
+  font-size: 1.75rem;
+  line-height: 1;
+  user-select: none;
+}
+.pc-status {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid;
+}
+.pc-status--done {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+  border-color: rgba(74, 222, 128, 0.25);
+}
+.pc-status--dev {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+  border-color: rgba(251, 191, 36, 0.25);
+}
+
+/* ── Title ── */
+.pc-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f0f4ff;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* ── Tech stack pills ── */
+.pc-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: auto;
+}
+.pc-tech-pill {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.375rem;
+  background: rgba(1, 69, 242, 0.12);
+  color: #6ea4ff;
+  border: 1px solid rgba(1, 69, 242, 0.25);
+  white-space: nowrap;
+}
+
+/* ── Footer ── */
+.pc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.pc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0145F2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.pc-link:hover {
+  color: #5588ff;
+}
+.pc-hint {
+  font-size: 0.6875rem;
+  color: #2d4060;
+  user-select: none;
+  white-space: nowrap;
+}
+
 
 /* ─── Grid ─── */
 .hero-grid {
