@@ -186,6 +186,17 @@ const heroCards = projects.slice(0, 4).map(p => ({
 
       </div>
     </div>
+
+    <!-- Gradual Blur layer at bottom of Hero section -->
+    <GradualBlur
+      position="bottom"
+      height="6rem"
+      :strength="2.5"
+      :div-count="6"
+      curve="bezier"
+      :exponential="true"
+      :opacity="1"
+    />
   </section>
 </template>
 
