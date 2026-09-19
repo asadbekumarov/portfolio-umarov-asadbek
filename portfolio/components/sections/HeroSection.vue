@@ -10,7 +10,7 @@ const scrollToSection = (hash: string): void => {
 
 const windowOpen = (url: string): void => {
   if (typeof window !== 'undefined' && url) {
-    window.open(url, '_blank')
+    window.open(url, '_blank', 'noopener,noreferrer')
   }
 }
 
@@ -22,13 +22,38 @@ const techStack = [
   { name: 'React Native',  icon: 'mobile'     },
 ]
 
-// Faqat Smart Life va DNA-Technology kartochkalari (rasmlari assetsdan)
-const heroCards = [
+// Window width for responsive 3D card presentation
+const windowWidth = ref(1200)
+const updateSize = () => {
+  if (typeof window !== 'undefined') {
+    windowWidth.value = window.innerWidth
+  }
+}
+
+onMounted(() => {
+  updateSize()
+  window.addEventListener('resize', updateSize, { passive: true })
+})
+
+onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('resize', updateSize)
+  }
+})
+
+const isSmall = computed(() => windowWidth.value < 640)
+const cardWidth = computed(() => (windowWidth.value < 360 ? 285 : windowWidth.value < 640 ? 315 : 430))
+const cardHeight = computed(() => (windowWidth.value < 640 ? 245 : 305))
+const cardDistX = computed(() => (windowWidth.value < 640 ? 20 : 42))
+const cardDistY = computed(() => (windowWidth.value < 640 ? 24 : 48))
+
+// Faqat Smart Life va DNA-Technology kartochkalari (i18n bilan)
+const heroCards = computed(() => [
   {
     key: 'smart_life',
     title: 'Smart Life',
-    subtitle: 'Elektronika platformasi',
-    badge: 'Live Project',
+    subtitle: t('hero.cards.smart_life_sub'),
+    badge: t('hero.cards.live_badge'),
     image: smartlifeImg,
     link: 'https://www.smartlife.uz/uz',
     technologies: ['Next.js', 'TypeScript', 'RTK Query'],
@@ -36,13 +61,13 @@ const heroCards = [
   {
     key: 'dna_technology',
     title: 'DNA-Technology',
-    subtitle: 'Tibbiy tashxis portali',
-    badge: 'Live Project',
+    subtitle: t('hero.cards.dna_sub'),
+    badge: t('hero.cards.live_badge'),
     image: dnkImg,
     link: 'https://dnk-expert.vercel.app/uz',
     technologies: ['Next.js', 'TypeScript', 'REST API'],
   },
-]
+])
 </script>
 
 <template>
@@ -133,17 +158,17 @@ const heroCards = [
         <!-- ═══════════════════════════════
              RIGHT — Continuous Looping Project Cards
              ═══════════════════════════════ -->
-        <div class="hero-right hero-code-wrap hidden lg:flex items-center justify-center relative z-10">
+        <div class="hero-right hero-code-wrap flex items-center justify-center relative z-10 w-full mt-10 lg:mt-0">
           <div class="card-swap-stage" aria-label="Featured projects showcase">
             <VCardSwap
               :item-count="heroCards.length"
-              :width="430"
-              :height="305"
-              :card-distance="42"
-              :vertical-distance="48"
+              :width="cardWidth"
+              :height="cardHeight"
+              :card-distance="cardDistX"
+              :vertical-distance="cardDistY"
               :delay="3200"
               :pause-on-hover="true"
-              :skew-amount="4"
+              :skew-amount="isSmall ? 2 : 4"
               easing="linear"
               @card-click="(i) => heroCards[i]?.link && windowOpen(heroCards[i]?.link)"
             >
@@ -181,20 +206,17 @@ const heroCards = [
                         >{{ tech }}</span>
                       </div>
 
-                      <a
-                        :href="heroCards[index]?.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="pc-link"
-                        @click.stop
+                      <span
+                        class="pc-link cursor-pointer"
+                        aria-hidden="true"
                       >
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                           <polyline points="15 3 21 3 21 9" />
                           <line x1="10" y1="14" x2="21" y2="3" />
                         </svg>
-                        Ochish
-                      </a>
+                        {{ t('hero.open_project') }}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -234,6 +256,17 @@ const heroCards = [
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .card-swap-stage {
+    width: 100%;
+    max-width: 350px;
+    height: 310px;
+  }
+  .pc-image-wrap {
+    height: 135px;
+  }
 }
 
 .project-card-inner {

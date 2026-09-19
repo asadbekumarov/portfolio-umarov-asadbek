@@ -48,7 +48,13 @@
     "tagline": "Ishlab chiqarishga tayyor ilovalar yaratuvchi frontend dasturchi. 5000+ buyurtmalarni qayta ishlagan Telegram WebApp va haqiqiy mijozlarga xizmat qiluvchi e-commerce platformasini React, Next.js, TypeScript va RTK Query yordamida yaratdim.",
     "location": "Toshkent, O'zbekiston",
     "cta_view": "Loyihalarni ko'rish",
-    "cta_contact": "Bog'lanish"
+    "cta_contact": "Bog'lanish",
+    "cards": {
+      "smart_life_sub": "Elektronika platformasi",
+      "dna_sub": "Tibbiy tashxis portali",
+      "live_badge": "Jonli loyiha"
+    },
+    "open_project": "Ochish"
   },
   "skills": {
     "title": "Ko'nikmalar va",

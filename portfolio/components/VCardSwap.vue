@@ -114,9 +114,11 @@ const swap = () => {
   });
   tlRef = tl;
 
+  const dropDist = typeof props.height === 'number' ? props.height * 1.35 : 420;
+
   // 1. Birinchi kartni pastga tushir
   tl.to(elFront, {
-    y:        '+=480',
+    y:        `+=${dropDist}`,
     opacity:  0.8,
     duration: cfg.durDrop,
     ease:     cfg.ease,
@@ -150,7 +152,7 @@ const swap = () => {
   );
 };
 
-// ── Hover interaction ─────────────────────────────────────────────
+// ── Hover & Touch interaction ─────────────────────────────────────
 const onMouseEnter = () => {
   if (!props.pauseOnHover) return;
   if (swapTimer) clearTimeout(swapTimer);
@@ -161,6 +163,29 @@ const onMouseLeave = () => {
   if (!props.pauseOnHover) return;
   tlRef?.play();
   scheduleNext();
+};
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+const onTouchStart = (e: TouchEvent) => {
+  if (!e.touches[0]) return;
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+  if (props.pauseOnHover && swapTimer) clearTimeout(swapTimer);
+};
+
+const onTouchEnd = (e: TouchEvent) => {
+  if (!e.changedTouches[0]) return;
+  const deltaX = e.changedTouches[0].clientX - touchStartX;
+  const deltaY = e.changedTouches[0].clientY - touchStartY;
+
+  // Agar gorizontal swipe sezilarli bo'lsa (> 45px)
+  if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+    swap();
+  } else {
+    scheduleNext();
+  }
 };
 
 // ── Tab visibility interaction ───────────────────────────────────
@@ -174,6 +199,20 @@ const handleVisibilityChange = () => {
     scheduleNext();
   }
 };
+
+// ── Reactivity on prop changes ───────────────────────────────────
+watch(
+  () => [props.cardDistance, props.verticalDistance, props.skewAmount, props.itemCount],
+  () => {
+    const total = cardEls.value.length;
+    order.value.forEach((idx, i) => {
+      const el = cardEls.value[idx];
+      if (el) {
+        placeNow(el, makeSlot(i, props.cardDistance, props.verticalDistance, total), props.skewAmount);
+      }
+    });
+  },
+);
 
 // ── Lifecycle ────────────────────────────────────────────────────
 onMounted(() => {
@@ -215,10 +254,12 @@ const containerStyle = computed(() => ({
 <template>
   <div
     ref="containerRef"
-    class="relative overflow-visible"
+    class="relative overflow-visible touch-pan-y"
     :style="{ ...containerStyle, perspective: '900px' }"
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
+    @touchstart.passive="onTouchStart"
+    @touchend.passive="onTouchEnd"
   >
     <div
       v-for="i in itemCount"
