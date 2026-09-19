@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import { projects } from '~/data';
+import smartlifeImg from '~/assets/images/smartlife.png';
+import dnkImg from '~/assets/images/dnk-expert.png';
 const { t } = useI18n()
 
 const scrollToSection = (hash: string): void => {
   const el = document.querySelector(hash)
   if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
+
+const windowOpen = (url: string): void => {
+  if (typeof window !== 'undefined' && url) {
+    window.open(url, '_blank')
+  }
 }
 
 const techStack = [
@@ -15,17 +22,27 @@ const techStack = [
   { name: 'React Native',  icon: 'mobile'     },
 ]
 
-// CardSwap uchun top 4 project ma'lumotlari
-const heroCards = projects.slice(0, 4).map(p => ({
-  key:          p.key,
-  title:        p.title,
-  icon:         p.icon,
-  technologies: p.technologies.slice(0, 3),
-  link:         p.link,
-  statusKey:    p.statusKey,
-  image:        p.image,
-}))
-
+// Faqat Smart Life va DNA-Technology kartochkalari (rasmlari assetsdan)
+const heroCards = [
+  {
+    key: 'smart_life',
+    title: 'Smart Life',
+    subtitle: 'Elektronika platformasi',
+    badge: 'Live Project',
+    image: smartlifeImg,
+    link: 'https://www.smartlife.uz/uz',
+    technologies: ['Next.js', 'TypeScript', 'RTK Query'],
+  },
+  {
+    key: 'dna_technology',
+    title: 'DNA-Technology',
+    subtitle: 'Tibbiy tashxis portali',
+    badge: 'Live Project',
+    image: dnkImg,
+    link: 'https://dnk-expert.vercel.app/uz',
+    technologies: ['Next.js', 'TypeScript', 'REST API'],
+  },
+]
 </script>
 
 <template>
@@ -41,7 +58,6 @@ const heroCards = projects.slice(0, 4).map(p => ({
              LEFT — Text / CTA
              ═══════════════════════════════ -->
         <div class="hero-left relative z-20">
-
 
           <!-- H1 -->
           <h1 class="hero-title">
@@ -89,7 +105,7 @@ const heroCards = projects.slice(0, 4).map(p => ({
             </li>
           </ul>
 
-          <!-- CTA buttons — clear hierarchy -->
+          <!-- CTA buttons -->
           <div class="cta-row hero-ctas">
             <a href="#projects" class="btn-primary" @click.prevent="scrollToSection('#projects')">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -115,69 +131,72 @@ const heroCards = projects.slice(0, 4).map(p => ({
         </div>
 
         <!-- ═══════════════════════════════
-             RIGHT — CardSwap (desktop only)
+             RIGHT — Continuous Looping Project Cards
              ═══════════════════════════════ -->
         <div class="hero-right hero-code-wrap hidden lg:flex items-center justify-center relative z-10">
           <div class="card-swap-stage" aria-label="Featured projects showcase">
             <VCardSwap
               :item-count="heroCards.length"
-              :width="340"
-              :height="220"
-              :card-distance="45"
-              :vertical-distance="55"
-              :delay="4000"
+              :width="430"
+              :height="305"
+              :card-distance="42"
+              :vertical-distance="48"
+              :delay="3200"
               :pause-on-hover="true"
-              :skew-amount="5"
-              easing="elastic"
-              @card-click="(i) => scrollToSection('#projects')"
+              :skew-amount="4"
+              easing="linear"
+              @card-click="(i) => heroCards[i]?.link && windowOpen(heroCards[i]?.link)"
             >
               <template #default="{ index }">
                 <div class="project-card-inner">
-
-                  <!-- Top row: emoji icon + status -->
-                  <div class="pc-header">
-                    <span class="pc-emoji" aria-hidden="true">{{ heroCards[index]?.icon }}</span>
-                    <span
-                      class="pc-status"
-                      :class="heroCards[index]?.statusKey?.includes('development')
-                        ? 'pc-status--dev' : 'pc-status--done'"
-                    >
-                      {{ heroCards[index]?.statusKey?.includes('development') ? 'In Progress' : 'Live' }}
-                    </span>
+                  <!-- Project Cover Image -->
+                  <div class="pc-image-wrap">
+                    <img
+                      :src="heroCards[index]?.image"
+                      :alt="heroCards[index]?.title"
+                      class="pc-image"
+                      loading="eager"
+                    />
+                    <div class="pc-image-overlay" />
+                    <!-- Badge -->
+                    <div class="pc-badge">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>{{ heroCards[index]?.badge }}</span>
+                    </div>
                   </div>
 
-                  <!-- Title -->
-                  <h3 class="pc-title">{{ heroCards[index]?.title }}</h3>
+                  <!-- Project Meta -->
+                  <div class="pc-content">
+                    <div class="flex items-center justify-between gap-2">
+                      <h3 class="pc-title">{{ heroCards[index]?.title }}</h3>
+                      <span class="pc-sub">{{ heroCards[index]?.subtitle }}</span>
+                    </div>
 
-                  <!-- Tech stack pills -->
-                  <div class="pc-techs" aria-label="Technologies used">
-                    <span
-                      v-for="tech in heroCards[index]?.technologies"
-                      :key="tech"
-                      class="pc-tech-pill"
-                    >{{ tech }}</span>
+                    <div class="pc-footer">
+                      <div class="pc-techs">
+                        <span
+                          v-for="tech in heroCards[index]?.technologies"
+                          :key="tech"
+                          class="pc-tech-pill"
+                        >{{ tech }}</span>
+                      </div>
+
+                      <a
+                        :href="heroCards[index]?.link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="pc-link"
+                        @click.stop
+                      >
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                        Ochish
+                      </a>
+                    </div>
                   </div>
-
-                  <!-- Footer: link -->
-                  <div class="pc-footer">
-                    <a
-                      v-if="heroCards[index]?.link"
-                      :href="heroCards[index]?.link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="pc-link"
-                      @click.stop
-                    >
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" y1="14" x2="21" y2="3" />
-                      </svg>
-                      View Live
-                    </a>
-                    <span class="pc-hint">Click to see all →</span>
-                  </div>
-
                 </div>
               </template>
             </VCardSwap>
@@ -206,88 +225,110 @@ const heroCards = projects.slice(0, 4).map(p => ({
   background-color: #030f1d;
 }
 
-/* ─── CardSwap stage ───────────────────────────────────────────────
-   VCardSwap ni markazda ushlab turadi.
-   VCardSwap o'zi relative + centered — absolute bottom-right emas.
-   ─────────────────────────────────────────────────────────────── */
+/* ─── CardSwap stage ─────────────────────────────────────────────── */
 .card-swap-stage {
   position: relative;
-  width: 380px;
+  width: 480px;
   height: 420px;
-  /* Kartalar stage dan biroz chiqishi mumkin — clip bo'lmasin */
   overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ─── Project card inner content ───────────────────────────────── */
 .project-card-inner {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 1.25rem 1.375rem;
-  background: linear-gradient(
-    135deg,
-    rgba(13, 21, 41, 0.96) 0%,
-    rgba(6, 11, 28, 0.98) 100%
-  );
-  gap: 0.625rem;
+  width: 100%;
+  background: #090e1a;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ── Header row: emoji + status badge ── */
-.pc-header {
+.pc-image-wrap {
+  position: relative;
+  height: 180px;
+  width: 100%;
+  overflow: hidden;
+  background: #050811;
+}
+
+.pc-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.pc-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #090e1a 0%, transparent 60%);
+}
+
+.pc-badge {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(8, 13, 26, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #4ade80;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.pc-content {
+  padding: 0.75rem 1rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.pc-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.pc-sub {
+  font-size: 0.6875rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.pc-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.pc-emoji {
-  font-size: 1.75rem;
-  line-height: 1;
-  user-select: none;
-}
-.pc-status {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid;
-}
-.pc-status--done {
-  color: #4ade80;
-  background: rgba(74, 222, 128, 0.08);
-  border-color: rgba(74, 222, 128, 0.25);
-}
-.pc-status--dev {
-  color: #fbbf24;
-  background: rgba(251, 191, 36, 0.08);
-  border-color: rgba(251, 191, 36, 0.25);
+  gap: 0.5rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* ── Title ── */
-.pc-title {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #f0f4ff;
-  letter-spacing: -0.01em;
-  margin: 0;
-  line-height: 1.2;
-}
-
-/* ── Tech stack pills ── */
 .pc-techs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.375rem;
-  margin-top: auto;
+  gap: 0.3rem;
 }
+
 .pc-tech-pill {
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 0.2rem 0.55rem;
+  font-size: 0.6875rem;
+  font-family: monospace;
+  padding: 0.15rem 0.45rem;
   border-radius: 0.375rem;
   background: rgba(1, 69, 242, 0.12);
   color: #6ea4ff;
@@ -295,35 +336,20 @@ const heroCards = projects.slice(0, 4).map(p => ({
   white-space: nowrap;
 }
 
-/* ── Footer ── */
-.pc-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
 .pc-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.25rem;
   font-size: 0.75rem;
   font-weight: 600;
   color: #0145F2;
   text-decoration: none;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 .pc-link:hover {
   color: #5588ff;
 }
-.pc-hint {
-  font-size: 0.6875rem;
-  color: #2d4060;
-  user-select: none;
-  white-space: nowrap;
-}
-
 
 /* ─── Grid ─── */
 .hero-grid {
@@ -333,34 +359,7 @@ const heroCards = projects.slice(0, 4).map(p => ({
   align-items: center;
 }
 @media (min-width: 1024px) {
-  .hero-grid { grid-template-columns: 3fr 2fr; gap: 4rem; }
-}
-
-/* ─── Status badge ─── */
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: #a3e6b5;
-  background: rgba(34, 197, 94, 0.08);
-  border: 1px solid rgba(34, 197, 94, 0.2);
-  width: fit-content;
-  margin-bottom: 1.5rem;
-}
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #22c55e;
-  animation: pulse-dot 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0   rgba(34, 197, 94, 0.45); }
-  50%       { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0);   }
+  .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 3.5rem; }
 }
 
 /* ─── Typography ─── */
@@ -434,62 +433,6 @@ const heroCards = projects.slice(0, 4).map(p => ({
   align-items: center;
 }
 
-/* ─── Terminal card ─── */
-.terminal-card {
-  border-radius: 0.875rem;
-  background: #0a1628;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(1, 69, 242, 0.06),
-    0 24px 48px -12px rgba(0, 0, 0, 0.55);
-}
-.terminal-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.65rem 1rem;
-  background: #0d1c35;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-.dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
-.dot-red   { background: #ff5f57; }
-.dot-amber { background: #febc2e; }
-.dot-green { background: #28c840; }
-.terminal-file {
-  margin-left: 0.5rem;
-  font-size: 0.75rem;
-  font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
-  color: #4a6a96;
-}
-.terminal-body {
-  margin: 0;
-  padding: 1.25rem;
-  font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
-  font-size: 0.78rem;
-  line-height: 1.75;
-  color: #8aacce;
-  white-space: pre;
-  overflow-x: auto;
-}
-.terminal-body code { display: block; }
-.terminal-footer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background: #0d1c35;
-}
-.stat-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #4a6a96;
-}
-
 /* ─── Entrance animations ─── */
 .hero-badge     { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
 .hero-title     { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both; }
@@ -497,19 +440,4 @@ const heroCards = projects.slice(0, 4).map(p => ({
 .hero-tech      { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.27s both; }
 .hero-ctas      { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.33s both; }
 .hero-code-wrap { animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both; }
-
-/* ─── Syntax highlight tokens ─── */
-.c-comment { color: #546e7a; font-style: italic; }   /* grey  — comment      */
-.c-keyword  { color: #c792ea; }                       /* purple — const/let   */
-.c-var      { color: #82aaff; }                       /* blue  — variable     */
-.c-prop     { color: #80cbc4; }                       /* teal  — property key */
-.c-str      { color: #c3e88d; }                       /* green — string       */
-.c-num      { color: #f78c6c; }                       /* orange — number      */
-.c-fn       { color: #82aaff; }                       /* blue  — console      */
-.c-method   { color: #82aaff; }                       /* blue  — log          */
-.c-tpl      { color: #c3e88d; }                       /* green — template lit */
-.c-interp   { color: #89ddff; }                       /* cyan  — ${ }         */
-.c-op       { color: #89ddff; }                       /* cyan  — = : .        */
-.c-brace    { color: #ffcb6b; }                       /* amber — { }          */
-.c-paren    { color: #89ddff; }                       /* cyan  — ( )          */
 </style>

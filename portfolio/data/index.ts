@@ -11,7 +11,7 @@ import type {
 } from '~/types';
 import smartlifeImg from '~/assets/images/smartlife.png';
 import notimageImg from '~/assets/images/notimage.jpg';
-import dnkImg from '~/assets/images/dnk.png';
+import dnkImg from '~/assets/images/dnk-expert.png';
 import tolaBotImg from '~/assets/images/tolaBot.png';
 import autoQuizImg from '~/assets/images/autoQuiz.png';
 import vocabAppImg from '~/assets/images/vocabApp.png';
