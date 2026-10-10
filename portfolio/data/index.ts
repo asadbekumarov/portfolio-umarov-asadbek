@@ -9,12 +9,12 @@ import type {
   EducationItem,
   SkillCategory
 } from '~/types';
-import smartlifeImg from '~/assets/images/smartlife.png';
-import notimageImg from '~/assets/images/notimage.jpg';
-import dnkImg from '~/assets/images/dnk-expert.png';
-import tolaBotImg from '~/assets/images/tolaBot.png';
-import autoQuizImg from '~/assets/images/autoQuiz.png';
-import vocabAppImg from '~/assets/images/vocabApp.png';
+import smartlifeImg from '~/assets/images/smartlife.webp';
+import notimageImg from '~/assets/images/notimage.webp';
+import dnkImg from '~/assets/images/dnk-expert.webp';
+import tolaBotImg from '~/assets/images/tolaBot.webp';
+import autoQuizImg from '~/assets/images/autoQuiz.webp';
+import vocabAppImg from '~/assets/images/vocabApp.webp';
 
 export const stats: StatItem[] = [
   { value: '4+', labelKey: 'about.stats.projects' },

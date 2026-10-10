@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-umarov-asadbek.vercel.app/sitemap.xml

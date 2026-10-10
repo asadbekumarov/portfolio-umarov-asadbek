@@ -32,7 +32,7 @@ const { scrollToTop, scrollToSection } = useNavigation()
           <a
             href="#"
             class="inline-flex items-center gap-3 mb-4 group focus-visible:outline-none"
-            aria-label="Asadbek Umarov — back to top"
+            aria-label="Asadbek Umarov"
             @click.prevent="scrollToTop"
           >
             <div
@@ -59,7 +59,7 @@ const { scrollToTop, scrollToSection } = useNavigation()
 
         <!-- Navigation -->
         <div class="lg:col-span-4 flex flex-col items-center sm:items-start">
-          <p class="text-[11px] font-bold tracking-widest uppercase mb-4 text-slate-500">
+          <p class="text-[11px] font-bold tracking-widest uppercase mb-4 text-slate-400">
             {{ t('nav.navigation') || 'Navigation' }}
           </p>
           <ul
@@ -81,7 +81,7 @@ const { scrollToTop, scrollToSection } = useNavigation()
 
         <!-- Connect -->
         <div class="lg:col-span-4 flex flex-col items-center sm:items-start">
-          <p class="text-[11px] font-bold tracking-widest uppercase mb-4 text-slate-500">
+          <p class="text-[11px] font-bold tracking-widest uppercase mb-4 text-slate-400">
             {{ t('nav.connect') || 'Connect' }}
           </p>
 
@@ -207,7 +207,7 @@ const { scrollToTop, scrollToSection } = useNavigation()
             </a>
           </div>
 
-          <p class="text-xs text-slate-500 font-mono tracking-wide">
+          <p class="text-xs text-slate-400 font-mono tracking-wide">
             asadbekumarov922@gmail.com
           </p>
         </div>
@@ -215,7 +215,7 @@ const { scrollToTop, scrollToSection } = useNavigation()
 
       <!-- ── Bottom Bar ── -->
       <div
-        class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-5 text-xs text-slate-500"
+        class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-5 text-xs text-slate-400"
       >
         <p class="text-center sm:text-left order-2 sm:order-1">
           © {{ currentYear }} Asadbek Umarov.

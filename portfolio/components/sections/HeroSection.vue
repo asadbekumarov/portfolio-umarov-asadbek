@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import smartlifeImg from '~/assets/images/smartlife.png';
-import dnkImg from '~/assets/images/dnk-expert.png';
-const { t } = useI18n()
+import smartlifeImg from '~/assets/images/smartlife.webp';
+import dnkImg from '~/assets/images/dnk-expert.webp';
+const { t, locale } = useI18n()
 
 const scrollToSection = (hash: string): void => {
   const el = document.querySelector(hash)
@@ -85,13 +85,13 @@ const heroCards = computed(() => [
         <div class="hero-left relative z-20">
 
           <!-- H1 -->
-          <h1 class="hero-title">
+          <h1 class="hero-title" v-memo="[locale]">
             <span class="hero-name">{{ t('hero.name') }} {{ t('hero.surname') }}</span>
             <span class="hero-role">{{ t('hero.role') }}</span>
           </h1>
 
           <!-- Subtext -->
-          <p class="hero-sub hero-tagline">
+          <p class="hero-sub hero-tagline" v-memo="[locale]">
             {{ t('hero.tagline') }}
           </p>
 
@@ -180,7 +180,10 @@ const heroCards = computed(() => [
                       :src="heroCards[index]?.image"
                       :alt="heroCards[index]?.title"
                       class="pc-image"
-                      loading="eager"
+                      width="430"
+                      height="180"
+                      :loading="index === 0 ? 'eager' : 'lazy'"
+                      :decoding="index === 0 ? 'auto' : 'async'"
                     />
                     <div class="pc-image-overlay" />
                     <!-- Badge -->
@@ -193,7 +196,7 @@ const heroCards = computed(() => [
                   <!-- Project Meta -->
                   <div class="pc-content">
                     <div class="flex items-center justify-between gap-2">
-                      <h3 class="pc-title">{{ heroCards[index]?.title }}</h3>
+                      <h2 class="pc-title">{{ heroCards[index]?.title }}</h2>
                       <span class="pc-sub">{{ heroCards[index]?.subtitle }}</span>
                     </div>
 
@@ -228,8 +231,9 @@ const heroCards = computed(() => [
       </div>
     </div>
 
-    <!-- Gradual Blur layer at bottom of Hero section -->
+    <!-- Gradual Blur layer at bottom of Hero section (desktop only) -->
     <GradualBlur
+      class="hidden sm:block"
       position="bottom"
       height="6rem"
       :strength="2.5"
@@ -339,7 +343,7 @@ const heroCards = computed(() => [
 
 .pc-sub {
   font-size: 0.6875rem;
-  color: #64748b;
+  color: #94a3b8;
   white-space: nowrap;
 }
 
@@ -375,13 +379,13 @@ const heroCards = computed(() => [
   gap: 0.25rem;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #0145F2;
+  color: #3b82f6;
   text-decoration: none;
   transition: color 0.2s ease;
   white-space: nowrap;
 }
 .pc-link:hover {
-  color: #5588ff;
+  color: #60a5fa;
 }
 
 /* ─── Grid ─── */
@@ -419,6 +423,7 @@ const heroCards = computed(() => [
   line-height: 1.3;
 }
 .hero-sub {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
   font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
   line-height: 1.7;
   color: #7a8ea8;
@@ -468,9 +473,20 @@ const heroCards = computed(() => [
 
 /* ─── Entrance animations ─── */
 .hero-badge     { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
-.hero-title     { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both; }
-.hero-tagline   { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.21s both; }
-.hero-tech      { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.27s both; }
-.hero-ctas      { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.33s both; }
+.hero-title     { /* LCP candidate: immediately visible */ }
+.hero-tagline   { /* LCP candidate: immediately visible */ }
+.hero-tech      { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both; }
+.hero-ctas      { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
 .hero-code-wrap { animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both; }
+
+@media (max-width: 640px) {
+  .hero-badge,
+  .hero-tech,
+  .hero-ctas,
+  .hero-code-wrap {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 </style>

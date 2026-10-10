@@ -45,10 +45,13 @@ const quickInfoItems = [
         <!-- 1. Photo Card (Tall, Spans 2 Rows on Desktop) -->
         <div class="md:col-span-5 lg:col-span-4 md:row-span-2 relative overflow-hidden rounded-[2rem] border border-[#1e293b] bg-[#0d1522] group h-96 sm:h-[440px] md:h-full min-h-[360px] md:min-h-[480px] shadow-lg shadow-black/20">
           <img
-            src="/user.jpg"
+            src="/user.webp"
             alt="Asadbek Umarov"
+            width="720"
+            height="728"
             class="absolute inset-0 w-full h-full object-cover object-[center_45%] group-hover:scale-105 transition-transform duration-700"
             loading="lazy"
+            decoding="async"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#080c14]/90 via-[#080c14]/20 to-transparent pointer-events-none"></div>
           <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full z-10">
@@ -91,7 +94,7 @@ const quickInfoItems = [
 
         <!-- 4. Tech Stack -->
         <div class="md:col-span-6 lg:col-span-5 p-6 sm:p-8 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20">
-          <h3 class="text-xs font-bold tracking-wider uppercase text-slate-500 mb-5">Texnologiyalar</h3>
+          <h3 class="text-xs font-bold tracking-wider uppercase text-slate-400 mb-5">Texnologiyalar</h3>
           <div class="flex flex-wrap gap-2.5">
             <span
               v-for="badge in techBadges"
@@ -110,7 +113,7 @@ const quickInfoItems = [
 
         <!-- 5. Quick Info -->
         <div class="md:col-span-6 lg:col-span-4 p-6 sm:p-8 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20">
-          <h3 class="text-xs font-bold tracking-wider uppercase text-slate-500 mb-5">Qisqacha</h3>
+          <h3 class="text-xs font-bold tracking-wider uppercase text-slate-400 mb-5">Qisqacha</h3>
           <ul class="space-y-4">
             <li
               v-for="item in quickInfoItems"
@@ -131,7 +134,7 @@ const quickInfoItems = [
 
         <!-- 6. Socials -->
         <div class="md:col-span-12 lg:col-span-3 p-6 sm:p-8 rounded-[2rem] border border-[#1e293b] bg-[#0d1522] hover:border-slate-700 transition-colors shadow-lg shadow-black/20 flex flex-col justify-center">
-          <h3 class="text-xs font-bold tracking-wider uppercase text-slate-500 mb-5">Tarmoqlar</h3>
+          <h3 class="text-xs font-bold tracking-wider uppercase text-slate-400 mb-5">Tarmoqlar</h3>
           <div class="flex flex-row lg:flex-col gap-3 h-full justify-center">
             <a
               href="https://www.linkedin.com/in/asadbek-umarov-ab9385376"

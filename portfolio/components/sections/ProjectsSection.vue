@@ -196,6 +196,8 @@ function onKeydown(e: KeyboardEvent) {
                             :src="lightboxImage"
                             :alt="`${lightboxTitle} full preview`"
                             class="lightbox-img"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </div>

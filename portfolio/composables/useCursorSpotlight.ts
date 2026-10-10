@@ -34,12 +34,16 @@ export function useCursorSpotlight() {
   };
 
   onMounted(() => {
+    const isPointerFine = typeof window !== 'undefined'
+      && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!isPointerFine) return;
+
     window.addEventListener('mousemove', onMove, { passive: true });
     raf.id = requestAnimationFrame(tick);
   });
 
   onUnmounted(() => {
     window.removeEventListener('mousemove', onMove);
-    cancelAnimationFrame(raf.id);
+    if (raf.id) cancelAnimationFrame(raf.id);
   });
 }

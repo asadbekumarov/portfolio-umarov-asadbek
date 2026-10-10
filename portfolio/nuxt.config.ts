@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
-  devtools: { enabled: process.env.NODE_ENV !== "production" },
+  devtools: { enabled: false },
   telemetry: false,
 
   components: [
@@ -18,11 +18,43 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: "vercel",
+    preset: process.env.VERCEL ? "vercel" : (process.env.NITRO_PRESET || "node-server"),
+    compressPublicAssets: true,
+    prerender: {
+      crawlLinks: true,
+      routes: ["/uz", "/en"],
+    },
+    routeRules: {
+      "/_nuxt/**": { headers: { "cache-control": "public, max-age=31536000, immutable" } },
+      "/fonts/**": { headers: { "cache-control": "public, max-age=31536000, immutable" } },
+      "/**/*.webp": { headers: { "cache-control": "public, max-age=31536000, immutable" } },
+      "/**/*.png": { headers: { "cache-control": "public, max-age=31536000, immutable" } },
+      "/**/*.svg": { headers: { "cache-control": "public, max-age=31536000, immutable" } },
+    },
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n", // Modul shu yerga qo'shildi
-  "nuxt-schema-org", "@nuxt/fonts"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/i18n",
+    "nuxt-schema-org",
+    "@nuxt/fonts"
+  ],
+
+  features: {
+    inlineStyles: true,
+  },
+
+  fonts: {
+    families: [
+      { name: 'Space Grotesk', weights: [500, 700, 800], display: 'swap' },
+      { name: 'Inter', weights: [400, 500, 600, 700], display: 'optional' },
+    ],
+    defaults: {
+      weights: [400, 500, 600, 700],
+      styles: ['normal'],
+      subsets: ['latin'],
+    },
+  },
 
   app: {
     head: {
@@ -55,13 +87,14 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    lazy: true,
+    langDir: "locales",
     locales: [
       { code: "uz", name: "O'zbek", iso: "uz-UZ", file: "uz.json" },
       { code: "en", name: "English", iso: "en-US", file: "en.json" },
     ],
     defaultLocale: "uz",
     strategy: "prefix",
-    langDir: "locales",
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: "i18n_redirected",

@@ -226,6 +226,12 @@ useHead({
     }
 }
 
+/* ── Mobile performance optimization: disable heavy blur orbs on mobile devices ── */
+@media (max-width: 768px) {
+    .glow-orbs { display: none !important; }
+    .cursor-spotlight { display: none !important; }
+}
+
 /* ── Vestibular trigger guard: reduced motion → hamma effektlar o'chiriladi ── */
 @media (prefers-reduced-motion: reduce) {
     .orb {

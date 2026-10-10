@@ -134,6 +134,27 @@ useHead(() => ({
       href: "/favicon.svg",
     },
     {
+      rel: "preload",
+      href: "/fonts/clouds.woff2",
+      as: "font",
+      type: "font/woff2",
+      crossorigin: "anonymous",
+    },
+    {
+      rel: "preload",
+      href: "/_fonts/HgJel4iAS5mDVqJaDUYKmxaMJg4zKHTGmyD1FQkOsTM-2hVuuQIZ4GSGMgNv6dvlqz7cfD6lr7xLohUph7OCgFg.woff2",
+      as: "font",
+      type: "font/woff2",
+      crossorigin: "anonymous",
+    },
+    {
+      rel: "preload",
+      href: "/_fonts/nASo_t82HLcFL0hjY2wGJIeDVSDhmGGSBHuQt1N7u8U-kdshFNu4PTvb1n8YiLDLxfZcX5vdvROSRvgHFcHUmfI.woff2",
+      as: "font",
+      type: "font/woff2",
+      crossorigin: "anonymous",
+    },
+    {
       rel: "canonical",
       href: seoData.value.canonicalUrl,
     },
