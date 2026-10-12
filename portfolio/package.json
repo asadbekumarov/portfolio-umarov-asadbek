@@ -17,6 +17,7 @@
     "nuxt": "^3.13.0",
     "nuxt-schema-org": "^6.2.7",
     "sharp": "^0.35.5",
+    "simple-icons": "^16.35.0",
     "typescript": "^5.5.0",
     "vue": "^3.4.0",
     "vue-router": "^4.3.0",

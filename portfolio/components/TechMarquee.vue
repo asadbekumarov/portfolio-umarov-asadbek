@@ -12,29 +12,29 @@
  */
 
 const topItems = [
-  { name: 'React.js',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Next.js',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-  { name: 'TypeScript',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-  { name: 'JavaScript',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-  { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-  { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'HTML5',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-  { name: 'CSS3',         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'Vue.js',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
-  { name: 'Nuxt',         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg' },
+  { name: 'React.js',     icon: '/icons/react.svg' },
+  { name: 'Next.js',      icon: '/icons/nextjs.svg' },
+  { name: 'TypeScript',   icon: '/icons/typescript.svg' },
+  { name: 'JavaScript',   icon: '/icons/javascript.svg' },
+  { name: 'Tailwind CSS', icon: '/icons/tailwind.svg' },
+  { name: 'React Native', icon: '/icons/react-native.svg' },
+  { name: 'HTML5',        icon: '/icons/html5.svg' },
+  { name: 'CSS3',         icon: '/icons/css3.svg' },
+  { name: 'Vue.js',       icon: '/icons/vue.svg' },
+  { name: 'Nuxt',         icon: '/icons/nuxt.svg' },
 ];
 
 const bottomItems = [
-  { name: 'Git',           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-  { name: 'GitHub',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-  { name: 'Redux Toolkit', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg' },
-  { name: 'Figma',         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-  { name: 'VS Code',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-  { name: 'npm',           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg' },
-  { name: 'CSS Modules',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'Expo',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg' },
-  { name: 'Supabase',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg' },
-  { name: 'Vercel',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg' },
+  { name: 'Git',           icon: '/icons/git.svg' },
+  { name: 'GitHub',        icon: '/icons/github.svg' },
+  { name: 'Redux Toolkit', icon: '/icons/redux.svg' },
+  { name: 'Figma',         icon: '/icons/figma.svg' },
+  { name: 'VS Code',       icon: '/icons/vscode.svg' },
+  { name: 'npm',           icon: '/icons/npm.svg' },
+  { name: 'CSS Modules',   icon: '/icons/cssmodules.svg' },
+  { name: 'Expo',          icon: '/icons/expo.svg' },
+  { name: 'Supabase',      icon: '/icons/supabase.svg' },
+  { name: 'Vercel',        icon: '/icons/vercel.svg' },
 ];
 </script>
 
@@ -200,25 +200,11 @@ const bottomItems = [
   height: 18px;
   object-fit: contain;
   flex-shrink: 0;
-  filter: brightness(0) invert(1) opacity(0.7);
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
 }
-/* Rangli ikonalar — filter bekor */
-.marquee-icon[src*="javascript"],
-.marquee-icon[src*="typescript"],
-.marquee-icon[src*="html5"],
-.marquee-icon[src*="css3"],
-.marquee-icon[src*="react"],
-.marquee-icon[src*="tailwind"],
-.marquee-icon[src*="vuejs"],
-.marquee-icon[src*="nuxtjs"],
-.marquee-icon[src*="redux"],
-.marquee-icon[src*="figma"],
-.marquee-icon[src*="git/"],
-.marquee-icon[src*="vscode"],
-.marquee-icon[src*="npm"],
-.marquee-icon[src*="postgresql"] {
-  filter: none;
-  opacity: 0.82;
+.marquee-item:hover .marquee-icon {
+  opacity: 1;
 }
 
 /* ── Label ── */
