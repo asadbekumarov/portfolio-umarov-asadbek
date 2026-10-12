@@ -48,6 +48,7 @@ export interface Project {
   image?: string;
   highlightCount: number;
   technologies: string[];
+  hidden?: boolean;
 }
 
 export interface EducationItem {

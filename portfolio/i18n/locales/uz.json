@@ -50,6 +50,7 @@
     "cta_view": "Loyihalarni ko'rish",
     "cta_contact": "Bog'lanish",
     "cards": {
+      "stpos_sub": "Restoranlar uchun POS tizim",
       "smart_life_sub": "Elektronika platformasi",
       "dna_sub": "Tibbiy tashxis portali",
       "live_badge": "Real loyiha"
@@ -140,6 +141,15 @@
       "screenshot": "Rasm"
     },
     "items": {
+      "stpos": {
+        "subtitle": "Restoran va kafelar uchun POS tizim — stpos.uz saytida jonli",
+        "description": "STpos restoran va kafelar uchun POS tizim ishlab chiqaradigan kompaniya. Shularning tanishtiruv saytini yaratdim: mahsulot imkoniyatlari, tariflar, mijozlar fikrlari va demo so'rash bo'limi bor. Sayt ikki tilda (uz/en) ishlaydi va telefonda ham qulay ochiladi. Next.js, TypeScript va Tailwind CSS'da yozdim, ma'lumotlar bilan ishlashda RTK Query ishlatdim.",
+        "highlights": [
+          "Mahsulot imkoniyatlari, tariflar va mijozlar fikrlari aks etgan to'liq tanishtiruv sayti",
+          "Ikki tilli (uz/en) va mobil qurilmalarda qulay foydalanishga moslashtirilgan interfeys",
+          "Next.js, TypeScript, Tailwind CSS hamda ma'lumotlar boshqaruvi uchun RTK Query integratsiyasi"
+        ]
+      },
       "darrow": {
         "subtitle": "Multi-xizmat Telegram Web App — Taksi, Taom Yetkazish va Usta Xizmatlari",
         "description": "3 kishilik masofaviy jamoa tarkibida (1 backend, 2 frontend) Yandex Go uslubidagi super-ilovani Telegram brauzerida ishlaydigan qilib yaratdim. 4 xizmat kategoriyasi bo'yicha band qilish va buyurtma oqimlarini qurdim, Telegram WebView cheklovlari uchun UI optimallashtirildi va real vaqtdagi buyurtmalarni qayta ishlash uchun REST APIlar integratsiya qilindi.",

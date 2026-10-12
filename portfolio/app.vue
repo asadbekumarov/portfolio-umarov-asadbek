@@ -178,7 +178,7 @@ useSchemaOrg([
       seoData.value.canonicalUrl,
 
     sameAs: [
-      "https://www.linkedin.com/in/asadbek-umarov-ab9385376",
+      "https://www.linkedin.com/in/asadbek-umarov/",
       config.public.siteUrl,
     ],
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import stposImg from '~/assets/images/stpos.webp';
 import smartlifeImg from '~/assets/images/smartlife.webp';
 import dnkImg from '~/assets/images/dnk-expert.webp';
 const { t, locale } = useI18n()
@@ -47,15 +48,24 @@ const cardHeight = computed(() => (windowWidth.value < 640 ? 245 : 305))
 const cardDistX = computed(() => (windowWidth.value < 640 ? 20 : 42))
 const cardDistY = computed(() => (windowWidth.value < 640 ? 24 : 48))
 
-// Faqat Smart Life va DNA-Technology kartochkalari (i18n bilan)
+// STpos, Smart Life va DNA-Technology kartochkalari (i18n bilan)
 const heroCards = computed(() => [
+  {
+    key: 'stpos',
+    title: 'STpos',
+    subtitle: t('hero.cards.stpos_sub'),
+    badge: t('hero.cards.live_badge'),
+    image: stposImg,
+    link: 'https://stpos.uz/uz',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+  },
   {
     key: 'smart_life',
     title: 'Smart Life',
     subtitle: t('hero.cards.smart_life_sub'),
     badge: t('hero.cards.live_badge'),
     image: smartlifeImg,
-    link: 'https://www.smartlife.uz/uz',
+    link: 'https://smartlife.uz',
     technologies: ['Next.js', 'TypeScript', 'RTK Query'],
   },
   {

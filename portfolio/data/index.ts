@@ -9,6 +9,7 @@ import type {
   EducationItem,
   SkillCategory
 } from '~/types';
+import stposImg from '~/assets/images/stpos.webp';
 import smartlifeImg from '~/assets/images/smartlife.webp';
 import notimageImg from '~/assets/images/notimage.webp';
 import dnkImg from '~/assets/images/dnk-expert.webp';
@@ -17,7 +18,7 @@ import autoQuizImg from '~/assets/images/autoQuiz.webp';
 import vocabAppImg from '~/assets/images/vocabApp.webp';
 
 export const stats: StatItem[] = [
-  { value: '4+', labelKey: 'about.stats.projects' },
+  { value: '5+', labelKey: 'about.stats.projects' },
   { value: '1+', labelKey: 'about.stats.experience' },
   { value: '100%', labelKey: 'about.stats.remote' },
 ];
@@ -32,7 +33,7 @@ export const quickInfo: InfoItem[] = [
 export const contacts: ContactCard[] = [
   { icon: 'email', labelKey: 'contact.cards.email', value: 'asadbekumarov922@gmail.com', href: 'mailto:asadbekumarov922@gmail.com', external: true },
   { icon: 'phone', labelKey: 'contact.cards.phone', value: '+998 77 268 7865', href: 'tel:+998772687865', external: false },
-  { icon: 'linkedin', labelKey: 'contact.cards.linkedin', value: 'asadbek-umarov-ab9385376', href: 'https://www.linkedin.com/in/asadbek-umarov-ab9385376', external: true },
+  { icon: 'linkedin', labelKey: 'contact.cards.linkedin', value: 'asadbek-umarov', href: 'https://www.linkedin.com/in/asadbek-umarov/', external: true },
   { icon: 'telegram', labelKey: 'contact.cards.telegram', value: '@Asad_umarov', href: 'https://t.me/Asad_umarov', external: true }
 ];
 
@@ -46,7 +47,7 @@ export const navLinks: NavLink[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { labelKey: 'footer.social.linkedin', href: 'https://www.linkedin.com/in/asadbek-umarov-ab9385376', icon: 'linkedin', external: true },
+  { labelKey: 'footer.social.linkedin', href: 'https://www.linkedin.com/in/asadbek-umarov/', icon: 'linkedin', external: true },
   { labelKey: 'footer.social.github', href: 'https://github.com/asadbekumarov', icon: 'github', external: true },
   { labelKey: 'footer.social.telegram', href: 'https://t.me/asadbek_umarov', icon: 'telegram', external: true },
   { labelKey: 'footer.social.portfolio', href: 'https://portfolio-umarov-asadbek.vercel.app/', icon: 'globe', external: true },
@@ -59,12 +60,22 @@ export const experiences: ExperienceItem[] = [
 
 export const projects: Project[] = [
   {
+    key: 'stpos',
+    title: 'STpos',
+    categoryKey: 'web_app',
+    icon: '🍽️',
+    link: 'https://stpos.uz/uz',
+    image: stposImg,
+    statusKey: 'projects.status.completed',
+    highlightCount: 3,
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'RTK Query'],
+  },
+  {
     key: 'smart_life',
     title: 'Smart Life',
     categoryKey: 'web_app',
     icon: '📱',
-    link: 'https://www.smartlife.uz/uz',
-    github: 'https://github.com/asadbekumarov',
+    link: 'https://smartlife.uz',
     image: smartlifeImg,
     statusKey: 'projects.status.completed',
     highlightCount: 3,
@@ -76,7 +87,6 @@ export const projects: Project[] = [
     categoryKey: 'telegram_app',
     icon: '✈️',
     link: 'https://t.me/darrov_bot',
-    github: 'https://github.com/asadbekumarov',
     image: notimageImg,
     statusKey: 'projects.status.completed',
     highlightCount: 3,
@@ -88,7 +98,6 @@ export const projects: Project[] = [
     categoryKey: 'web_app',
     icon: '🧬',
     link: 'https://dnk-expert.vercel.app/uz',
-    github: 'https://github.com/asadbekumarov',
     image: dnkImg,
     statusKey: 'projects.status.completed',
     highlightCount: 3,
@@ -100,7 +109,7 @@ export const projects: Project[] = [
     categoryKey: 'telegram_app',
     icon: '🔔',
     link: 'https://tola-bot.vercel.app/',
-    github: 'https://github.com/asadbekumarov',
+    github: 'https://github.com/asadbekumarov/tola-bot',
     image: tolaBotImg,
     statusKey: 'projects.status.development',
     highlightCount: 3,
@@ -112,18 +121,19 @@ export const projects: Project[] = [
     categoryKey: 'web_app',
     icon: '📝',
     link: 'https://auto-quiz-liard.vercel.app/',
-    github: 'https://github.com/asadbekumarov',
+    github: 'https://github.com/asadbekumarov/autoQuiz',
     image: autoQuizImg,
     statusKey: 'projects.status.development',
     highlightCount: 3,
     technologies: ['React 19', 'Vite', 'Tailwind CSS', 'jsPDF'],
+    hidden: true,
   },
   {
     key: 'vocab_app',
     title: 'VocabApp',
     categoryKey: 'mobile_app',
     icon: '📚',
-    github: 'https://github.com/asadbekumarov',
+    github: 'https://github.com/asadbekumarov/vocan',
     image: vocabAppImg,
     statusKey: 'projects.status.development',
     highlightCount: 3,

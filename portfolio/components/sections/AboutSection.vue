@@ -26,7 +26,7 @@ const quickInfoItems = [
 <template>
   <section
     id="about"
-    class="py-20 sm:py-28 relatives"
+    class="py-20 sm:py-28 relative z-10"
     aria-labelledby="about-heading"
   >
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -137,7 +137,7 @@ const quickInfoItems = [
           <h3 class="text-xs font-bold tracking-wider uppercase text-slate-400 mb-5">Tarmoqlar</h3>
           <div class="flex flex-row lg:flex-col gap-3 h-full justify-center">
             <a
-              href="https://www.linkedin.com/in/asadbek-umarov-ab9385376"
+              href="https://www.linkedin.com/in/asadbek-umarov/"
               target="_blank"
               rel="noopener noreferrer"
               class="flex-1 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-center gap-3 bg-[#080c14] border border-[#1e293b] rounded-2xl p-4 hover:bg-[#1e293b] hover:border-blue-500/30 transition-all text-slate-300 group"

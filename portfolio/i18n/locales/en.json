@@ -51,6 +51,7 @@
     "cta_view": "View Projects",
     "cta_contact": "Get in Touch",
     "cards": {
+      "stpos_sub": "POS System for Restaurants",
       "smart_life_sub": "Electronics Platform",
       "dna_sub": "Medical Diagnostic Portal",
       "live_badge": "Real Project"
@@ -142,6 +143,15 @@
       "screenshot": "Screenshot"
     },
     "items": {
+      "stpos": {
+        "subtitle": "POS System for Restaurants & Cafes — Live at stpos.uz",
+        "description": "STpos is a company that develops POS systems for restaurants and cafes. Built their official presentation website featuring product capabilities, pricing plans, customer reviews, and demo request sections. The site works in two languages (uz/en) and is fully responsive on mobile. Built with Next.js, TypeScript, and Tailwind CSS, using RTK Query for data management.",
+        "highlights": [
+          "Complete showcase landing website highlighting features, pricing plans, client reviews, and demo request flow",
+          "Bilingual support (uz/en) with a responsive mobile-first interface optimized for seamless mobile viewing",
+          "Developed with Next.js, TypeScript, Tailwind CSS, and RTK Query for efficient data management"
+        ]
+      },
       "darrow": {
         "subtitle": "Multi-service Telegram Web App — Taxi, Food Delivery & Handyman Services",
         "description": "Co-developed a Yandex Go-style super-app running inside Telegram's in-app browser. Part of a 3-person remote team (1 backend, 2 frontend). Built booking and ordering flows across 4 service categories, optimized UI for Telegram's constrained WebView, and integrated REST APIs for real-time order processing.",
