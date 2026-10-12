@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { projects } from '~/data';
+import { projects, experiments } from '~/data';
 
 const showAll = ref(false);
-const INITIAL_SHOW = 4;
+const INITIAL_SHOW = 6;
 
 const activeProjects = computed(() => projects.filter(p => !p.hidden));
 
@@ -167,6 +167,97 @@ function onKeydown(e: KeyboardEvent) {
                         <polyline points="6 9 12 15 18 9"/>
                     </svg>
                 </button>
+            </div>
+
+            <!-- ── Experiments Sub-section ── -->
+            <div class="mt-20 pt-16 border-t border-slate-800/80">
+                <!-- Sub-section Header -->
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide uppercase border bg-amber-500/10 text-amber-400 border-amber-500/20 mb-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
+                            {{ $t('projects.experiments.badge') }}
+                        </div>
+                        <h3
+                            class="text-2xl sm:text-3xl font-bold text-white tracking-tight"
+                            style="font-family: 'Space Grotesk', sans-serif;"
+                        >
+                            {{ $t('projects.experiments.title') }} <span class="text-blue-500">{{ $t('projects.experiments.title_accent') }}</span>
+                        </h3>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-md">
+                        {{ $t('projects.experiments.subtitle') }}
+                    </p>
+                </div>
+
+                <!-- Experiments Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <article
+                        v-for="item in experiments"
+                        :key="item.key"
+                        class="flex flex-col bg-[#0d1522] rounded-2xl border border-[#1e293b] p-6 hover:border-slate-600 transition-colors duration-300 group"
+                    >
+                        <!-- Top Row: Category & Status -->
+                        <div class="flex items-center justify-between gap-4 mb-4">
+                            <span class="text-xs font-bold tracking-wider uppercase text-slate-400">
+                                {{ $t(`projects.categories.${item.categoryKey}`) }}
+                            </span>
+
+                            <!-- Status Badge -->
+                            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide uppercase border bg-amber-500/10 text-amber-400 border-amber-500/20">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
+                                {{ $t('projects.experiments.badge') }}
+                            </div>
+                        </div>
+
+                        <!-- Title -->
+                        <h4 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                            {{ item.title }}
+                        </h4>
+
+                        <!-- Description -->
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-6 flex-1">
+                            {{ $t(`projects.items.${item.key}.description`) }}
+                        </p>
+
+                        <!-- Tech Stack Pills -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                v-for="tech in item.technologies"
+                                :key="tech"
+                                class="bg-slate-800/70 text-slate-300 border border-slate-700/60 rounded-lg px-2.5 py-1 text-xs font-medium"
+                            >
+                                {{ tech }}
+                            </span>
+                        </div>
+
+                        <!-- Footer Actions -->
+                        <div class="flex items-center gap-2.5 mt-auto">
+                            <button
+                                v-if="item.image"
+                                type="button"
+                                @click="openLightbox(item.image as string, item.title)"
+                                class="flex-1 bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl py-2.5 px-4 text-center text-sm font-semibold transition-colors flex items-center justify-center gap-2 border border-slate-700/60"
+                            >
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
+                                {{ $t('projects.actions.screenshot') }}
+                            </button>
+                            <a
+                                v-if="item.github"
+                                :href="item.github"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex-1 bg-blue-600 hover:bg-blue-500 text-white rounded-xl py-2.5 px-4 text-center text-sm font-semibold transition-colors flex items-center justify-center gap-2"
+                                :aria-label="`${item.title} GitHub repository`"
+                            >
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                </svg>
+                                <span>{{ $t('projects.actions.github') }}</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
 

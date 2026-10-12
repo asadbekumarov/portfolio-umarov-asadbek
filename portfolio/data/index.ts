@@ -60,15 +60,15 @@ export const experiences: ExperienceItem[] = [
 
 export const projects: Project[] = [
   {
-    key: 'stpos',
-    title: 'STpos',
-    categoryKey: 'web_app',
-    icon: '🍽️',
-    link: 'https://stpos.uz/uz',
-    image: stposImg,
+    key: 'darrow',
+    title: 'Darrow',
+    categoryKey: 'telegram_app',
+    icon: '✈️',
+    link: 'https://t.me/darrov_bot',
+    image: notimageImg,
     statusKey: 'projects.status.completed',
     highlightCount: 3,
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'RTK Query'],
+    technologies: ['React.js', 'TypeScript', 'Tailwind CSS', 'Telegram API'],
   },
   {
     key: 'smart_life',
@@ -80,17 +80,6 @@ export const projects: Project[] = [
     statusKey: 'projects.status.completed',
     highlightCount: 3,
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'RTK Query'],
-  },
-  {
-    key: 'darrow',
-    title: 'Darrow',
-    categoryKey: 'telegram_app',
-    icon: '✈️',
-    link: 'https://t.me/darrov_bot',
-    image: notimageImg,
-    statusKey: 'projects.status.completed',
-    highlightCount: 3,
-    technologies: ['React.js', 'TypeScript', 'Tailwind CSS', 'Telegram API'],
   },
   {
     key: 'dna_technology',
@@ -116,6 +105,20 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'Supabase', 'Telegram API'],
   },
   {
+    key: 'stpos',
+    title: 'STpos',
+    categoryKey: 'web_app',
+    icon: '🍽️',
+    link: 'https://stpos.uz/uz',
+    image: stposImg,
+    statusKey: 'projects.status.completed',
+    highlightCount: 3,
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'RTK Query'],
+  },
+];
+
+export const experiments: Project[] = [
+  {
     key: 'auto_quiz',
     title: 'AutoQuiz',
     categoryKey: 'web_app',
@@ -126,7 +129,6 @@ export const projects: Project[] = [
     statusKey: 'projects.status.development',
     highlightCount: 3,
     technologies: ['React 19', 'Vite', 'Tailwind CSS', 'jsPDF'],
-    hidden: true,
   },
   {
     key: 'vocab_app',
@@ -138,7 +140,7 @@ export const projects: Project[] = [
     statusKey: 'projects.status.development',
     highlightCount: 3,
     technologies: ['React Native', 'Expo', 'TypeScript', 'AsyncStorage'],
-  }
+  },
 ];
 
 export const education: EducationItem[] = [

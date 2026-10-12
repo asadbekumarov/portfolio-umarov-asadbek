@@ -140,6 +140,12 @@
       "github": "GitHub",
       "screenshot": "Rasm"
     },
+    "experiments": {
+      "badge": "Ish jarayonida",
+      "title": "Tajribalar",
+      "title_accent": "va Pet-loyihalar",
+      "subtitle": "Yangi texnologiyalar va g'oyalarni amalda sinash jarayonidagi shaxsiy ishlanmalar."
+    },
     "items": {
       "stpos": {
         "subtitle": "Restoran va kafelar uchun POS tizim — stpos.uz saytida jonli",

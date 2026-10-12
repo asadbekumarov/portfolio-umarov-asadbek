@@ -142,6 +142,12 @@
       "github": "GitHub",
       "screenshot": "Screenshot"
     },
+    "experiments": {
+      "badge": "In Development",
+      "title": "Experiments",
+      "title_accent": "& Pet Projects",
+      "subtitle": "Personal experiments and prototypes exploring modern technologies and ideas."
+    },
     "items": {
       "stpos": {
         "subtitle": "POS System for Restaurants & Cafes — Live at stpos.uz",
