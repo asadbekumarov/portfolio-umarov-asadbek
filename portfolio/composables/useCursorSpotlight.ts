@@ -10,8 +10,10 @@ export function useCursorSpotlight() {
 
   const raf = { id: 0 };
   // Target & current — smooth lerp uchun
-  let tx = -200, ty = -200;
-  let cx = -200, cy = -200;
+  let tx = -200,
+    ty = -200;
+  let cx = -200,
+    cy = -200;
   const LERP = 0.075; // [0..1] — qancha yumshoq ergashsin
 
   const setProps = () => {
@@ -34,8 +36,9 @@ export function useCursorSpotlight() {
   };
 
   onMounted(() => {
-    const isPointerFine = typeof window !== 'undefined'
-      && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const isPointerFine =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     if (!isPointerFine) return;
 
     window.addEventListener('mousemove', onMove, { passive: true });

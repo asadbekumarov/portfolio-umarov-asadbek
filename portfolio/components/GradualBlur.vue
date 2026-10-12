@@ -39,7 +39,7 @@ export interface GradualBlurProps {
   hoverIntensity?: number;
   target?: 'parent' | 'page';
   className?: string;
-  style?: Record<string, any> | string;
+  style?: Record<string, string | number> | string;
 }
 
 const props = withDefaults(defineProps<GradualBlurProps>(), {
@@ -89,7 +89,7 @@ const DEFAULT_CONFIG = {
   responsive: false,
   target: 'parent' as const,
   className: '',
-  style: {} as Record<string, any>,
+  style: {} as Record<string, string | number>,
 };
 
 const PRESETS: Record<string, Partial<GradualBlurProps>> = {
@@ -146,10 +146,11 @@ const isVisible = ref(true);
 const windowWidth = ref(1200);
 
 const resolvedConfig = computed(() => {
-  const presetConfig = props.preset && PRESETS[props.preset] ? PRESETS[props.preset] : {};
-  
+  const presetConfig =
+    props.preset && PRESETS[props.preset] ? PRESETS[props.preset] : {};
+
   // Filter undefined props
-  const definedProps: Record<string, any> = {};
+  const definedProps: Record<string, unknown> = {};
   for (const [key, value] of Object.entries(props)) {
     if (value !== undefined) {
       definedProps[key] = value;
@@ -193,7 +194,11 @@ const setupObserver = () => {
     observer.disconnect();
     observer = null;
   }
-  if (resolvedConfig.value.animated === 'scroll' && containerRef.value && typeof IntersectionObserver !== 'undefined') {
+  if (
+    resolvedConfig.value.animated === 'scroll' &&
+    containerRef.value &&
+    typeof IntersectionObserver !== 'undefined'
+  ) {
     isVisible.value = false;
     observer = new IntersectionObserver(
       ([entry]) => {
@@ -241,7 +246,10 @@ watch(
 
 // Blur divs computation
 const blurDivs = computed(() => {
-  const divs: Array<{ key: number; style: Record<string, any> }> = [];
+  const divs: Array<{
+    key: number;
+    style: Record<string, string | number | undefined>;
+  }> = [];
   const cfg = resolvedConfig.value;
   const count = Math.max(1, cfg.divCount || 5);
   const increment = 100 / count;
@@ -274,7 +282,7 @@ const blurDivs = computed(() => {
 
     const direction = getGradientDirection(cfg.position);
 
-    const divStyle: Record<string, any> = {
+    const divStyle: Record<string, string | number | undefined> = {
       maskImage: `linear-gradient(${direction}, ${gradient})`,
       WebkitMaskImage: `linear-gradient(${direction}, ${gradient})`,
       backdropFilter: `blur(${blurValue.toFixed(3)}rem)`,
@@ -304,12 +312,14 @@ const containerStyle = computed(() => {
   const isHorizontal = ['left', 'right'].includes(cfg.position);
   const isPageTarget = cfg.target === 'page';
 
-  const baseStyle: Record<string, any> = {
+  const baseStyle: Record<string, string | number | undefined> = {
     position: isPageTarget ? 'fixed' : 'absolute',
     pointerEvents: cfg.hoverIntensity ? 'auto' : 'none',
     opacity: isVisible.value ? 1 : 0,
-    transition: cfg.animated ? `opacity ${cfg.duration} ${cfg.easing}` : undefined,
-    zIndex: isPageTarget ? (cfg.zIndex || 1000) + 100 : (cfg.zIndex || 1000),
+    transition: cfg.animated
+      ? `opacity ${cfg.duration} ${cfg.easing}`
+      : undefined,
+    zIndex: isPageTarget ? (cfg.zIndex || 1000) + 100 : cfg.zIndex || 1000,
     ...(typeof cfg.style === 'object' ? cfg.style : {}),
   };
 
@@ -336,12 +346,16 @@ const containerStyle = computed(() => {
     ref="containerRef"
     :class="[
       'gradual-blur relative isolate pointer-events-none',
-      resolvedConfig.target === 'page' ? 'gradual-blur-page' : 'gradual-blur-parent',
-      resolvedConfig.className
+      resolvedConfig.target === 'page'
+        ? 'gradual-blur-page'
+        : 'gradual-blur-parent',
+      resolvedConfig.className,
     ]"
     :style="containerStyle"
     @mouseenter="resolvedConfig.hoverIntensity ? (isHovered = true) : undefined"
-    @mouseleave="resolvedConfig.hoverIntensity ? (isHovered = false) : undefined"
+    @mouseleave="
+      resolvedConfig.hoverIntensity ? (isHovered = false) : undefined
+    "
   >
     <div class="relative w-full h-full">
       <div

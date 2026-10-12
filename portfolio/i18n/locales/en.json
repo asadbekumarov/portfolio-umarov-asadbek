@@ -45,7 +45,7 @@
     "name": "Asadbek",
     "surname": "Umarov",
     "role": "Frontend Developer (React / Next.js)",
-    "tagline": "Frontend developer building modern web and mobile apps with React, Next.js, and TypeScript. Built an e-commerce platform serving real customers and a multi-service Telegram Web App that processed 5,000+ orders.",
+    "tagline": "Frontend developer building modern web and mobile apps with React, Next.js, and TypeScript. Built an e-commerce platform serving real customers and a multi-service Telegram Web App.",
     "location": "Tashkent, Uzbekistan",
     "open_to_work": "Open to full-time and internship roles",
     "cta_view": "View Projects",
@@ -105,7 +105,7 @@
         "achievements": [
           "Built booking and ordering flows across multiple service categories: taxi, food delivery, handyman services (electricians, plumbers, technicians) and product orders from shops.",
           "Built a responsive UI with React.js, TypeScript and Tailwind CSS, optimized for Telegram's constrained in-app browser.",
-          "Integrated REST APIs to handle real-time orders and service requests; the platform processed 5000+ orders in total, tracked via the admin panel."
+          "Integrated REST APIs and RTK Query to manage real-time service requests and data flow between client and backend."
         ]
       },
       "najot_talim_teacher": {
@@ -139,11 +139,11 @@
     },
     "actions": {
       "preview": "Preview",
+      "case_study": "Case study",
       "github": "GitHub",
       "screenshot": "Screenshot"
     },
     "experiments": {
-      "badge": "In Development",
       "title": "Experiments",
       "title_accent": "& Pet Projects",
       "subtitle": "Personal experiments and prototypes exploring modern technologies and ideas."
@@ -160,11 +160,11 @@
       },
       "darrow": {
         "subtitle": "Multi-service Telegram Web App — Taxi, Food Delivery & Handyman Services",
-        "description": "Co-developed a Yandex Go-style super-app running inside Telegram's in-app browser. Part of a 3-person remote team (1 backend, 2 frontend). Built booking and ordering flows across 4 service categories, optimized UI for Telegram's constrained WebView, and integrated REST APIs for real-time order processing.",
+        "description": "As part of a 3-person team (1 backend, 2 frontend), I worked on a web application opening inside Telegram for Turtkul, combining taxi, food, shops, and handyman services. I engineered the SMS OTP login, taxi booking screen, and restaurant pages.",
         "highlights": [
           "Architected booking flows for taxi, food delivery, handyman services, and shop orders — all sharing a unified UI component library",
           "Optimized for Telegram WebView limitations: implemented JS-based viewport height calculations where CSS dvh units failed",
-          "Integrated REST APIs handling 5,000+ total orders with centralized error handling and loading states"
+          "Integrated REST APIs and RTK Query with centralized error handling, caching, and skeleton loading states"
         ]
       },
       "smart_life": {
@@ -272,5 +272,84 @@
     "og_description": "Frontend developer building modern, fast, and user-friendly web and mobile applications with React, Next.js, and TypeScript.",
     "twitter_title": "Asadbek Umarov — Frontend Developer (React / Next.js)",
     "twitter_description": "Frontend developer building modern, fast, and user-friendly web and mobile applications with React, Next.js, and TypeScript."
+  },
+  "case_study": {
+    "back_to_projects": "All Projects",
+    "back_to_home": "Back to Home",
+    "badge": "Telegram Mini App • Case Study",
+    "quick_info": {
+      "role_label": "Role",
+      "team_label": "Team",
+      "stack_label": "Tech Stack",
+      "timeline_label": "Timeline",
+      "live_label": "Live Link"
+    },
+    "actions": {
+      "open_live": "Open in Telegram",
+      "view_all_projects": "View All Projects"
+    },
+    "nav": {
+      "select_section": "Select section",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "cta": {
+      "title": "Try Darrow Live",
+      "description": "Open the Web App directly via Telegram messenger to explore the multi-service ordering workflow."
+    },
+    "darrow": {
+      "title": "Darrow — Multi-service Telegram Web App",
+      "subtitle": "Super-app combining taxi, food delivery, master services, and shop orders in Telegram",
+      "seo": {
+        "title": "Darrow Case Study — Asadbek Umarov",
+        "description": "Technical case study of Darrow — a multi-service Telegram Web App built with React, TypeScript, RTK Query, and Telegram API.",
+        "og_title": "Darrow Case Study — Asadbek Umarov",
+        "og_description": "Detailed technical case study on building a multi-service Telegram Web App.",
+        "twitter_title": "Darrow Case Study — Asadbek Umarov",
+        "twitter_description": "Detailed technical case study on building a multi-service Telegram Web App."
+      },
+      "meta": {
+        "role": "Frontend Developer (React / TypeScript)",
+        "team": "3 members (1 Backend - Python, 2 Frontend)",
+        "stack": "React 19, TypeScript, Tailwind CSS v4, RTK Query, Vite",
+        "timeline": "Dec 2025 – Mar 2026",
+        "live_url": "https://t.me/darrov_bot"
+      },
+      "problem": {
+        "title": "Problem",
+        "subtitle": "What challenge was this project built to solve?",
+        "content": "To'rtko'l needed an all-in-one app combining taxi, food delivery, handyman services, and store shopping in one place, so users wouldn't need to visit separate platforms for each service.\n\nDeveloping separate apps for iOS and Android and publishing them to app stores takes a lot of time, and users would also have to download and install them. Therefore, the decision was made to build a web application that opens directly inside Telegram, which people already use every day."
+      },
+      "role": {
+        "title": "My Role",
+        "subtitle": "Key responsibilities and engineering contributions",
+        "content": "I was one of 2 frontend developers on the project. I mainly built the following:\n• SMS OTP Login (AuthPage): phone number entry, 5-digit verification code, session handling, and new user onboarding. The file was 100% written by me.\n• Taxi booking screen (Taxi component): tariff tier selection (Comfort, Ekonom) and bottom order sheet. At this stage, it was UI-only without backend and map integration.\n• RTK Query auth service and Redux slice (authApi, authSlice): token management and TypeScript types.\n• Restaurant details page (RestaurantDetail): categories and food menu listings, mostly authored by me.\n\nWe collaborated closely with my teammate on language selection, user profile, promo codes, and cart pages."
+      },
+      "team": {
+        "title": "Team",
+        "subtitle": "Team composition and collaboration workflow",
+        "content": "We were a 3-person team on the project: 1 backend developer using Python, and 2 frontend developers (myself and my teammate). We split the frontend work into domain modules: I built authentication, taxi, and restaurant pages, while my teammate handled the home screen and common components.\n\nWork was managed on GitHub via feature branches and pull requests, with no direct commits to main. From December 2025 to February 2026, 8 PRs were merged. We integrated with the backend over REST API contracts."
+      },
+      "decisions": {
+        "title": "Technical Decisions",
+        "subtitle": "Architecture, tech stack, and tool choices",
+        "stack_title": "Stack",
+        "stack_content": "React 19, TypeScript 5.9, and Vite 7. Styling powered by Tailwind CSS v4, animations by Framer Motion.",
+        "state_title": "State Management",
+        "state_content": "Server data (restaurants, menus, banners, branches, services) is fetched via Redux Toolkit and RTK Query. The auth token is stored in localStorage, while authSlice manages runtime session state. This approach is simple but vulnerable to XSS. A more secure alternative is httpOnly cookies, which requires backend adjustments.",
+        "why_rtk_title": "Why RTK Query?",
+        "why_rtk_content": "To avoid manually handling loading and error states for each request and prevent redundant re-fetching of identical data (caching). I authored the auth service (authApi) here."
+      },
+      "challenges": {
+        "title": "Challenges",
+        "subtitle": "Engineering obstacles faced and how they were solved",
+        "content": "1. SMS OTP authentication flow: This was a two-step process where the phone number is submitted, the backend returns a session token, and the user enters a 5-digit verification code verified against that session. New users are routed to a registration step. The main challenge was preserving the phone number and session state between steps, disabling submit buttons until the code is fully entered, and preventing duplicate requests during in-flight network calls.\n\n2. Blank screens on network delays: To prevent empty screens while fetching initial data, loading skeletons were implemented across the home page, restaurant listings, shops, and service catalogues.\n\n3. Incomplete modules: At this stage, the taxi booking and shopping cart screens remained UI-only prototypes without active backend integration. Errors were primarily displayed using basic feedback messages, with dedicated empty-state and error-state screens deferred to subsequent milestones."
+      },
+      "results": {
+        "title": "Results",
+        "subtitle": "Project outcomes, metrics, and business impact",
+        "content": "• Core frontend delivered: SMS OTP authentication, restaurants and menus, branch-specific services, and promo banners successfully integrated with a live backend.\n• Screens and bottom navigation ready for taxi, shops, and handyman services. Taxi and cart remained UI-only at this milestone.\n• Zero installation friction: Users open and access the application seamlessly inside Telegram."
+      }
+    }
   }
 }

@@ -4,26 +4,26 @@ let gsap: GSAP | null = null;
 
 // ── Props ───────────────────────────────────────────────────────
 interface Props {
-  width?:           number | string;
-  height?:          number | string;
-  cardDistance?:    number;
-  verticalDistance?:number;
-  delay?:           number;
-  pauseOnHover?:    boolean;
-  skewAmount?:      number;
-  easing?:          'linear' | 'elastic';
-  itemCount:        number;
+  width?: number | string;
+  height?: number | string;
+  cardDistance?: number;
+  verticalDistance?: number;
+  delay?: number;
+  pauseOnHover?: boolean;
+  skewAmount?: number;
+  easing?: 'linear' | 'elastic';
+  itemCount: number;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  width:            380,
-  height:           260,
-  cardDistance:     40,
+  width: 380,
+  height: 260,
+  cardDistance: 40,
   verticalDistance: 50,
-  delay:            2600,
-  pauseOnHover:     true,
-  skewAmount:       5,
-  easing:           'linear',
+  delay: 2600,
+  pauseOnHover: true,
+  skewAmount: 5,
+  easing: 'linear',
 });
 
 const emit = defineEmits<{
@@ -33,7 +33,6 @@ const emit = defineEmits<{
 // ── Refs ─────────────────────────────────────────────────────────
 const containerRef = ref<HTMLDivElement | null>(null);
 const cardEls = ref<HTMLElement[]>([]);
-const isReady = ref(true);
 const isPointerFine = ref(false);
 
 const setCardEl = (el: unknown, i: number) => {
@@ -45,29 +44,39 @@ const setCardEl = (el: unknown, i: number) => {
 const config = computed(() =>
   props.easing === 'elastic'
     ? {
-        ease:           'elastic.out(0.6, 0.9)',
-        durDrop:        1.2,
-        durMove:        1.2,
-        durReturn:      1.2,
+        ease: 'elastic.out(0.6, 0.9)',
+        durDrop: 1.2,
+        durMove: 1.2,
+        durReturn: 1.2,
         promoteOverlap: 0.85,
-        returnDelay:    0.05,
+        returnDelay: 0.05,
       }
     : {
-        ease:           'power2.inOut',
-        durDrop:        0.55,
-        durMove:        0.55,
-        durReturn:      0.55,
+        ease: 'power2.inOut',
+        durDrop: 0.55,
+        durMove: 0.55,
+        durReturn: 0.55,
         promoteOverlap: 0.65,
-        returnDelay:    0.08,
-      },
+        returnDelay: 0.08,
+      }
 );
 
-interface Slot { x: number; y: number; z: number; zIndex: number; }
+interface Slot {
+  x: number;
+  y: number;
+  z: number;
+  zIndex: number;
+}
 
-const makeSlot = (i: number, distX: number, distY: number, total: number): Slot => ({
-  x:      i * distX,
-  y:      -i * distY,
-  z:      -i * distX * 1.5,
+const makeSlot = (
+  i: number,
+  distX: number,
+  distY: number,
+  total: number
+): Slot => ({
+  x: i * distX,
+  y: -i * distY,
+  z: -i * distX * 1.5,
   zIndex: total - i,
 });
 
@@ -88,23 +97,27 @@ const placeNow = (el: HTMLElement, slot: Slot, skew: number) => {
     return;
   }
   gsap.set(el, {
-    x:              slot.x,
-    y:              slot.y,
-    z:              slot.z,
-    xPercent:       -50,
-    yPercent:       -50,
-    skewY:          skew,
-    transformOrigin:'center center',
-    zIndex:         slot.zIndex,
-    force3D:        true,
+    x: slot.x,
+    y: slot.y,
+    z: slot.z,
+    xPercent: -50,
+    yPercent: -50,
+    skewY: skew,
+    transformOrigin: 'center center',
+    zIndex: slot.zIndex,
+    force3D: true,
   });
 };
 
 // ── GSAP animation (continuous reliable loop) ────────────────────
-let tlRef:       any = null;
-let swapTimer:   ReturnType<typeof setTimeout> | null = null;
-let isSwapping   = false;
-const order      = ref<number[]>([]);
+let tlRef: {
+  kill: () => void;
+  pause: () => void;
+  play: () => void;
+} | null = null;
+let swapTimer: ReturnType<typeof setTimeout> | null = null;
+let isSwapping = false;
+const order = ref<number[]>([]);
 
 const scheduleNext = (delayMs?: number) => {
   if (swapTimer) clearTimeout(swapTimer);
@@ -122,13 +135,13 @@ const swap = () => {
   if (!elFront) return;
 
   isSwapping = true;
-  const cfg   = config.value;
+  const cfg = config.value;
   const total = cardEls.value.length;
-  const tl    = gsap.timeline({
+  const tl = gsap.timeline({
     onComplete: () => {
       isSwapping = false;
       scheduleNext();
-    }
+    },
   });
   tlRef = tl;
 
@@ -136,10 +149,10 @@ const swap = () => {
 
   // 1. Birinchi kartni pastga tushir
   tl.to(elFront, {
-    y:        `+=${dropDist}`,
-    opacity:  0.8,
+    y: `+=${dropDist}`,
+    opacity: 0.8,
     duration: cfg.durDrop,
-    ease:     cfg.ease,
+    ease: cfg.ease,
   });
 
   // 2. Qolganlarni oldinga siljit
@@ -151,22 +164,47 @@ const swap = () => {
     tl.set(el, { zIndex: slot.zIndex }, 'promote');
     tl.to(
       el,
-      { x: slot.x, y: slot.y, z: slot.z, opacity: 1, duration: cfg.durMove, ease: cfg.ease },
-      `promote+=${i * 0.08}`,
+      {
+        x: slot.x,
+        y: slot.y,
+        z: slot.z,
+        opacity: 1,
+        duration: cfg.durMove,
+        ease: cfg.ease,
+      },
+      `promote+=${i * 0.08}`
     );
   });
 
   // 3. Birinchi kartni orqa slotga qaytar
-  const backSlot = makeSlot(total - 1, props.cardDistance, props.verticalDistance, total);
+  const backSlot = makeSlot(
+    total - 1,
+    props.cardDistance,
+    props.verticalDistance,
+    total
+  );
   tl.addLabel('return', `promote+=${cfg.durMove * cfg.returnDelay}`);
-  tl.call(() => {
-    gsap.set(elFront, { zIndex: backSlot.zIndex });
-    order.value = [...rest, front];
-  }, undefined, 'return');
+  tl.call(
+    () => {
+      if (gsap) {
+        gsap.set(elFront, { zIndex: backSlot.zIndex });
+      }
+      order.value = [...rest, front];
+    },
+    undefined,
+    'return'
+  );
   tl.to(
     elFront,
-    { x: backSlot.x, y: backSlot.y, z: backSlot.z, opacity: 1, duration: cfg.durReturn, ease: cfg.ease },
-    'return',
+    {
+      x: backSlot.x,
+      y: backSlot.y,
+      z: backSlot.z,
+      opacity: 1,
+      duration: cfg.durReturn,
+      ease: cfg.ease,
+    },
+    'return'
   );
 };
 
@@ -220,16 +258,25 @@ const handleVisibilityChange = () => {
 
 // ── Reactivity on prop changes ───────────────────────────────────
 watch(
-  () => [props.cardDistance, props.verticalDistance, props.skewAmount, props.itemCount],
+  () => [
+    props.cardDistance,
+    props.verticalDistance,
+    props.skewAmount,
+    props.itemCount,
+  ],
   () => {
     const total = cardEls.value.length;
     order.value.forEach((idx, i) => {
       const el = cardEls.value[idx];
       if (el) {
-        placeNow(el, makeSlot(i, props.cardDistance, props.verticalDistance, total), props.skewAmount);
+        placeNow(
+          el,
+          makeSlot(i, props.cardDistance, props.verticalDistance, total),
+          props.skewAmount
+        );
       }
     });
-  },
+  }
 );
 
 // ── Lifecycle ────────────────────────────────────────────────────
@@ -237,12 +284,17 @@ onMounted(() => {
   const total = cardEls.value.length;
   order.value = Array.from({ length: total }, (_, i) => i);
 
-  isPointerFine.value = typeof window !== 'undefined'
-    && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  isPointerFine.value =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   // Kartlarni dastlabki toza transform bilan joylashtiramiz
   cardEls.value.forEach((el, i) =>
-    placeNow(el, makeSlot(i, props.cardDistance, props.verticalDistance, total), props.skewAmount),
+    placeNow(
+      el,
+      makeSlot(i, props.cardDistance, props.verticalDistance, total),
+      props.skewAmount
+    )
   );
 
   const initGSAP = async () => {
@@ -251,11 +303,16 @@ onMounted(() => {
       gsap = gsapModule;
 
       cardEls.value.forEach((el, i) =>
-        placeNow(el, makeSlot(i, props.cardDistance, props.verticalDistance, total), props.skewAmount),
+        placeNow(
+          el,
+          makeSlot(i, props.cardDistance, props.verticalDistance, total),
+          props.skewAmount
+        )
       );
 
-      const prefersReducedMotion = typeof window !== 'undefined'
-        && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const prefersReducedMotion =
+        typeof window !== 'undefined' &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       if (!prefersReducedMotion) {
         scheduleNext(5000);
@@ -266,7 +323,14 @@ onMounted(() => {
   };
 
   if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
-    (window as any).requestIdleCallback(initGSAP, { timeout: 2500 });
+    (
+      window as Window & {
+        requestIdleCallback?: (
+          cb: () => void,
+          opts?: { timeout: number }
+        ) => void;
+      }
+    ).requestIdleCallback?.(initGSAP, { timeout: 2500 });
   } else {
     setTimeout(initGSAP, 1200);
   }
@@ -286,7 +350,7 @@ onUnmounted(() => {
 
 // ── Computed width/height style ───────────────────────────────────
 const containerStyle = computed(() => ({
-  width:  typeof props.width  === 'number' ? `${props.width}px`  : props.width,
+  width: typeof props.width === 'number' ? `${props.width}px` : props.width,
   height: typeof props.height === 'number' ? `${props.height}px` : props.height,
 }));
 </script>
@@ -306,10 +370,7 @@ const containerStyle = computed(() => ({
       :key="i - 1"
       :ref="(el) => setCardEl(el as HTMLElement, i - 1)"
       :style="{ ...containerStyle, ...getCardTransform(i - 1) }"
-      class="absolute top-1/2 left-1/2 rounded-2xl border border-slate-700/60 bg-[#0a101d]
-             [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden]
-             overflow-hidden cursor-pointer shadow-2xl shadow-black/80
-             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+      class="absolute top-1/2 left-1/2 rounded-2xl border border-slate-700/60 bg-[#0a101d] [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] overflow-hidden cursor-pointer shadow-2xl shadow-black/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
       @click="emit('card-click', i - 1)"
     >
       <slot :index="i - 1" />

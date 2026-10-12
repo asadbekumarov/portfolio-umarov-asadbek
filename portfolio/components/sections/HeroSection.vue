@@ -2,51 +2,53 @@
 import stposImg from '~/assets/images/stpos.webp';
 import smartlifeImg from '~/assets/images/smartlife.webp';
 import dnkImg from '~/assets/images/dnk-expert.webp';
-const { t, locale } = useI18n()
+const { t, locale } = useI18n();
 
 const scrollToSection = (hash: string): void => {
-  const el = document.querySelector(hash)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
-}
+  const el = document.querySelector(hash);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
 
 const windowOpen = (url: string): void => {
   if (typeof window !== 'undefined' && url) {
-    window.open(url, '_blank', 'noopener,noreferrer')
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
-}
+};
 
 const techStack = [
-  { name: 'React.js',      icon: 'react'      },
-  { name: 'Next.js',       icon: 'nextjs'     },
-  { name: 'TypeScript',    icon: 'typescript' },
-  { name: 'Tailwind CSS',  icon: 'tailwind'   },
-  { name: 'React Native',  icon: 'mobile'     },
-]
+  { name: 'React.js', icon: 'react' },
+  { name: 'Next.js', icon: 'nextjs' },
+  { name: 'TypeScript', icon: 'typescript' },
+  { name: 'Tailwind CSS', icon: 'tailwind' },
+  { name: 'React Native', icon: 'mobile' },
+];
 
 // Window width for responsive 3D card presentation
-const windowWidth = ref(1200)
+const windowWidth = ref(1200);
 const updateSize = () => {
   if (typeof window !== 'undefined') {
-    windowWidth.value = window.innerWidth
+    windowWidth.value = window.innerWidth;
   }
-}
+};
 
 onMounted(() => {
-  updateSize()
-  window.addEventListener('resize', updateSize, { passive: true })
-})
+  updateSize();
+  window.addEventListener('resize', updateSize, { passive: true });
+});
 
 onUnmounted(() => {
   if (typeof window !== 'undefined') {
-    window.removeEventListener('resize', updateSize)
+    window.removeEventListener('resize', updateSize);
   }
-})
+});
 
-const isSmall = computed(() => windowWidth.value < 640)
-const cardWidth = computed(() => (windowWidth.value < 360 ? 285 : windowWidth.value < 640 ? 315 : 430))
-const cardHeight = computed(() => (windowWidth.value < 640 ? 245 : 305))
-const cardDistX = computed(() => (windowWidth.value < 640 ? 20 : 42))
-const cardDistY = computed(() => (windowWidth.value < 640 ? 24 : 48))
+const isSmall = computed(() => windowWidth.value < 640);
+const cardWidth = computed(() =>
+  windowWidth.value < 360 ? 285 : windowWidth.value < 640 ? 315 : 430
+);
+const cardHeight = computed(() => (windowWidth.value < 640 ? 245 : 305));
+const cardDistX = computed(() => (windowWidth.value < 640 ? 20 : 42));
+const cardDistY = computed(() => (windowWidth.value < 640 ? 24 : 48));
 
 // STpos, Smart Life va DNA-Technology kartochkalari (i18n bilan)
 const heroCards = computed(() => [
@@ -77,7 +79,7 @@ const heroCards = computed(() => [
     link: 'https://dnk-expert.vercel.app/uz',
     technologies: ['Next.js', 'TypeScript', 'REST API'],
   },
-])
+]);
 </script>
 
 <template>
@@ -88,20 +90,20 @@ const heroCards = computed(() => [
   >
     <div class="section-container relative z-10 w-full py-20 sm:py-28 lg:py-32">
       <div class="hero-grid">
-
         <!-- ═══════════════════════════════
              LEFT — Text / CTA
              ═══════════════════════════════ -->
         <div class="hero-left relative z-20">
-
           <!-- H1 -->
-          <h1 class="hero-title" v-memo="[locale]">
-            <span class="hero-name">{{ t('hero.name') }} {{ t('hero.surname') }}</span>
+          <h1 v-memo="[locale]" class="hero-title">
+            <span class="hero-name"
+              >{{ t('hero.name') }} {{ t('hero.surname') }}</span
+            >
             <span class="hero-role">{{ t('hero.role') }}</span>
           </h1>
 
           <!-- Subtext -->
-          <p class="hero-sub hero-tagline" v-memo="[locale]">
+          <p v-memo="[locale]" class="hero-sub hero-tagline">
             {{ t('hero.tagline') }}
           </p>
 
@@ -109,30 +111,127 @@ const heroCards = computed(() => [
           <ul class="tech-list hero-tech" aria-label="Tech stack">
             <li v-for="tech in techStack" :key="tech.name" class="tech-badge">
               <!-- React icon -->
-              <svg v-if="tech.icon === 'react'" class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <circle cx="12" cy="12" r="2.25" fill="currentColor" stroke="none" />
+              <svg
+                v-if="tech.icon === 'react'"
+                class="tech-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="2.25"
+                  fill="currentColor"
+                  stroke="none"
+                />
                 <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" />
-                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" transform="rotate(60 12 12)" />
-                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" transform="rotate(120 12 12)" />
+                <ellipse
+                  cx="12"
+                  cy="12"
+                  rx="10"
+                  ry="4"
+                  stroke="currentColor"
+                  transform="rotate(60 12 12)"
+                />
+                <ellipse
+                  cx="12"
+                  cy="12"
+                  rx="10"
+                  ry="4"
+                  stroke="currentColor"
+                  transform="rotate(120 12 12)"
+                />
               </svg>
               <!-- Next.js icon -->
-              <svg v-else-if="tech.icon === 'nextjs'" class="tech-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
-                <path d="M8 16V8l8 8V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <svg
+                v-else-if="tech.icon === 'nextjs'"
+                class="tech-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M8 16V8l8 8V8"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
               <!-- TypeScript icon -->
-              <svg v-else-if="tech.icon === 'typescript'" class="tech-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" />
-                <path d="M13 12h3.5M14.75 12v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                <path d="M7 12h3v1.5a1.5 1.5 0 1 1-3 0V12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <svg
+                v-else-if="tech.icon === 'typescript'"
+                class="tech-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M13 12h3.5M14.75 12v5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M7 12h3v1.5a1.5 1.5 0 1 1-3 0V12Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
               <!-- Tailwind icon -->
-              <svg v-else-if="tech.icon === 'tailwind'" class="tech-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 13c1-4 3.5-6 7-6s5 2.5 4 5c1-2.5 3.5-3.5 5-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                <path d="M3 18c1-4 3.5-6 7-6s5 2.5 4 5c1-2.5 3.5-3.5 5-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <svg
+                v-else-if="tech.icon === 'tailwind'"
+                class="tech-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6 13c1-4 3.5-6 7-6s5 2.5 4 5c1-2.5 3.5-3.5 5-2"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M3 18c1-4 3.5-6 7-6s5 2.5 4 5c1-2.5 3.5-3.5 5-2"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
               </svg>
               <!-- Mobile icon -->
-              <svg v-else-if="tech.icon === 'mobile'" class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg
+                v-else-if="tech.icon === 'mobile'"
+                class="tech-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
                 <rect x="7" y="2" width="10" height="20" rx="2" />
                 <circle cx="12" cy="18" r="0.5" fill="currentColor" />
               </svg>
@@ -142,8 +241,22 @@ const heroCards = computed(() => [
 
           <!-- CTA buttons -->
           <div class="cta-row hero-ctas">
-            <a href="#projects" class="btn-primary" @click.prevent="scrollToSection('#projects')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <a
+              href="#projects"
+              class="btn-primary"
+              @click.prevent="scrollToSection('#projects')"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
                 <rect x="2" y="7" width="20" height="14" rx="2" />
                 <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
               </svg>
@@ -155,7 +268,17 @@ const heroCards = computed(() => [
               download="Asadbek_Umarov_Resume.pdf"
               class="btn-secondary"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
@@ -168,7 +291,9 @@ const heroCards = computed(() => [
         <!-- ═══════════════════════════════
              RIGHT — Continuous Looping Project Cards (Desktop only)
              ═══════════════════════════════ -->
-        <div class="hero-right hero-code-wrap hidden lg:flex items-center justify-center relative z-10 w-full mt-10 lg:mt-0">
+        <div
+          class="hero-right hero-code-wrap hidden lg:flex items-center justify-center relative z-10 w-full mt-10 lg:mt-0"
+        >
           <div class="card-swap-stage" aria-label="Featured projects showcase">
             <VCardSwap
               :item-count="heroCards.length"
@@ -180,7 +305,9 @@ const heroCards = computed(() => [
               :pause-on-hover="true"
               :skew-amount="isSmall ? 2 : 4"
               easing="linear"
-              @card-click="(i) => heroCards[i]?.link && windowOpen(heroCards[i]?.link)"
+              @card-click="
+                (i) => heroCards[i]?.link && windowOpen(heroCards[i]?.link)
+              "
             >
               <template #default="{ index }">
                 <div class="project-card-inner">
@@ -198,7 +325,9 @@ const heroCards = computed(() => [
                     <div class="pc-image-overlay" />
                     <!-- Badge -->
                     <div class="pc-badge">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"
+                      />
                       <span>{{ heroCards[index]?.badge }}</span>
                     </div>
                   </div>
@@ -207,7 +336,9 @@ const heroCards = computed(() => [
                   <div class="pc-content">
                     <div class="flex items-center justify-between gap-2">
                       <h2 class="pc-title">{{ heroCards[index]?.title }}</h2>
-                      <span class="pc-sub">{{ heroCards[index]?.subtitle }}</span>
+                      <span class="pc-sub">{{
+                        heroCards[index]?.subtitle
+                      }}</span>
                     </div>
 
                     <div class="pc-footer">
@@ -216,15 +347,25 @@ const heroCards = computed(() => [
                           v-for="tech in heroCards[index]?.technologies"
                           :key="tech"
                           class="pc-tech-pill"
-                        >{{ tech }}</span>
+                          >{{ tech }}</span
+                        >
                       </div>
 
-                      <span
-                        class="pc-link cursor-pointer"
-                        aria-hidden="true"
-                      >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <span class="pc-link cursor-pointer" aria-hidden="true">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                          />
                           <polyline points="15 3 21 3 21 9" />
                           <line x1="10" y1="14" x2="21" y2="3" />
                         </svg>
@@ -237,7 +378,6 @@ const heroCards = computed(() => [
             </VCardSwap>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -406,7 +546,10 @@ const heroCards = computed(() => [
   align-items: center;
 }
 @media (min-width: 1024px) {
-  .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 3.5rem; }
+  .hero-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3.5rem;
+  }
 }
 
 /* ─── Typography ─── */
@@ -417,7 +560,7 @@ const heroCards = computed(() => [
   margin-bottom: 1.25rem;
 }
 .hero-name {
-  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
   color: #f0f4ff;
@@ -425,15 +568,22 @@ const heroCards = computed(() => [
   line-height: 1;
 }
 .hero-role {
-  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   font-weight: 500;
-  color: #0145F2;
+  color: #0145f2;
   letter-spacing: -0.01em;
   line-height: 1.3;
 }
 .hero-sub {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Inter',
+    sans-serif;
   font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
   line-height: 1.7;
   color: #7a8ea8;
@@ -459,7 +609,10 @@ const heroCards = computed(() => [
   color: #94a8c4;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
 }
 .tech-badge:hover {
   border-color: rgba(1, 69, 242, 0.35);
@@ -482,12 +635,24 @@ const heroCards = computed(() => [
 }
 
 /* ─── Entrance animations ─── */
-.hero-badge     { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
-.hero-title     { /* LCP candidate: immediately visible */ }
-.hero-tagline   { /* LCP candidate: immediately visible */ }
-.hero-tech      { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both; }
-.hero-ctas      { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
-.hero-code-wrap { animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both; }
+.hero-badge {
+  animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+.hero-title {
+  /* LCP candidate: immediately visible */
+}
+.hero-tagline {
+  /* LCP candidate: immediately visible */
+}
+.hero-tech {
+  animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+.hero-ctas {
+  animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+.hero-code-wrap {
+  animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
 
 @media (max-width: 640px) {
   .hero-badge,

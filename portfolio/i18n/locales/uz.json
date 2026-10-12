@@ -45,7 +45,7 @@
     "name": "Asadbek",
     "surname": "Umarov",
     "role": "Frontend Developer (React / Next.js)",
-    "tagline": "React, Next.js va TypeScript yordamida veb hamda mobil ilovalar yarataman. 5000+ buyurtmalarni qayta ishlagan Telegram WebApp va haqiqiy mijozlarga xizmat qiluvchi e-commerce platformasini ishlab chiqqanman.",
+    "tagline": "React, Next.js va TypeScript yordamida veb hamda mobil ilovalar yarataman. Telegram WebApp hamda haqiqiy mijozlarga xizmat qiluvchi e-commerce platformalarini ishlab chiqqanman.",
     "location": "Toshkent, O'zbekiston",
     "cta_view": "Loyihalarni ko'rish",
     "cta_contact": "Bog'lanish",
@@ -102,7 +102,7 @@
         "achievements": [
           "Bir nechta xizmat kategoriyalari bo'yicha band qilish va buyurtma berish oqimlarini yaratdim: taksi, taom yetkazib berish, usta xizmatlari (elektrchilar, santexniklar, texniklar) va do'konlardan mahsulot buyurtmalari.",
           "Telegram'ning cheklangan brauzeri uchun optimallashtirilgan React.js, TypeScript va Tailwind CSS bilan moslashuvchan (responsive) UI qurdim.",
-          "Real vaqtdagi buyurtmalar va xizmat so'rovlarini boshqarish uchun REST API'larni integratsiya qildim; platforma admin panel orqali kuzatilgan jami 5000+ dan ortiq buyurtmalarni qayta ishladi."
+          "Real vaqtdagi xizmat so'rovlari va ma'lumotlar almashinuvi uchun REST API hamda RTK Query integratsiyasini amalga oshirdim."
         ]
       },
       "najot_talim_teacher": {
@@ -137,6 +137,7 @@
     },
     "actions": {
       "preview": "Ko'rish",
+      "case_study": "Case study",
       "github": "GitHub",
       "screenshot": "Rasm"
     },
@@ -158,11 +159,11 @@
       },
       "darrow": {
         "subtitle": "Multi-xizmat Telegram Web App — Taksi, Taom Yetkazish va Usta Xizmatlari",
-        "description": "3 kishilik masofaviy jamoa tarkibida (1 backend, 2 frontend) Yandex Go uslubidagi super-ilovani Telegram brauzerida ishlaydigan qilib yaratdim. 4 xizmat kategoriyasi bo'yicha band qilish va buyurtma oqimlarini qurdim, Telegram WebView cheklovlari uchun UI optimallashtirildi va real vaqtdagi buyurtmalarni qayta ishlash uchun REST APIlar integratsiya qilindi.",
+        "description": "3 kishilik jamoada (1 backend, 2 frontend) To’rtko’l uchun taksi, taom, do’kon va usta xizmatlarini birlashtirgan, Telegram’da ochiladigan veb-ilova ustida ishladim. SMS OTP bilan kirish, taksi buyurtma ekrani va restoran sahifalarini yozdim.",
         "highlights": [
           "Taksi, taom yetkazish, usta xizmatlari va do'kon buyurtmalari uchun band qilish oqimlari — barchasi birlashgan UI komponent kutubxonasidan foydalanadi",
           "Telegram WebView cheklovlari uchun optimallashtirilgan: CSS dvh birliklar ishlamagan joyda JS asosidagi viewport balandligini hisoblash amalga oshirildi",
-          "Jami 5000+ buyurtmani qayta ishlagan REST API integratsiyasi — markazlashgan xato boshqaruvi va yuklash holatlari bilan"
+          "REST API va RTK Query integratsiyasi — markazlashgan xato boshqaruvi, kesh va yuklash holatlari (skeletonlar) bilan"
         ]
       },
       "smart_life": {
@@ -272,5 +273,84 @@
     "og_description": "React, Next.js va TypeScript yordamida zamonaviy veb hamda mobil ilovalar yaratuvchi Frontend dasturchi.",
     "twitter_title": "Asadbek Umarov — Frontend Developer (React / Next.js)",
     "twitter_description": "React, Next.js va TypeScript yordamida zamonaviy veb hamda mobil ilovalar yaratuvchi Frontend dasturchi."
+  },
+  "case_study": {
+    "back_to_projects": "Barcha loyihalar",
+    "back_to_home": "Bosh sahifaga qaytish",
+    "badge": "Telegram Mini App • Case Study",
+    "quick_info": {
+      "role_label": "Rol",
+      "team_label": "Jamoa",
+      "stack_label": "Texnologiyalar",
+      "timeline_label": "Muddati",
+      "live_label": "Jonli havola"
+    },
+    "actions": {
+      "open_live": "Telegramda ochish",
+      "view_all_projects": "Barcha loyihalarni ko'rish"
+    },
+    "nav": {
+      "select_section": "Bo'limni tanlang",
+      "prev": "Oldingisi",
+      "next": "Keyingisi"
+    },
+    "cta": {
+      "title": "Darrow loyihasini jonli sinab ko'ring",
+      "description": "Telegram messenjeri orqali to'g'ridan-to'g'ri Web App interfeysini ochib, buyurtma berish jarayonini ko'rishingiz mumkin."
+    },
+    "darrow": {
+      "title": "Darrow — Multi-xizmat Telegram Web App",
+      "subtitle": "Taksi, taom yetkazish, usta xizmatlari va do'kon buyurtmalarini birlashtirgan super-ilova",
+      "seo": {
+        "title": "Darrow Case Study — Asadbek Umarov",
+        "description": "Darrow — Telegram Web App multi-xizmat super-ilovasi yaratilishi bo'yicha texnik case study. React, RTK Query va Telegram API integratsiyasi.",
+        "og_title": "Darrow Case Study — Asadbek Umarov",
+        "og_description": "Telegram Web App multi-xizmat ilovasi yaratilishi bo'yicha batafsil texnik case study.",
+        "twitter_title": "Darrow Case Study — Asadbek Umarov",
+        "twitter_description": "Telegram Web App multi-xizmat ilovasi yaratilishi bo'yicha batafsil texnik case study."
+      },
+      "meta": {
+        "role": "Frontend Developer (React / TypeScript)",
+        "team": "3 kishi (1 Backend - Python, 2 Frontend)",
+        "stack": "React 19, TypeScript, Tailwind CSS v4, RTK Query, Vite",
+        "timeline": "Dec 2025 – Mar 2026",
+        "live_url": "https://t.me/darrov_bot"
+      },
+      "problem": {
+        "title": "Muammo",
+        "subtitle": "Loyiha qanday muammoni hal qilishi kerak edi?",
+        "content": "To’rtko’l uchun taksi, taom yetkazish, usta xizmatlari va do’kon xaridlarini bir joyga jamlaydigan ilova kerak edi, foydalanuvchi har xizmat uchun alohida joyga kirmasligi uchun.\n\niOS va Android uchun alohida ilova qilish, uni do’konlarga joylash ko’p vaqt oladi, foydalanuvchi ham ilovani yuklab o’rnatishi kerak bo’ladi. Shuning uchun odamlar har kuni ishlatadigan Telegram ichida ochiladigan veb-ilova qilishga qaror qilindi."
+      },
+      "role": {
+        "title": "Mening rolim",
+        "subtitle": "Loyihadagi asosiy mas’uliyatlarim va vazifalarim",
+        "content": "Loyihada 2 frontend dasturchidan biri bo’ldim. Quyidagilarni asosan o’zim yozdim:\n• SMS OTP orqali kirish (AuthPage): telefon raqam kiritish, 5 xonali kodni tekshirish, sessiya va yangi foydalanuvchini ro’yxatdan o’tkazish. Fayl 100% mening muallifligimda.\n• Taksi buyurtma ekrani (Taxi komponenti): tarif tanlash (Comfort, Ekonom) va pastdan chiqadigan buyurtma paneli. Bu bosqichda faqat interfeys edi, backend va xarita ulanmagan.\n• Auth uchun RTK Query servisi va Redux slice (authApi, authSlice): token boshqaruvi va TypeScript tiplari.\n• Restoran tafsilotlari sahifasi (RestaurantDetail): toifalar va taomlar ro’yxati, asosan men yozdim.\n\nTil tanlash, profil, promokod va savat sahifalarida jamoadoshim bilan birga ishladik."
+      },
+      "team": {
+        "title": "Jamoa",
+        "subtitle": "Jamoa tarkibi va hamkorlik jarayoni",
+        "content": "Loyihada 3 kishi ishladik: Python’da backend qilgan 1 ta dasturchi va 2 ta frontend dasturchi (men va jamoadoshim). Frontend ishini modullarga bo’lib oldik: men kirish, taksi va restoran sahifalarini yozdim, jamoadoshim bosh sahifa va umumiy qismlarni qildi.\n\nIsh GitHub’da alohida branchlar va pull request’lar orqali yuritildi, main’ga to’g’ridan-to’g’ri commit qilinmadi. 2025-yil dekabrdan 2026-yil fevralgacha 8 ta PR merge qilindi. Backend bilan REST API orqali ishladik."
+      },
+      "decisions": {
+        "title": "Texnik qarorlar",
+        "subtitle": "Arxitektura, stack va vositalar tanlovi",
+        "stack_title": "Stack",
+        "stack_content": "React 19, TypeScript 5.9 va Vite 7. Stil uchun Tailwind CSS v4, animatsiya uchun Framer Motion.",
+        "state_title": "State boshqaruvi",
+        "state_content": "Server ma’lumotlari (restoranlar, menyu, bannerlar, filiallar, xizmatlar) Redux Toolkit va RTK Query orqali olinadi. Kirish tokeni localStorage’da saqlanadi, authSlice esa ish vaqtidagi sessiya holatini ushlaydi. Bu usul oddiy, lekin XSS xavfiga ochiq. Xavfsizroq variant httpOnly cookie, buning uchun backend tomonda o’zgarish kerak.",
+        "why_rtk_title": "Nega RTK Query?",
+        "why_rtk_content": "Har bir so’rov uchun loading va error holatini qo’lda yozmaslik hamda bir xil ma’lumotni qayta-qayta so’ramaslik uchun (kesh). Auth servisini (authApi) shu yerda men yozdim."
+      },
+      "challenges": {
+        "title": "Qiyinchiliklar",
+        "subtitle": "Ish jarayonida duch kelingan to’siqlar va ularning yechimlari",
+        "content": "1. SMS OTP bilan kirish oqimi. Bu ikki bosqichli jarayon: telefon raqam yuboriladi, backend sessiya qaytaradi, keyin foydalanuvchi 5 xonali kodni kiritadi va kod shu sessiya bilan tekshiriladi. Yangi foydalanuvchi ro’yxatdan o’tish bosqichiga o’tadi. Bosqichlar orasida telefon raqam va sessiyani yo’qotmaslik, kod to’lmaguncha tugmani bloklash va so’rov ketayotganda takroriy bosishning oldini olish kerak edi.\n\n2. Ma’lumot kechikkandagi bo’sh ekran. Bosh sahifa, restoranlar, do’konlar va xizmatlar ro’yxatida ma’lumot kelguncha skeletonlar ko’rsatiladi.\n\n3. Tugallanmagan qismlar. Taksi va savat ekranlari bu bosqichda faqat interfeys darajasida qoldi, backendga ulanmagan. Xatolar asosan oddiy xabar bilan ko’rsatiladi, bo’sh va xato holatlari uchun alohida ekranlar keyingi bosqichga qolgan."
+      },
+      "results": {
+        "title": "Natija",
+        "subtitle": "Loyiha natijalari va erishilgan ko’rsatkichlar",
+        "content": "• Frontendning asosiy qismi tayyor bo’ldi: SMS OTP bilan kirish, restoranlar va taomlar menyusi, filial bo’yicha xizmatlar va reklama bannerlari real backend’ga ulandi.\n• Taksi, do’kon va usta xizmatlari uchun sahifalar va pastki navigatsiya tayyor. Taksi va savat bu bosqichda interfeys sifatida qoldi.\n• Foydalanuvchi ilovani o’rnatmasdan, Telegram ichida ochib ishlatadi."
+      }
+    }
   }
 }

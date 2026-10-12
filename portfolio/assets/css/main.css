@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'Cloudes';
-    src: url('/fonts/clouds.woff2') format('woff2');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Cloudes';
+  src: url('/fonts/clouds.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @tailwind base;
@@ -11,7 +11,7 @@
 @tailwind utilities;
 
 .font-cloudes {
-    font-family: 'Cloudes', cursive, sans-serif;
+  font-family: 'Cloudes', cursive, sans-serif;
 }
 
 /* =============================================
@@ -19,34 +19,48 @@
    ============================================= */
 
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(28px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes floatY {
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 @keyframes orbPulse {
-    0%, 100% { opacity: 0.30; transform: scale(1);   }
-    50%       { opacity: 0.45; transform: scale(1.08); }
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.08);
+  }
 }
 @keyframes orbDrift {
-    0%, 100% { transform: translate(0, 0);     }
-    33%      { transform: translate(30px, -20px); }
-    66%      { transform: translate(-20px, 25px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(30px, -20px);
+  }
+  66% {
+    transform: translate(-20px, 25px);
+  }
 }
 
 /* =============================================
@@ -54,99 +68,99 @@
    ============================================= */
 
 @layer base {
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-    html {
-        scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-    }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
-    body {
-        /* Asosiy fon */
-        background-color: #030712;
-        /* Nozik ko'k to'r fon (subtle grid) */
-        background-image:
-            linear-gradient(rgba(1, 69, 242, 0.045) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(1, 69, 242, 0.045) 1px, transparent 1px);
-        background-size: 48px 48px;
-        /* Asosiy matn — Ochiq bo'z rang (#EDF1F5) */
-        color: #EDF1F5;
-        font-family:
-            "Inter",
-            system-ui,
-            -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
-        line-height: 1.6;
-    }
+  body {
+    /* Asosiy fon */
+    background-color: #030712;
+    /* Nozik ko'k to'r fon (subtle grid) */
+    background-image:
+      linear-gradient(rgba(1, 69, 242, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(1, 69, 242, 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
+    /* Asosiy matn — Ochiq bo'z rang (#EDF1F5) */
+    color: #edf1f5;
+    font-family:
+      'Inter',
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
 
-    /* ── Sarlavhalar — Space Grotesk (@nuxt/fonts orqali avtomatik yuklanadi) ── */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
-        letter-spacing: normal;
-        font-synthesis: none; /* brauzer "soxta bold" yasab, harflarni yopishtirib yubormasligi uchun */
-    }
+  /* ── Sarlavhalar — Space Grotesk (@nuxt/fonts orqali avtomatik yuklanadi) ── */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: normal;
+    font-synthesis: none; /* brauzer "soxta bold" yasab, harflarni yopishtirib yubormasligi uchun */
+  }
 
-    /* ── Custom scrollbar ── */
-    ::-webkit-scrollbar {
-        width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-        background: #030712;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #0145F2; /* Electric Blue */
-        border-radius: 999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #0033b8;
-    }
+  /* ── Custom scrollbar ── */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030712;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0145f2; /* Electric Blue */
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0033b8;
+  }
 
-    /* ── Global Accessible Focus Ring ── */
-    :focus-visible,
-    button:focus-visible,
-    a:focus-visible,
-    input:focus-visible,
-    select:focus-visible,
-    textarea:focus-visible,
-    [tabindex]:focus-visible {
-        outline: 2px solid #0145F2 !important;
-        outline-offset: 2px !important;
-        box-shadow: 0 0 0 4px rgba(1, 69, 242, 0.25) !important;
-        border-radius: 6px;
-    }
-    :focus:not(:focus-visible) {
-        outline: none;
-        box-shadow: none;
-    }
+  /* ── Global Accessible Focus Ring ── */
+  :focus-visible,
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #0145f2 !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 4px rgba(1, 69, 242, 0.25) !important;
+    border-radius: 6px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
 
-    img,
-    svg {
-        display: block;
-    }
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-    ul,
-    ol {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+  img,
+  svg {
+    display: block;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 /* =============================================
@@ -154,189 +168,201 @@
    ============================================= */
 
 @layer components {
-    /* ── Layout ── */
+  /* ── Layout ── */
 
+  .section-container {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
     .section-container {
-        max-width: 72rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
+  }
 
-    @media (min-width: 640px) {
-        .section-container {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
+  @media (min-width: 1024px) {
+    .section-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
+  }
 
-    @media (min-width: 1024px) {
-        .section-container {
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-    }
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 
+  @media (min-width: 1024px) {
     .section-padding {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+      padding-top: 7rem;
+      padding-bottom: 7rem;
     }
+  }
 
-    @media (min-width: 1024px) {
-        .section-padding {
-            padding-top: 7rem;
-            padding-bottom: 7rem;
-        }
-    }
+  /* ── Typography ── */
 
-    /* ── Typography ── */
+  .section-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #0145f2; /* Electric Blue */
+  }
 
-    .section-label {
-        display: block;
-        font-size: 0.875rem;
-        font-weight: 700;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: #0145F2; /* Electric Blue */
-    }
+  .section-title {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: normal;
+    font-synthesis: none;
+  }
 
-    .section-title {
-        font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
-        font-size: clamp(1.75rem, 5vw, 2.5rem);
-        font-weight: 700;
-        color: #ffffff;
-        line-height: 1.2;
-        letter-spacing: normal;
-        font-synthesis: none;
-    }
+  /* ── Accent Text (Electric Blue) ── */
 
-    /* ── Accent Text (Electric Blue) ── */
+  .gradient-text,
+  .gradient-text-animated {
+    color: #0145f2;
+    background: transparent;
+    -webkit-text-fill-color: initial;
+  }
 
-    .gradient-text,
-    .gradient-text-animated {
-        color: #0145F2;
-        background: transparent;
-        -webkit-text-fill-color: initial;
-    }
+  /* ── Glass card ── */
 
-    /* ── Glass card ── */
+  .glass-card {
+    background: rgba(13, 21, 41, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
 
-    .glass-card {
-        background: rgba(13, 21, 41, 0.7);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 1rem;
-        transition:
-            border-color 0.2s ease,
-            background 0.2s ease,
-            transform 0.2s ease,
-            box-shadow 0.2s ease;
-    }
+  .glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(13, 21, 41, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px rgba(1, 69, 242, 0.08);
+  }
 
-    .glass-card:hover {
-        border-color: rgba(255, 255, 255, 0.15);
-        background: rgba(13, 21, 41, 0.85);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px -5px rgba(1, 69, 242, 0.08);
-    }
+  /* ── Primary button (Electric Blue) ── */
 
-    /* ── Primary button (Electric Blue) ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #0145f2;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    border: 1px solid #0145f2;
+  }
 
-    .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.75rem;
-        font-size: 1rem;
-        font-weight: 600;
-        color: #ffffff;
-        background-color: #0145F2;
-        transition: background-color 0.2s ease;
-        white-space: nowrap;
-        border: 1px solid #0145F2;
-    }
+  .btn-primary:hover {
+    background-color: #0039ce;
+    border-color: #0039ce;
+  }
 
-    .btn-primary:hover {
-        background-color: #0039ce;
-        border-color: #0039ce;
-    }
+  .btn-primary:active {
+    background-color: #002ea6;
+  }
 
-    .btn-primary:active {
-        background-color: #002ea6;
-    }
+  /* ── Secondary button (Canvas Cloud border) ── */
 
-    /* ── Secondary button (Canvas Cloud border) ── */
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #edf1f5;
+    background: transparent;
+    border: 1px solid rgba(237, 241, 245, 0.15);
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+    white-space: nowrap;
+  }
 
-    .btn-secondary {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.75rem;
-        font-size: 1rem;
-        font-weight: 600;
-        color: #EDF1F5;
-        background: transparent;
-        border: 1px solid rgba(237, 241, 245, 0.15);
-        transition:
-            background-color 0.2s ease,
-            border-color 0.2s ease,
-            color 0.2s ease;
-        white-space: nowrap;
-    }
+  .btn-secondary:hover {
+    background-color: rgba(237, 241, 245, 0.06);
+    border-color: rgba(237, 241, 245, 0.25);
+    color: #ffffff;
+  }
 
-    .btn-secondary:hover {
-        background-color: rgba(237, 241, 245, 0.06);
-        border-color: rgba(237, 241, 245, 0.25);
-        color: #ffffff;
-    }
+  .btn-secondary:active {
+    background-color: rgba(237, 241, 245, 0.1);
+  }
 
-    .btn-secondary:active {
-        background-color: rgba(237, 241, 245, 0.1);
-    }
+  /* ── Tag pill ── */
 
-    /* ── Tag pill ── */
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.25rem 0.625rem;
+    border-radius: 999px;
+    background: rgba(1, 69, 242, 0.15);
+    color: #edf1f5;
+    border: 1px solid rgba(1, 69, 242, 0.35);
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
 
-    .tag-pill {
-        display: inline-flex;
-        align-items: center;
-        font-size: 0.875rem;
-        font-weight: 500;
-        padding: 0.25rem 0.625rem;
-        border-radius: 999px;
-        background: rgba(1, 69, 242, 0.15);
-        color: #EDF1F5;
-        border: 1px solid rgba(1, 69, 242, 0.35);
-        transition:
-            background 0.2s ease,
-            border-color 0.2s ease;
-    }
+  /* ── Scroll animation system ── */
 
-    /* ── Scroll animation system ── */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 
-    .scroll-animate {
-        opacity: 0;
-        transform: translateY(28px);
-        transition:
-            opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-            transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+  .scroll-animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-    .scroll-animate.in-view {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* ── Stagger delay helpers ── */
-    .delay-100 { transition-delay: 0.1s; }
-    .delay-150 { transition-delay: 0.15s; }
-    .delay-200 { transition-delay: 0.2s; }
-    .delay-300 { transition-delay: 0.3s; }
-    .delay-400 { transition-delay: 0.4s; }
-    .delay-500 { transition-delay: 0.5s; }
+  /* ── Stagger delay helpers ── */
+  .delay-100 {
+    transition-delay: 0.1s;
+  }
+  .delay-150 {
+    transition-delay: 0.15s;
+  }
+  .delay-200 {
+    transition-delay: 0.2s;
+  }
+  .delay-300 {
+    transition-delay: 0.3s;
+  }
+  .delay-400 {
+    transition-delay: 0.4s;
+  }
+  .delay-500 {
+    transition-delay: 0.5s;
+  }
 }
 
 /* =============================================
@@ -344,30 +370,25 @@
    ============================================= */
 
 @layer utilities {
-    .bg-grid {
-        background-image:
-            linear-gradient(rgba(1, 69, 242, 0.07) 1px, transparent 1px),
-            linear-gradient(
-                90deg,
-                rgba(1, 69, 242, 0.07) 1px,
-                transparent 1px
-            );
-        background-size: 64px 64px;
-    }
-    
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(1, 69, 242, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(1, 69, 242, 0.07) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
 
-    .animate-float {
-        animation: floatY 5s ease-in-out infinite;
-    }
+  .animate-float {
+    animation: floatY 5s ease-in-out infinite;
+  }
 
-    /* Aniq ko'rinadigan custom focus ring (focus-visible:outline-none ni ham qamrab oladi) */
-    .focus-visible\:outline-none:focus-visible,
-    [class*="focus-visible:outline-none"]:focus-visible,
-    [class*="focus:outline-none"]:focus-visible {
-        outline: 2px solid #0145F2 !important;
-        outline-offset: 2px !important;
-        box-shadow: 0 0 0 4px rgba(1, 69, 242, 0.25) !important;
-    }
+  /* Aniq ko'rinadigan custom focus ring (focus-visible:outline-none ni ham qamrab oladi) */
+  .focus-visible\:outline-none:focus-visible,
+  [class*='focus-visible:outline-none']:focus-visible,
+  [class*='focus:outline-none']:focus-visible {
+    outline: 2px solid #0145f2 !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 4px rgba(1, 69, 242, 0.25) !important;
+  }
 }
 
 /* =============================================
@@ -376,32 +397,32 @@
 
 /* No-JS fallback: if scripting is disabled, scroll-animate content must still be visible */
 @media (scripting: none) {
-    .scroll-animate {
-        opacity: 1;
-        transform: none;
-    }
+  .scroll-animate {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
-    .scroll-animate {
-        transition: none;
-        opacity: 1;
-        transform: none;
-    }
-    .hero-title,
-    .hero-badge,
-    .hero-tagline,
-    .hero-tech,
-    .hero-ctas {
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
-    .glass-card {
-        transition: none;
-    }
-    .glass-card:hover {
-        transform: none;
-    }
+  .scroll-animate {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .hero-title,
+  .hero-badge,
+  .hero-tagline,
+  .hero-tech,
+  .hero-ctas {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .glass-card {
+    transition: none;
+  }
+  .glass-card:hover {
+    transform: none;
+  }
 }

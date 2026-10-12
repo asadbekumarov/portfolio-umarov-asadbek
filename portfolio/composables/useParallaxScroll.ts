@@ -31,7 +31,7 @@ export function useParallaxScroll() {
     const update = () => {
       document.documentElement.style.setProperty(
         '--parallax-y',
-        `${window.scrollY}px`,
+        `${window.scrollY}px`
       );
       ticking = false;
     };

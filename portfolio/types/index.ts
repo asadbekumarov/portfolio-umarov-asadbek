@@ -10,7 +10,7 @@ export interface InfoItem {
 }
 
 export interface ContactCard {
-  icon: "email" | "phone" | "linkedin" | "telegram";
+  icon: 'email' | 'phone' | 'linkedin' | 'telegram';
   labelKey: string;
   value: string;
   href: string;
@@ -49,6 +49,7 @@ export interface Project {
   highlightCount: number;
   technologies: string[];
   hidden?: boolean;
+  hasCaseStudy?: boolean;
 }
 
 export interface EducationItem {

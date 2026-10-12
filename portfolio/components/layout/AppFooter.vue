@@ -1,13 +1,11 @@
 <script setup lang="ts">
-const { t } = useI18n()
-
 import { navLinks, socialLinks } from '~/data';
 
-const currentYear = new Date().getFullYear()
+const { t } = useI18n();
 
+const currentYear = new Date().getFullYear();
 
-
-const { scrollToTop, scrollToSection } = useNavigation()
+const { scrollToTop, scrollToSection } = useNavigation();
 </script>
 
 <template>
@@ -27,7 +25,9 @@ const { scrollToTop, scrollToSection } = useNavigation()
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/[0.05]"
       >
         <!-- Brand Column -->
-        <div class="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left">
+        <div
+          class="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left"
+        >
           <!-- Logo -->
           <a
             href="#"
@@ -36,16 +36,13 @@ const { scrollToTop, scrollToSection } = useNavigation()
             @click.prevent="scrollToTop"
           >
             <div
-              class="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black select-none
-                     text-white
-                     bg-[#0145F2]"
+              class="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black select-none text-white bg-[#0145F2]"
               aria-hidden="true"
             >
               AU
             </div>
             <span
-              class="text-base font-bold tracking-wide text-white
-                     transition-colors duration-200"
+              class="text-base font-bold tracking-wide text-white transition-colors duration-200"
             >
               Asadbek Umarov
             </span>
@@ -54,12 +51,13 @@ const { scrollToTop, scrollToSection } = useNavigation()
           <p class="text-xs leading-relaxed max-w-xs text-slate-400/80 mb-5">
             {{ t('footer.tagline') }}
           </p>
-
         </div>
 
         <!-- Navigation -->
         <div class="lg:col-span-4 flex flex-col items-center sm:items-start">
-          <p class="text-[11px] font-bold tracking-widest uppercase mb-4 text-slate-400">
+          <p
+            class="text-[11px] font-bold tracking-widest uppercase mb-4 text-slate-400"
+          >
             {{ t('nav.navigation') || 'Navigation' }}
           </p>
           <ul
@@ -69,8 +67,7 @@ const { scrollToTop, scrollToSection } = useNavigation()
             <li v-for="link in navLinks" :key="link.href">
               <a
                 :href="link.href"
-                class="text-sm font-medium text-slate-300 hover:text-[#0145F2]
-                       transition-colors duration-200"
+                class="text-sm font-medium text-slate-300 hover:text-[#0145F2] transition-colors duration-200"
                 @click.prevent="scrollToSection(link.href)"
               >
                 {{ t(link.labelKey) }}
@@ -81,12 +78,16 @@ const { scrollToTop, scrollToSection } = useNavigation()
 
         <!-- Connect -->
         <div class="lg:col-span-4 flex flex-col items-center sm:items-start">
-          <p class="text-[11px] font-bold tracking-widest uppercase mb-4 text-slate-400">
+          <p
+            class="text-[11px] font-bold tracking-widest uppercase mb-4 text-slate-400"
+          >
             {{ t('nav.connect') || 'Connect' }}
           </p>
 
           <!-- Social Icons -->
-          <div class="flex flex-wrap gap-2.5 justify-center sm:justify-start mb-5">
+          <div
+            class="flex flex-wrap gap-2.5 justify-center sm:justify-start mb-5"
+          >
             <a
               v-for="social in socialLinks"
               :key="social.icon"
@@ -94,11 +95,7 @@ const { scrollToTop, scrollToSection } = useNavigation()
               :target="social.external ? '_blank' : undefined"
               :rel="social.external ? 'noopener noreferrer' : undefined"
               :aria-label="t(social.labelKey)"
-              class="w-9 h-9 rounded-xl flex items-center justify-center
-                     transition-colors duration-200
-                     bg-white/[0.04] border border-white/[0.08]
-                     text-slate-400 hover:text-white
-                     hover:bg-white/[0.08] hover:border-white/[0.15]"
+              class="w-9 h-9 rounded-xl flex items-center justify-center transition-colors duration-200 bg-white/[0.04] border border-white/[0.08] text-slate-400 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.15]"
             >
               <!-- LinkedIn -->
               <svg
@@ -225,11 +222,7 @@ const { scrollToTop, scrollToSection } = useNavigation()
         <div class="flex items-center gap-4 order-1 sm:order-2">
           <!-- Back to Top -->
           <button
-            class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl
-                   bg-white/[0.04] border border-white/[0.08]
-                   text-slate-400 hover:text-white
-                   hover:bg-white/[0.08] hover:border-white/[0.15]
-                   transition-colors duration-200"
+            class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-400 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.15] transition-colors duration-200"
             aria-label="Back to top"
             @click="scrollToTop"
           >

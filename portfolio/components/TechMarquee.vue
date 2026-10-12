@@ -12,37 +12,34 @@
  */
 
 const topItems = [
-  { name: 'React.js',     icon: '/icons/react.svg' },
-  { name: 'Next.js',      icon: '/icons/nextjs.svg' },
-  { name: 'TypeScript',   icon: '/icons/typescript.svg' },
-  { name: 'JavaScript',   icon: '/icons/javascript.svg' },
+  { name: 'React.js', icon: '/icons/react.svg' },
+  { name: 'Next.js', icon: '/icons/nextjs.svg' },
+  { name: 'TypeScript', icon: '/icons/typescript.svg' },
+  { name: 'JavaScript', icon: '/icons/javascript.svg' },
   { name: 'Tailwind CSS', icon: '/icons/tailwind.svg' },
   { name: 'React Native', icon: '/icons/react-native.svg' },
-  { name: 'HTML5',        icon: '/icons/html5.svg' },
-  { name: 'CSS3',         icon: '/icons/css3.svg' },
-  { name: 'Vue.js',       icon: '/icons/vue.svg' },
-  { name: 'Nuxt',         icon: '/icons/nuxt.svg' },
+  { name: 'HTML5', icon: '/icons/html5.svg' },
+  { name: 'CSS3', icon: '/icons/css3.svg' },
+  { name: 'Vue.js', icon: '/icons/vue.svg' },
+  { name: 'Nuxt', icon: '/icons/nuxt.svg' },
 ];
 
 const bottomItems = [
-  { name: 'Git',           icon: '/icons/git.svg' },
-  { name: 'GitHub',        icon: '/icons/github.svg' },
+  { name: 'Git', icon: '/icons/git.svg' },
+  { name: 'GitHub', icon: '/icons/github.svg' },
   { name: 'Redux Toolkit', icon: '/icons/redux.svg' },
-  { name: 'Figma',         icon: '/icons/figma.svg' },
-  { name: 'VS Code',       icon: '/icons/vscode.svg' },
-  { name: 'npm',           icon: '/icons/npm.svg' },
-  { name: 'CSS Modules',   icon: '/icons/cssmodules.svg' },
-  { name: 'Expo',          icon: '/icons/expo.svg' },
-  { name: 'Supabase',      icon: '/icons/supabase.svg' },
-  { name: 'Vercel',        icon: '/icons/vercel.svg' },
+  { name: 'Figma', icon: '/icons/figma.svg' },
+  { name: 'VS Code', icon: '/icons/vscode.svg' },
+  { name: 'npm', icon: '/icons/npm.svg' },
+  { name: 'CSS Modules', icon: '/icons/cssmodules.svg' },
+  { name: 'Expo', icon: '/icons/expo.svg' },
+  { name: 'Supabase', icon: '/icons/supabase.svg' },
+  { name: 'Vercel', icon: '/icons/vercel.svg' },
 ];
 </script>
 
 <template>
-  <section
-    class="marquee-section"
-    aria-label="Technology stack showcase"
-  >
+  <section class="marquee-section" aria-label="Technology stack showcase">
     <!-- ── Top row: left → right ── -->
     <div class="marquee-track-wrap" aria-hidden="true">
       <ul class="marquee-track marquee-ltr" role="list">
@@ -164,13 +161,21 @@ const bottomItems = [
  *   joyda bo'ladi → uzilish yo'q.
  */
 @keyframes marquee-ltr {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee-rtl {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* ── Item ── */
@@ -187,11 +192,11 @@ const bottomItems = [
   cursor: default;
   transition:
     border-color 0.2s ease,
-    background   0.2s ease;
+    background 0.2s ease;
 }
 .marquee-item:hover {
-  border-color: rgba(1, 69, 242, 0.40);
-  background:   rgba(1, 69, 242, 0.09);
+  border-color: rgba(1, 69, 242, 0.4);
+  background: rgba(1, 69, 242, 0.09);
 }
 
 /* ── Icon ── */
@@ -228,7 +233,7 @@ const bottomItems = [
     width: auto;
   }
   /* Ikkinchi nusxani (dublikat) yashiramiz */
-  .marquee-item:nth-child(n+11) {
+  .marquee-item:nth-child(n + 11) {
     display: none;
   }
   .marquee-section {

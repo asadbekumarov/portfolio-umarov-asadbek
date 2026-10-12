@@ -1,84 +1,87 @@
 <script setup lang="ts">
-const { t } = useI18n()
+import { navLinks } from '~/data';
 
-import { navLinks } from '~/data'
+const { t } = useI18n();
 
-const isMenuOpen = ref(false)
-const isScrolled = ref(false)
+const isMenuOpen = ref(false);
+const isScrolled = ref(false);
 
 // Body scroll lock on mobile menu open
 watch(isMenuOpen, (open) => {
   if (typeof document !== 'undefined') {
     if (open) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = ''
+      document.body.style.overflow = '';
     }
   }
-})
+});
 
-let ticking = false
+let ticking = false;
 const handleScroll = (): void => {
   if (!ticking) {
     requestAnimationFrame(() => {
-      isScrolled.value = window.scrollY > 24
-      ticking = false
-    })
-    ticking = true
+      isScrolled.value = window.scrollY > 24;
+      ticking = false;
+    });
+    ticking = true;
   }
-}
+};
 
 const handleResize = (): void => {
   if (window.innerWidth >= 1024 && isMenuOpen.value) {
-    isMenuOpen.value = false
+    isMenuOpen.value = false;
   }
-}
+};
 
 const handleKeydown = (e: KeyboardEvent): void => {
   if (e.key === 'Escape' && isMenuOpen.value) {
-    isMenuOpen.value = false
+    isMenuOpen.value = false;
   }
-}
+};
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true })
-  window.addEventListener('resize', handleResize, { passive: true })
-  window.addEventListener('keydown', handleKeydown)
-})
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleResize, { passive: true });
+  window.addEventListener('keydown', handleKeydown);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-  window.removeEventListener('resize', handleResize)
-  window.removeEventListener('keydown', handleKeydown)
+  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('resize', handleResize);
+  window.removeEventListener('keydown', handleKeydown);
   if (typeof document !== 'undefined') {
-    document.body.style.overflow = ''
+    document.body.style.overflow = '';
   }
-})
+});
 
-const { scrollToTop: navScrollToTop, scrollToSection: navScrollToSection } = useNavigation()
+const { scrollToTop: navScrollToTop, scrollToSection: navScrollToSection } =
+  useNavigation();
 
 const scrollToTop = (): void => {
   if (isMenuOpen.value) {
-    isMenuOpen.value = false
+    isMenuOpen.value = false;
   }
   setTimeout(() => {
-    navScrollToTop()
-  }, 60)
-}
+    navScrollToTop();
+  }, 60);
+};
 
 const scrollToSection = (href: string): void => {
-  isMenuOpen.value = false
+  isMenuOpen.value = false;
   setTimeout(() => {
-    navScrollToSection(href)
-  }, 60)
-}
+    navScrollToSection(href);
+  }, 60);
+};
 </script>
 
 <template>
   <nav
     :class="[
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-none outline-none',
-      isScrolled || isMenuOpen ? 'py-3 sm:py-3.5 bg-[#030712]/95 backdrop-blur-md' : 'py-4 sm:py-5 bg-transparent',
+      isScrolled || isMenuOpen
+        ? 'py-3 sm:py-3.5 bg-[#030712]/95 backdrop-blur-md'
+        : 'py-4 sm:py-5 bg-transparent',
     ]"
     role="navigation"
     aria-label="Main navigation"
@@ -92,7 +95,9 @@ const scrollToSection = (href: string): void => {
           aria-label="Umarov.A — back to top"
           @click.prevent="scrollToTop"
         >
-          <span class="font-cloudes text-2xl sm:text-3xl tracking-wide text-white group-hover:text-[#0145F2] transition-colors duration-200">
+          <span
+            class="font-cloudes text-2xl sm:text-3xl tracking-wide text-white group-hover:text-[#0145F2] transition-colors duration-200"
+          >
             Umarov<span class="text-[#0145F2]">.A</span>
           </span>
         </a>
@@ -121,7 +126,9 @@ const scrollToSection = (href: string): void => {
           <button
             type="button"
             class="p-2.5 rounded-xl transition-all duration-200 hover:bg-white/10 active:scale-95 text-slate-200 border-none outline-none focus-visible:outline-none"
-            :aria-label="isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'"
+            :aria-label="
+              isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
+            "
             :aria-expanded="isMenuOpen"
             aria-controls="mobile-menu"
             @click="isMenuOpen = !isMenuOpen"
@@ -173,14 +180,11 @@ const scrollToSection = (href: string): void => {
       >
         <div
           class="relative flex flex-col flex-1 pt-20 sm:pt-24 pb-8 px-6 max-w-lg mx-auto w-full"
-          style="padding-bottom: max(2rem, env(safe-area-inset-bottom));"
+          style="padding-bottom: max(2rem, env(safe-area-inset-bottom))"
         >
           <!-- Navigation links list starting right below header -->
           <ul class="flex flex-col gap-1.5 mt-4 sm:mt-6 flex-1" role="list">
-            <li
-              v-for="(link, index) in navLinks"
-              :key="link.href"
-            >
+            <li v-for="(link, index) in navLinks" :key="link.href">
               <a
                 :href="link.href"
                 :style="{
@@ -199,7 +203,9 @@ const scrollToSection = (href: string): void => {
           </ul>
 
           <!-- Bottom info & copyright -->
-          <div class="pt-6 mt-6 border-t border-white/[0.08] flex items-center justify-between text-xs text-slate-400 font-mono">
+          <div
+            class="pt-6 mt-6 border-t border-white/[0.08] flex items-center justify-between text-xs text-slate-400 font-mono"
+          >
             <span class="font-semibold text-slate-300">Asadbek Umarov</span>
             <span>AU © 2026</span>
           </div>
@@ -241,7 +247,9 @@ const scrollToSection = (href: string): void => {
 /* Icon swap */
 .icon-swap-enter-active,
 .icon-swap-leave-active {
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
 }
 .icon-swap-enter-from {
   opacity: 0;

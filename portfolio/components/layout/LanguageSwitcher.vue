@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { locale, locales, setLocale } = useI18n();
-const router = useRouter();
 
 const currentLocale = computed(() => locale.value);
 const availableLocales = computed(() => {
@@ -36,7 +35,7 @@ const cleanup = () => {
   sessionStorage.removeItem(HASH_KEY);
 };
 
-const switchLanguage = async (localeCode: string) => {
+const switchLanguage = async (localeCode: 'uz' | 'en' | string) => {
   const savedScrollY = window.scrollY;
   const savedHash = window.location.hash || '';
   sessionStorage.setItem(SCROLL_KEY, String(savedScrollY));
@@ -44,7 +43,7 @@ const switchLanguage = async (localeCode: string) => {
 
   showDropdown.value = false;
 
-  await setLocale(localeCode);
+  await setLocale(localeCode as 'uz' | 'en');
 
   // Scrollni router scroll resetidan keyin 2 bosqichda tiklash
   await nextTick();
@@ -62,16 +61,20 @@ const switchLanguage = async (localeCode: string) => {
 };
 
 // Har qanday locale o'zgargandan keyin yana bir marta javobgarlik bilan tiklash
-watch(() => locale.value, () => {
-  nextTick(() => {
-    requestAnimationFrame(() => {
-      restoreScroll();
-      window.setTimeout(() => {
-        if (restoreScroll()) cleanup();
-      }, 120);
+watch(
+  () => locale.value,
+  () => {
+    nextTick(() => {
+      requestAnimationFrame(() => {
+        restoreScroll();
+        window.setTimeout(() => {
+          if (restoreScroll()) cleanup();
+        }, 120);
+      });
     });
-  });
-}, { flush: 'post' });
+  },
+  { flush: 'post' }
+);
 
 // Router har bir navigatsiyadan keyin til o'zgarish bo'lsa scrollni tiklash
 onMounted(() => {
@@ -94,16 +97,15 @@ onMounted(() => {
   <div class="relative">
     <!-- Dropdown Button -->
     <button
-      class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-colors duration-200
-             bg-white/[0.04] border border-white/[0.08] text-slate-200
-             hover:bg-white/[0.08] hover:border-white/[0.15]
-             focus:outline-none"
-      @click="showDropdown = !showDropdown"
+      class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-colors duration-200 bg-white/[0.04] border border-white/[0.08] text-slate-200 hover:bg-white/[0.08] hover:border-white/[0.15] focus:outline-none"
       :aria-expanded="showDropdown"
       aria-haspopup="listbox"
+      @click="showDropdown = !showDropdown"
     >
       <!-- Current Locale Code -->
-      <span class="text-xs sm:text-sm font-semibold tracking-wide uppercase select-none">
+      <span
+        class="text-xs sm:text-sm font-semibold tracking-wide uppercase select-none"
+      >
         {{ currentLocale }}
       </span>
       <!-- Dropdown Arrow -->
@@ -133,22 +135,22 @@ onMounted(() => {
     >
       <div
         v-if="showDropdown"
-        class="absolute top-full right-0 mt-2 w-40 rounded-xl
-               bg-[#0a1124]/95 backdrop-blur-md border border-white/[0.08] z-50"
+        class="absolute top-full right-0 mt-2 w-40 rounded-xl bg-[#0a1124]/95 backdrop-blur-md border border-white/[0.08] z-50"
         role="listbox"
       >
         <div class="py-1">
           <button
             v-for="loc in availableLocales"
             :key="loc.code"
-            class="w-full flex items-center gap-3 px-3 py-2 text-sm transition-colors duration-150
-                   text-slate-200 hover:bg-white/[0.08] focus:outline-none"
-            @click="switchLanguage(loc.code)"
+            class="w-full flex items-center gap-3 px-3 py-2 text-sm transition-colors duration-150 text-slate-200 hover:bg-white/[0.08] focus:outline-none"
             role="option"
             :aria-selected="loc.code === currentLocale"
+            @click="switchLanguage(loc.code)"
           >
             <!-- Language Code -->
-            <span class="text-xs font-semibold tracking-wide uppercase w-7 shrink-0 text-slate-400">
+            <span
+              class="text-xs font-semibold tracking-wide uppercase w-7 shrink-0 text-slate-400"
+            >
               {{ loc.code }}
             </span>
             <!-- Language Name -->

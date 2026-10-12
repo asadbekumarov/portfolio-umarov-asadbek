@@ -8,9 +8,6 @@ import { experiences } from '~/data';
     class="section-padding relative overflow-hidden py-12 sm:py-20"
     aria-labelledby="experience-heading"
   >
-
-
-
     <div class="section-container relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
       <!-- ── Section Header ── -->
       <div class="text-center mb-12 sm:mb-16">
@@ -32,7 +29,6 @@ import { experiences } from '~/data';
           :key="exp.key + index"
           class="relative pb-8 sm:pb-12 last:pb-0 scroll-animate delay-200"
         >
-
           <!-- ── Card ── -->
           <div
             class="glass-card p-5 sm:p-7 md:p-8 rounded-2xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-sm transition-colors duration-200"
@@ -72,7 +68,8 @@ import { experiences } from '~/data';
                 <span
                   class="inline-block text-xs font-semibold px-3 py-1.5 rounded-lg bg-[#0d2138]/80 border border-sky-500/20 text-slate-300 whitespace-nowrap"
                 >
-                  {{ exp.periodStart }} — {{ exp.current ? $t('experience.current') : exp.periodEnd }}
+                  {{ exp.periodStart }} —
+                  {{ exp.current ? $t('experience.current') : exp.periodEnd }}
                 </span>
               </div>
             </div>
@@ -84,15 +81,14 @@ import { experiences } from '~/data';
             />
 
             <!-- Description -->
-            <p class="text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 text-slate-400">
+            <p
+              class="text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 text-slate-400"
+            >
               {{ $t(`experience.items.${exp.key}.description`) }}
             </p>
 
             <!-- Achievements list -->
-            <ul
-              class="space-y-2 sm:space-y-2.5"
-              aria-label="Key achievements"
-            >
+            <ul class="space-y-2 sm:space-y-2.5" aria-label="Key achievements">
               <li
                 v-for="i in exp.achievementCount"
                 :key="i"
@@ -116,7 +112,9 @@ import { experiences } from '~/data';
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </span>
-                <span>{{ $t(`experience.items.${exp.key}.achievements.${i - 1}`) }}</span>
+                <span>{{
+                  $t(`experience.items.${exp.key}.achievements.${i - 1}`)
+                }}</span>
               </li>
             </ul>
           </div>
@@ -125,5 +123,3 @@ import { experiences } from '~/data';
     </div>
   </section>
 </template>
-
-
