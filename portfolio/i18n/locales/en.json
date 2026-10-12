@@ -44,8 +44,8 @@
   "hero": {
     "name": "Asadbek",
     "surname": "Umarov",
-    "role": "Frontend Engineer building production-ready applications",
-    "tagline": "Frontend developer who ships production apps. Built an e-commerce platform serving real customers and a multi-service Telegram Web App that processed 5,000+ orders — using React, Next.js, TypeScript, and RTK Query.",
+    "role": "Frontend Developer (React / Next.js)",
+    "tagline": "Frontend developer building modern web and mobile apps with React, Next.js, and TypeScript. Built an e-commerce platform serving real customers and a multi-service Telegram Web App that processed 5,000+ orders.",
     "location": "Tashkent, Uzbekistan",
     "open_to_work": "Open to full-time and internship roles",
     "cta_view": "View Projects",
