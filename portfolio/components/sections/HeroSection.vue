@@ -86,7 +86,7 @@ const heroCards = computed(() => [
     class="relative min-h-screen flex items-center overflow-hidden"
     aria-label="Introduction"
   >
-    <div class="section-container relative z-10 w-full py-28 sm:py-32">
+    <div class="section-container relative z-10 w-full py-20 sm:py-28 lg:py-32">
       <div class="hero-grid">
 
         <!-- ═══════════════════════════════
@@ -166,9 +166,9 @@ const heroCards = computed(() => [
         </div>
 
         <!-- ═══════════════════════════════
-             RIGHT — Continuous Looping Project Cards
+             RIGHT — Continuous Looping Project Cards (Desktop only)
              ═══════════════════════════════ -->
-        <div class="hero-right hero-code-wrap flex items-center justify-center relative z-10 w-full mt-10 lg:mt-0">
+        <div class="hero-right hero-code-wrap hidden lg:flex items-center justify-center relative z-10 w-full mt-10 lg:mt-0">
           <div class="card-swap-stage" aria-label="Featured projects showcase">
             <VCardSwap
               :item-count="heroCards.length"

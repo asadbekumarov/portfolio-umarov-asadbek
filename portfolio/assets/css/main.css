@@ -115,14 +115,22 @@
         background: #0033b8;
     }
 
-    /* ── Focus ring ── */
-    :focus-visible {
-        outline: 2px solid #0145F2;
-        outline-offset: 3px;
-        border-radius: 4px;
+    /* ── Global Accessible Focus Ring ── */
+    :focus-visible,
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    [tabindex]:focus-visible {
+        outline: 2px solid #0145F2 !important;
+        outline-offset: 2px !important;
+        box-shadow: 0 0 0 4px rgba(1, 69, 242, 0.25) !important;
+        border-radius: 6px;
     }
     :focus:not(:focus-visible) {
         outline: none;
+        box-shadow: none;
     }
 
     img,
@@ -350,6 +358,15 @@
 
     .animate-float {
         animation: floatY 5s ease-in-out infinite;
+    }
+
+    /* Aniq ko'rinadigan custom focus ring (focus-visible:outline-none ni ham qamrab oladi) */
+    .focus-visible\:outline-none:focus-visible,
+    [class*="focus-visible:outline-none"]:focus-visible,
+    [class*="focus:outline-none"]:focus-visible {
+        outline: 2px solid #0145F2 !important;
+        outline-offset: 2px !important;
+        box-shadow: 0 0 0 4px rgba(1, 69, 242, 0.25) !important;
     }
 }
 
