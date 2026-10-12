@@ -1,17 +1,17 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 useScrollAnimation();
 useCursorSpotlight();
 useParallaxScroll();
 
-useHead({
-    title: "Asadbek Umarov — Frontend Developer",
-    meta: [
-        {
-            name: "description",
-            content:
-                "Frontend Developer specializing in React, TypeScript & Next.js. Building fast, modern, and user-friendly web applications. Based in Tashkent, Uzbekistan — open to remote opportunities worldwide.",
-        },
-    ],
+useSeoMeta({
+    title: () => t('seo.title'),
+    description: () => t('seo.description'),
+    ogTitle: () => t('seo.og_title'),
+    ogDescription: () => t('seo.og_description'),
+    twitterTitle: () => t('seo.twitter_title'),
+    twitterDescription: () => t('seo.twitter_description'),
 });
 </script>
 

@@ -258,15 +258,13 @@
     "cta_email": "Send Me an Email"
   },
   "seo": {
-    "title": "Asadbek Umarov — Frontend & Mobile Developer (React, Next.js, React Native)",
-    "description": "Frontend & Mobile Developer specializing in React, Next.js, TypeScript, and React Native. Building fast, responsive, and user-friendly applications in Tashkent, Uzbekistan.",
+    "title": "Asadbek Umarov — Frontend Developer (React / Next.js)",
+    "description": "Frontend developer building modern, fast, and user-friendly web and mobile applications with React, Next.js, and TypeScript.",
     "author": "Asadbek Umarov",
     "keywords": "Asadbek Umarov, Frontend Developer, Mobile Developer, React Developer, Next.js, React Native, TypeScript, Portfolio",
-
-    "og_title": "Asadbek Umarov — Frontend & Mobile Developer",
-    "og_description": "React, Next.js & React Native Developer based in Tashkent. Check out my latest projects and skills.",
-
-    "twitter_title": "Asadbek Umarov — Frontend & Mobile Developer",
-    "twitter_description": "React, Next.js & React Native Developer. Building modern web and mobile applications."
+    "og_title": "Asadbek Umarov — Frontend Developer (React / Next.js)",
+    "og_description": "Frontend developer building modern, fast, and user-friendly web and mobile applications with React, Next.js, and TypeScript.",
+    "twitter_title": "Asadbek Umarov — Frontend Developer (React / Next.js)",
+    "twitter_description": "Frontend developer building modern, fast, and user-friendly web and mobile applications with React, Next.js, and TypeScript."
   }
 }
