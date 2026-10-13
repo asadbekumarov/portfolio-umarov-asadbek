@@ -7,8 +7,8 @@ const localePath = useLocalePath();
 
 const slug = computed(() => (route.params.slug as string) || '');
 
-// Faqat Darrow uchun case study sahifasi
-if (slug.value !== 'darrow') {
+// Faqat Darrov uchun case study sahifasi
+if (slug.value !== 'darrov') {
   throw createError({
     statusCode: 404,
     statusMessage: 'Case study not found',
@@ -17,12 +17,12 @@ if (slug.value !== 'darrow') {
 }
 
 useSeoMeta({
-  title: () => t('case_study.darrow.seo.title'),
-  description: () => t('case_study.darrow.seo.description'),
-  ogTitle: () => t('case_study.darrow.seo.og_title'),
-  ogDescription: () => t('case_study.darrow.seo.og_description'),
-  twitterTitle: () => t('case_study.darrow.seo.twitter_title'),
-  twitterDescription: () => t('case_study.darrow.seo.twitter_description'),
+  title: () => t('case_study.darrov.seo.title'),
+  description: () => t('case_study.darrov.seo.description'),
+  ogTitle: () => t('case_study.darrov.seo.og_title'),
+  ogDescription: () => t('case_study.darrov.seo.og_description'),
+  twitterTitle: () => t('case_study.darrov.seo.twitter_title'),
+  twitterDescription: () => t('case_study.darrov.seo.twitter_description'),
 });
 
 type SectionId =
@@ -35,16 +35,16 @@ interface SectionTab {
 }
 
 const sections: SectionTab[] = [
-  { id: 'problem', num: '01', titleKey: 'case_study.darrow.problem.title' },
-  { id: 'role', num: '02', titleKey: 'case_study.darrow.role.title' },
-  { id: 'team', num: '03', titleKey: 'case_study.darrow.team.title' },
-  { id: 'decisions', num: '04', titleKey: 'case_study.darrow.decisions.title' },
+  { id: 'problem', num: '01', titleKey: 'case_study.darrov.problem.title' },
+  { id: 'role', num: '02', titleKey: 'case_study.darrov.role.title' },
+  { id: 'team', num: '03', titleKey: 'case_study.darrov.team.title' },
+  { id: 'decisions', num: '04', titleKey: 'case_study.darrov.decisions.title' },
   {
     id: 'challenges',
     num: '05',
-    titleKey: 'case_study.darrow.challenges.title',
+    titleKey: 'case_study.darrov.challenges.title',
   },
-  { id: 'results', num: '06', titleKey: 'case_study.darrow.results.title' },
+  { id: 'results', num: '06', titleKey: 'case_study.darrov.results.title' },
 ];
 
 const activeTab = ref<SectionId>('problem');
@@ -122,13 +122,13 @@ const nextTab = () => {
           class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4"
           style="font-family: 'Space Grotesk', sans-serif"
         >
-          {{ $t('case_study.darrow.title') }}
+          {{ $t('case_study.darrov.title') }}
         </h1>
 
         <p
           class="text-base sm:text-xl text-slate-400 leading-relaxed max-w-3xl mb-8"
         >
-          {{ $t('case_study.darrow.subtitle') }}
+          {{ $t('case_study.darrov.subtitle') }}
         </p>
 
         <!-- Quick Metadata Cards Grid -->
@@ -142,7 +142,7 @@ const nextTab = () => {
               {{ $t('case_study.quick_info.role_label') }}
             </span>
             <p class="text-sm font-semibold text-slate-200">
-              {{ $t('case_study.darrow.meta.role') }}
+              {{ $t('case_study.darrov.meta.role') }}
             </p>
           </div>
 
@@ -153,7 +153,7 @@ const nextTab = () => {
               {{ $t('case_study.quick_info.team_label') }}
             </span>
             <p class="text-sm font-semibold text-slate-200">
-              {{ $t('case_study.darrow.meta.team') }}
+              {{ $t('case_study.darrov.meta.team') }}
             </p>
           </div>
 
@@ -165,7 +165,7 @@ const nextTab = () => {
             </span>
             <!-- TODO: Asadbek to'ldiradi -->
             <p class="text-sm font-semibold text-slate-300">
-              {{ $t('case_study.darrow.meta.timeline') }}
+              {{ $t('case_study.darrov.meta.timeline') }}
             </p>
           </div>
 
@@ -299,16 +299,16 @@ const nextTab = () => {
                 class="text-2xl sm:text-3xl font-bold text-white tracking-tight"
                 style="font-family: 'Space Grotesk', sans-serif"
               >
-                {{ $t('case_study.darrow.problem.title') }}
+                {{ $t('case_study.darrov.problem.title') }}
               </h2>
             </div>
             <p class="text-sm text-slate-400 mb-6">
-              {{ $t('case_study.darrow.problem.subtitle') }}
+              {{ $t('case_study.darrov.problem.subtitle') }}
             </p>
 
             <div class="content-box">
               <p class="text-slate-300 leading-relaxed whitespace-pre-line">
-                {{ $t('case_study.darrow.problem.content') }}
+                {{ $t('case_study.darrov.problem.content') }}
               </p>
             </div>
           </section>
@@ -329,16 +329,16 @@ const nextTab = () => {
                 class="text-2xl sm:text-3xl font-bold text-white tracking-tight"
                 style="font-family: 'Space Grotesk', sans-serif"
               >
-                {{ $t('case_study.darrow.role.title') }}
+                {{ $t('case_study.darrov.role.title') }}
               </h2>
             </div>
             <p class="text-sm text-slate-400 mb-6">
-              {{ $t('case_study.darrow.role.subtitle') }}
+              {{ $t('case_study.darrov.role.subtitle') }}
             </p>
 
             <div class="content-box">
               <p class="text-slate-300 leading-relaxed whitespace-pre-line">
-                {{ $t('case_study.darrow.role.content') }}
+                {{ $t('case_study.darrov.role.content') }}
               </p>
             </div>
           </section>
@@ -359,16 +359,16 @@ const nextTab = () => {
                 class="text-2xl sm:text-3xl font-bold text-white tracking-tight"
                 style="font-family: 'Space Grotesk', sans-serif"
               >
-                {{ $t('case_study.darrow.team.title') }}
+                {{ $t('case_study.darrov.team.title') }}
               </h2>
             </div>
             <p class="text-sm text-slate-400 mb-6">
-              {{ $t('case_study.darrow.team.subtitle') }}
+              {{ $t('case_study.darrov.team.subtitle') }}
             </p>
 
             <div class="content-box">
               <p class="text-slate-300 leading-relaxed whitespace-pre-line">
-                {{ $t('case_study.darrow.team.content') }}
+                {{ $t('case_study.darrov.team.content') }}
               </p>
             </div>
           </section>
@@ -389,11 +389,11 @@ const nextTab = () => {
                 class="text-2xl sm:text-3xl font-bold text-white tracking-tight"
                 style="font-family: 'Space Grotesk', sans-serif"
               >
-                {{ $t('case_study.darrow.decisions.title') }}
+                {{ $t('case_study.darrov.decisions.title') }}
               </h2>
             </div>
             <p class="text-sm text-slate-400 mb-6">
-              {{ $t('case_study.darrow.decisions.subtitle') }}
+              {{ $t('case_study.darrov.decisions.subtitle') }}
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -403,12 +403,12 @@ const nextTab = () => {
                   class="text-lg font-bold text-white mb-2 flex items-center gap-2"
                 >
                   <span class="w-2 h-2 rounded-full bg-blue-400" />
-                  {{ $t('case_study.darrow.decisions.stack_title') }}
+                  {{ $t('case_study.darrov.decisions.stack_title') }}
                 </h3>
                 <p
                   class="text-sm text-slate-300 leading-relaxed whitespace-pre-line"
                 >
-                  {{ $t('case_study.darrow.decisions.stack_content') }}
+                  {{ $t('case_study.darrov.decisions.stack_content') }}
                 </p>
               </div>
 
@@ -418,12 +418,12 @@ const nextTab = () => {
                   class="text-lg font-bold text-white mb-2 flex items-center gap-2"
                 >
                   <span class="w-2 h-2 rounded-full bg-cyan-400" />
-                  {{ $t('case_study.darrow.decisions.state_title') }}
+                  {{ $t('case_study.darrov.decisions.state_title') }}
                 </h3>
                 <p
                   class="text-sm text-slate-300 leading-relaxed whitespace-pre-line"
                 >
-                  {{ $t('case_study.darrow.decisions.state_content') }}
+                  {{ $t('case_study.darrov.decisions.state_content') }}
                 </p>
               </div>
 
@@ -433,12 +433,12 @@ const nextTab = () => {
                   class="text-lg font-bold text-white mb-2 flex items-center gap-2"
                 >
                   <span class="w-2 h-2 rounded-full bg-purple-400" />
-                  {{ $t('case_study.darrow.decisions.why_rtk_title') }}
+                  {{ $t('case_study.darrov.decisions.why_rtk_title') }}
                 </h3>
                 <p
                   class="text-sm text-slate-300 leading-relaxed whitespace-pre-line"
                 >
-                  {{ $t('case_study.darrow.decisions.why_rtk_content') }}
+                  {{ $t('case_study.darrov.decisions.why_rtk_content') }}
                 </p>
               </div>
             </div>
@@ -460,16 +460,16 @@ const nextTab = () => {
                 class="text-2xl sm:text-3xl font-bold text-white tracking-tight"
                 style="font-family: 'Space Grotesk', sans-serif"
               >
-                {{ $t('case_study.darrow.challenges.title') }}
+                {{ $t('case_study.darrov.challenges.title') }}
               </h2>
             </div>
             <p class="text-sm text-slate-400 mb-6">
-              {{ $t('case_study.darrow.challenges.subtitle') }}
+              {{ $t('case_study.darrov.challenges.subtitle') }}
             </p>
 
             <div class="content-box">
               <p class="text-slate-300 leading-relaxed whitespace-pre-line">
-                {{ $t('case_study.darrow.challenges.content') }}
+                {{ $t('case_study.darrov.challenges.content') }}
               </p>
             </div>
           </section>
@@ -490,16 +490,16 @@ const nextTab = () => {
                 class="text-2xl sm:text-3xl font-bold text-white tracking-tight"
                 style="font-family: 'Space Grotesk', sans-serif"
               >
-                {{ $t('case_study.darrow.results.title') }}
+                {{ $t('case_study.darrov.results.title') }}
               </h2>
             </div>
             <p class="text-sm text-slate-400 mb-6">
-              {{ $t('case_study.darrow.results.subtitle') }}
+              {{ $t('case_study.darrov.results.subtitle') }}
             </p>
 
             <div class="content-box">
               <p class="text-slate-300 leading-relaxed whitespace-pre-line">
-                {{ $t('case_study.darrow.results.content') }}
+                {{ $t('case_study.darrov.results.content') }}
               </p>
             </div>
           </section>

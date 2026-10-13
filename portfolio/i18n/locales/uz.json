@@ -45,7 +45,7 @@
     "name": "Asadbek",
     "surname": "Umarov",
     "role": "Frontend Developer (React / Next.js)",
-    "tagline": "React, Next.js va TypeScript yordamida veb hamda mobil ilovalar yarataman. Telegram WebApp hamda haqiqiy mijozlarga xizmat qiluvchi e-commerce platformalarini ishlab chiqqanman.",
+    "tagline": "React, Next.js va TypeScript yordamida veb hamda mobil ilovalar yarataman. Ko'p xizmatli Telegram WebApp loyihasida ishlaganman va haqiqiy mijozlar uchun e-commerce sayt yaratganman.",
     "location": "Toshkent, O'zbekiston",
     "cta_view": "Loyihalarni ko'rish",
     "cta_contact": "Bog'lanish",
@@ -157,11 +157,11 @@
           "Next.js, TypeScript, Tailwind CSS hamda ma'lumotlar boshqaruvi uchun RTK Query integratsiyasi"
         ]
       },
-      "darrow": {
+      "darrov": {
         "subtitle": "Multi-xizmat Telegram Web App — Taksi, Taom Yetkazish va Usta Xizmatlari",
         "description": "3 kishilik jamoada (1 backend, 2 frontend) To’rtko’l uchun taksi, taom, do’kon va usta xizmatlarini birlashtirgan, Telegram’da ochiladigan veb-ilova ustida ishladim. SMS OTP bilan kirish, taksi buyurtma ekrani va restoran sahifalarini yozdim.",
         "highlights": [
-          "Taksi, taom yetkazish, usta xizmatlari va do'kon buyurtmalari uchun band qilish oqimlari — barchasi birlashgan UI komponent kutubxonasidan foydalanadi",
+          "Taksi, taom, do'kon va usta xizmatlari uchun sahifalar, bitta umumiy interfeys uslubida",
           "Telegram WebView cheklovlari uchun optimallashtirilgan: CSS dvh birliklar ishlamagan joyda JS asosidagi viewport balandligini hisoblash amalga oshirildi",
           "REST API va RTK Query integratsiyasi — markazlashgan xato boshqaruvi, kesh va yuklash holatlari (skeletonlar) bilan"
         ]
@@ -295,18 +295,18 @@
       "next": "Keyingisi"
     },
     "cta": {
-      "title": "Darrow loyihasini jonli sinab ko'ring",
+      "title": "Darrov loyihasini jonli sinab ko'ring",
       "description": "Telegram messenjeri orqali to'g'ridan-to'g'ri Web App interfeysini ochib, buyurtma berish jarayonini ko'rishingiz mumkin."
     },
-    "darrow": {
-      "title": "Darrow — Multi-xizmat Telegram Web App",
+    "darrov": {
+      "title": "Darrov — Multi-xizmat Telegram Web App",
       "subtitle": "Taksi, taom yetkazish, usta xizmatlari va do'kon buyurtmalarini birlashtirgan super-ilova",
       "seo": {
-        "title": "Darrow Case Study — Asadbek Umarov",
-        "description": "Darrow — Telegram Web App multi-xizmat super-ilovasi yaratilishi bo'yicha texnik case study. React, RTK Query va Telegram API integratsiyasi.",
-        "og_title": "Darrow Case Study — Asadbek Umarov",
+        "title": "Darrov Case Study — Asadbek Umarov",
+        "description": "Darrov — Telegram Web App multi-xizmat super-ilovasi yaratilishi bo'yicha texnik case study. React, RTK Query va Telegram API integratsiyasi.",
+        "og_title": "Darrov Case Study — Asadbek Umarov",
         "og_description": "Telegram Web App multi-xizmat ilovasi yaratilishi bo'yicha batafsil texnik case study.",
-        "twitter_title": "Darrow Case Study — Asadbek Umarov",
+        "twitter_title": "Darrov Case Study — Asadbek Umarov",
         "twitter_description": "Telegram Web App multi-xizmat ilovasi yaratilishi bo'yicha batafsil texnik case study."
       },
       "meta": {

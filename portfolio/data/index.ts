@@ -132,8 +132,8 @@ export const experiences: ExperienceItem[] = [
 
 export const projects: Project[] = [
   {
-    key: 'darrow',
-    title: 'Darrow',
+    key: 'darrov',
+    title: 'Darrov',
     categoryKey: 'telegram_app',
     icon: '✈️',
     link: 'https://t.me/darrov_bot',
@@ -196,7 +196,6 @@ export const experiments: Project[] = [
     title: 'AutoQuiz',
     categoryKey: 'web_app',
     icon: '📝',
-    link: 'https://auto-quiz-liard.vercel.app/',
     github: 'https://github.com/asadbekumarov/autoQuiz',
     image: autoQuizImg,
     statusKey: 'projects.status.development',

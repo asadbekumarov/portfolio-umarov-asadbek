@@ -26,9 +26,11 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     prerender: {
       crawlLinks: true,
-      routes: ['/uz', '/en', '/uz/projects/darrow', '/en/projects/darrow'],
+      routes: ['/uz', '/en', '/uz/projects/darrov', '/en/projects/darrov'],
     },
     routeRules: {
+      '/uz/projects/darrow': { redirect: { to: '/uz/projects/darrov', statusCode: 301 } },
+      '/en/projects/darrow': { redirect: { to: '/en/projects/darrov', statusCode: 301 } },
       '/_nuxt/**': {
         headers: { 'cache-control': 'public, max-age=31536000, immutable' },
       },

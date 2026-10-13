@@ -45,7 +45,7 @@
     "name": "Asadbek",
     "surname": "Umarov",
     "role": "Frontend Developer (React / Next.js)",
-    "tagline": "Frontend developer building modern web and mobile apps with React, Next.js, and TypeScript. Built an e-commerce platform serving real customers and a multi-service Telegram Web App.",
+    "tagline": "Frontend developer building modern web and mobile apps with React, Next.js, and TypeScript. Worked on a multi-service Telegram Web App and built an e-commerce site for real customers.",
     "location": "Tashkent, Uzbekistan",
     "open_to_work": "Open to full-time and internship roles",
     "cta_view": "View Projects",
@@ -158,11 +158,11 @@
           "Developed with Next.js, TypeScript, Tailwind CSS, and RTK Query for efficient data management"
         ]
       },
-      "darrow": {
+      "darrov": {
         "subtitle": "Multi-service Telegram Web App — Taxi, Food Delivery & Handyman Services",
         "description": "As part of a 3-person team (1 backend, 2 frontend), I worked on a web application opening inside Telegram for Turtkul, combining taxi, food, shops, and handyman services. I engineered the SMS OTP login, taxi booking screen, and restaurant pages.",
         "highlights": [
-          "Architected booking flows for taxi, food delivery, handyman services, and shop orders — all sharing a unified UI component library",
+          "Pages for taxi, food, store and handyman services in one consistent interface style",
           "Optimized for Telegram WebView limitations: implemented JS-based viewport height calculations where CSS dvh units failed",
           "Integrated REST APIs and RTK Query with centralized error handling, caching, and skeleton loading states"
         ]
@@ -294,18 +294,18 @@
       "next": "Next"
     },
     "cta": {
-      "title": "Try Darrow Live",
+      "title": "Try Darrov Live",
       "description": "Open the Web App directly via Telegram messenger to explore the multi-service ordering workflow."
     },
-    "darrow": {
-      "title": "Darrow — Multi-service Telegram Web App",
+    "darrov": {
+      "title": "Darrov — Multi-service Telegram Web App",
       "subtitle": "Super-app combining taxi, food delivery, master services, and shop orders in Telegram",
       "seo": {
-        "title": "Darrow Case Study — Asadbek Umarov",
-        "description": "Technical case study of Darrow — a multi-service Telegram Web App built with React, TypeScript, RTK Query, and Telegram API.",
-        "og_title": "Darrow Case Study — Asadbek Umarov",
+        "title": "Darrov Case Study — Asadbek Umarov",
+        "description": "Technical case study of Darrov — a multi-service Telegram Web App built with React, TypeScript, RTK Query, and Telegram API.",
+        "og_title": "Darrov Case Study — Asadbek Umarov",
         "og_description": "Detailed technical case study on building a multi-service Telegram Web App.",
-        "twitter_title": "Darrow Case Study — Asadbek Umarov",
+        "twitter_title": "Darrov Case Study — Asadbek Umarov",
         "twitter_description": "Detailed technical case study on building a multi-service Telegram Web App."
       },
       "meta": {
