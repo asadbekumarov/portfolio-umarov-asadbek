@@ -134,6 +134,8 @@
     },
     "categories": {
       "web_app": "Web App",
+      "web_platform": "Web Platform",
+      "corporate_platform": "Corporate Platform",
       "telegram_app": "Telegram Mini App",
       "mobile_app": "Mobile App"
     },
@@ -211,6 +213,33 @@
           "Daily review system — reinforces vocabulary through scheduled spaced repetition of learned words",
           "Randomized recall tests — words are presented in random order to effectively test the user's retention rate"
         ]
+      },
+      "dinna": {
+        "subtitle": "Modern Web Platform for Practicing Psychologist",
+        "description": "A modern multilingual (UZ/RU/EN) platform developed for a practicing psychologist. Features a 3-minute interactive mental state quiz, showcase of services, and an automated system routing application submissions directly to Telegram groups/channels.",
+        "highlights": [
+          "3-minute interactive mental state diagnostics (Quiz)",
+          "Service showcase and automated lead routing directly to Telegram channels/groups",
+          "Multilingual architecture built on Next.js 15, TypeScript, and next-intl"
+        ]
+      },
+      "anvar_abduqayum": {
+        "subtitle": "Multi-industry Manufacturing Ecosystem & Corporate Platform",
+        "description": "A high-tier multilingual corporate platform built for a prominent Uzbek entrepreneur and manufacturer, encompassing a multi-industry ecosystem, B2B capacity configurator, and automated business diagnostic assessment.",
+        "highlights": [
+          "Multi-industry manufacturing enterprise ecosystem presentation",
+          "B2B production capacity configurator",
+          "Automated business diagnostic test with smooth interactive animations"
+        ]
+      },
+      "ilhom_begimqulov": {
+        "subtitle": "B2B Business Consulting & Strategic Diagnostics Web Platform",
+        "description": "A premium multilingual (UZ/RU/EN) web platform designed for a B2B business consultant. Features automated Cal.com booking for strategic diagnostics, an interactive business assessment test, and a Telegram bot integration routing inquiries to a private group.",
+        "highlights": [
+          "Automated Cal.com scheduling system for strategic diagnostics",
+          "Interactive business diagnostic assessment",
+          "Real-time lead routing to private Telegram groups via custom bot API"
+        ]
       }
     }
   },
@@ -253,15 +282,44 @@
     }
   },
   "contact": {
+    "label": "Get in Touch",
     "title": "Let's Work",
     "title_accent": "Together",
+    "subtitle": "Have a project in mind, opportunities, or just want to connect? Feel free to reach out anytime.",
+    "status_available": "Available for new opportunities",
     "cards": {
       "email": "Email",
       "phone": "Phone",
       "linkedin": "LinkedIn",
       "telegram": "Telegram"
     },
-    "cta_email": "Send Me an Email"
+    "copy": "Copy",
+    "copied": "Copied!",
+    "cta_email": "Send Me an Email",
+    "cta_telegram": "Message on Telegram",
+    "direct_title": "Direct Contact",
+    "direct_desc": "Feel free to reach out directly via any of the channels below for inquiries, projects, or collaborations.",
+    "response_time": "Usually responds within 1-2 hours",
+    "form": {
+      "badge": "Send Message",
+      "title": "Send Me a Message",
+      "subtitle": "Fill out the form below, and your message will be forwarded directly to my Telegram.",
+      "name_label": "Your Name",
+      "name_placeholder": "Enter your name",
+      "contact_label": "Contact (Phone or Telegram)",
+      "contact_placeholder": "+998 90 123 45 67 or username",
+      "subject_label": "Subject / Project Type",
+      "subject_placeholder": "e.g. Web App, Telegram Mini App, or Job Offer",
+      "message_label": "Message",
+      "message_placeholder": "Tell me a bit about your project or inquiry...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success_title": "Message sent successfully!",
+      "success_desc": "Your message was delivered to my Telegram. I'll get back to you shortly.",
+      "send_another": "Send another message",
+      "error_required": "Please provide your name, contact information, and message.",
+      "error_generic": "Failed to send message. Please reach out to me directly on Telegram."
+    }
   },
   "seo": {
     "title": "Asadbek Umarov — Frontend Developer (React / Next.js)",

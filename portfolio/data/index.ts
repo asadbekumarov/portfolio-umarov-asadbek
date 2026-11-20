@@ -18,7 +18,7 @@ import autoQuizImg from '~/assets/images/autoQuiz.webp';
 import vocabAppImg from '~/assets/images/vocabApp.webp';
 
 export const stats: StatItem[] = [
-  { value: '5+', labelKey: 'about.stats.projects' },
+  { value: '8+', labelKey: 'about.stats.projects' },
   { value: '1+', labelKey: 'about.stats.experience' },
   { value: '100%', labelKey: 'about.stats.remote' },
 ];
@@ -52,7 +52,7 @@ export const contacts: ContactCard[] = [
     labelKey: 'contact.cards.email',
     value: 'asadbekumarov922@gmail.com',
     href: 'mailto:asadbekumarov922@gmail.com',
-    external: true,
+    external: false,
   },
   {
     icon: 'phone',
@@ -166,18 +166,6 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'REST API'],
   },
   {
-    key: 'tola_bot',
-    title: "To'la Bot",
-    categoryKey: 'telegram_app',
-    icon: '🔔',
-    link: 'https://tola-bot.vercel.app/',
-    github: 'https://github.com/asadbekumarov/tola-bot',
-    image: tolaBotImg,
-    statusKey: 'projects.status.development',
-    highlightCount: 3,
-    technologies: ['Next.js', 'TypeScript', 'Supabase', 'Telegram API'],
-  },
-  {
     key: 'stpos',
     title: 'STpos',
     categoryKey: 'web_app',
@@ -191,6 +179,51 @@ export const projects: Project[] = [
 ];
 
 export const experiments: Project[] = [
+  {
+    key: 'dinna',
+    title: 'Psixologiya Platformasi',
+    categoryKey: 'web_platform',
+    icon: '🧠',
+    link: 'https://dinna-psixologiya.vercel.app/',
+    github: 'https://github.com/asadbekumarov/dinna',
+    statusKey: 'projects.status.development',
+    highlightCount: 3,
+    technologies: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'next-intl', 'Telegram API', 'Zod'],
+  },
+  {
+    key: 'anvar_abduqayum',
+    title: 'Anvar Abduqayum',
+    categoryKey: 'corporate_platform',
+    icon: '🏢',
+    link: 'https://anvarabduqayum.vercel.app/uz',
+    github: 'https://github.com/asadbekumarov/anvarAbduqayum',
+    statusKey: 'projects.status.development',
+    highlightCount: 3,
+    technologies: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+  },
+  {
+    key: 'ilhom_begimqulov',
+    title: 'Ilhom Begimqulov — Biznes Konsalting',
+    categoryKey: 'web_platform',
+    icon: '💼',
+    link: 'https://ilhom-begimqulov.vercel.app/',
+    github: 'https://github.com/asadbekumarov/ilhomBegimqulov',
+    statusKey: 'projects.status.development',
+    highlightCount: 3,
+    technologies: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Cal.com', 'Telegram Bot API', 'next-intl'],
+  },
+  {
+    key: 'tola_bot',
+    title: "To'la Bot",
+    categoryKey: 'telegram_app',
+    icon: '🔔',
+    link: 'https://tola-bot.vercel.app/',
+    github: 'https://github.com/asadbekumarov/tola-bot',
+    image: tolaBotImg,
+    statusKey: 'projects.status.development',
+    highlightCount: 3,
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'Telegram API'],
+  },
   {
     key: 'auto_quiz',
     title: 'AutoQuiz',

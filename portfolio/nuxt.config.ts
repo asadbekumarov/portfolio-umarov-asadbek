@@ -12,6 +12,8 @@ export default defineNuxtConfig({
   ],
 
   runtimeConfig: {
+    telegramBotToken: process.env.TELEGRAM_BOT_TOKEN || '',
+    telegramChatId: process.env.TELEGRAM_CHAT_ID || '',
     public: {
       siteUrl:
         process.env.NUXT_PUBLIC_SITE_URL ||

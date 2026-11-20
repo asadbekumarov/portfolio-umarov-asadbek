@@ -132,6 +132,8 @@
     },
     "categories": {
       "web_app": "Veb ilova",
+      "web_platform": "Veb platforma",
+      "corporate_platform": "Korporativ platforma",
       "telegram_app": "Telegram Mini-ilova",
       "mobile_app": "Mobil ilova"
     },
@@ -210,6 +212,33 @@
           "Kunlik takrorlash tizimi — o'rganilgan so'zlarni belgilangan vaqt asosida qayta takrorlash orqali vocabulary'ni mustahkamlash",
           "Randomized recall testlar — so'zlar tasodifiy tartibda chiqarilib, foydalanuvchining eslab qolish darajasi tekshiriladi"
         ]
+      },
+      "dinna": {
+        "subtitle": "Amaliyotchi psixolog uchun veb-platforma",
+        "description": "Amaliyotchi psixolog uchun ishlab chiqilgan ko‘p tilli (UZ/RU/EN) zamonaviy platforma. Foydalanuvchilar uchun 3 daqiqalik interaktiv ruhiy holat diagnostikasi (Quiz), xizmatlar taqdimoti hamda arizalarni to‘g‘ridan-to‘g‘ri Telegram guruh/kanaliga yetkazuvchi avtomatlashtirilgan tizimni yaratdim.",
+        "highlights": [
+          "3 daqiqalik interaktiv ruhiy holat diagnostikasi (Quiz)",
+          "Xizmatlar taqdimoti va arizalarni to'g'ridan-to'g'ri Telegram guruh/kanalga yetkazuvchi avtomatlashtirish",
+          "Next.js 15, TypeScript va next-intl asosida ko'p tilli arxitektura"
+        ]
+      },
+      "anvar_abduqayum": {
+        "subtitle": "Ko‘p tarmoqli sanoat korxonalari ekotizimi va korporativ platforma",
+        "description": "O‘zbekistonlik yirik tadbirkor va ishlab chiqaruvchi uchun ko‘p tarmoqli sanoat korxonalari ekotizimi, B2B quvvat konfiguratori va avtomatlashtirilgan biznes diagnostika testini o‘z ichiga olgan yuqori darajadagi ko‘p tilli korporativ platforma.",
+        "highlights": [
+          "Ko'p tarmoqli sanoat korxonalari ekotizimi taqdimoti",
+          "B2B ishlab chiqarish quvvat konfiguratori",
+          "Avtomatlashtirilgan biznes diagnostika testi va silliq interaktiv animatsiyalar"
+        ]
+      },
+      "ilhom_begimqulov": {
+        "subtitle": "B2B biznes-konsalting va strategik diagnostika veb-platformasi",
+        "description": "B2B biznes-konsultant uchun ishlab chiqilgan premium darajadagi ko'p tilli (UZ/RU/EN) veb-platforma. Strategik diagnostika uchun avtomatlashtirilgan Cal.com bron qilish tizimi, interaktiv biznes test va arizalarni Telegram guruhga yetkazuvchi bot integratsiyasiga ega.",
+        "highlights": [
+          "Strategik diagnostika uchun avtomatlashtirilgan Cal.com bron qilish tizimi",
+          "Interaktiv biznes diagnostika testi",
+          "Arizalarni Telegram guruhga yetkazuvchi bot integratsiyasi"
+        ]
       }
     }
   },
@@ -256,13 +285,41 @@
     "label": "Bog'lanish",
     "title": "Birga",
     "title_accent": "Ishlaylik",
+    "subtitle": "Yangi loyiha, hamkorlik yoki savollaringiz bormi? Quyidagi kanallar orqali istalgan vaqtda bog'lanishingiz mumkin.",
+    "status_available": "Yangi loyihalar uchun ochiq",
     "cards": {
       "email": "Email",
       "phone": "Telefon",
       "linkedin": "LinkedIn",
       "telegram": "Telegram"
     },
-    "cta_email": "Menga email yuboring"
+    "copy": "Nusxalash",
+    "copied": "Nusxalandi!",
+    "cta_email": "Menga email yuboring",
+    "cta_telegram": "Telegram orqali yozish",
+    "direct_title": "To'g'ridan-to'g'ri aloqa",
+    "direct_desc": "Savollar, takliflar yoki loyihalar bo'yicha quyidagi kanallar orqali tezkor bog'lanishingiz mumkin.",
+    "response_time": "Odatda 1-2 soat ichida javob beraman",
+    "form": {
+      "badge": "Xabar qoldirish",
+      "title": "Menga xabar yozing",
+      "subtitle": "Quyidagi formani to'ldiring, ma'lumotlaringiz darhol mening Telegramimga kelib tushadi.",
+      "name_label": "Ismingiz",
+      "name_placeholder": "Ismingizni kiriting",
+      "contact_label": "Aloqa (Telefon yoki Telegram)",
+      "contact_placeholder": "+998 90 123 45 67 yoki username",
+      "subject_label": "Mavzu / Loyiha turi",
+      "subject_placeholder": "Masalan: Veb-sayt, Telegram Mini App yoki Ish taklifi",
+      "message_label": "Xabaringiz",
+      "message_placeholder": "Loyihangiz yoki taklifingiz haqida qisqacha yozing...",
+      "submit": "Xabarni yuborish",
+      "submitting": "Yuborilmoqda...",
+      "success_title": "Xabaringiz muvaffaqiyatli yuborildi!",
+      "success_desc": "Xabaringiz Telegram guruhimga yetib bordi. Tez orada siz bilan bog'lanaman.",
+      "send_another": "Yana xabar yuborish",
+      "error_required": "Iltimos, ismingiz, aloqa ma'lumotingiz va xabarni to'liq kiriting.",
+      "error_generic": "Xabar yuborishda xatolik yuz berdi. Iltimos, Telegram orqali to'g'ridan-to'g'ri yozing."
+    }
   },
   "seo": {
     "title": "Asadbek Umarov — Frontend Developer (React / Next.js)",
